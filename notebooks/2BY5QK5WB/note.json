@@ -1,0 +1,1826 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n## Initialize Spark Context and Spark SQL Context",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943348_1895530662",
+      "id": "20161005-135903_970876368",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch2\u003eInitialize Spark Context and Spark SQL Context\u003c/h2\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\nfrom pyspark.sql import SQLContext\nsc\nsqlContext \u003d SQLContext(sc)",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943348_1895530662",
+      "id": "20161005-135903_270613098",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## Creating DataFrames from JSON files",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943348_1895530662",
+      "id": "20161005-135903_687453495",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch2\u003eCreating DataFrames from JSON files\u003c/h2\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\nbusiness \u003d sqlContext.read.json(\"/zeppelin/datasets/yelp/dataset/yelp_academic_dataset_business.json\")\nusers    \u003d sqlContext.read.json(\"/zeppelin/datasets/yelp/dataset/yelp_academic_dataset_user.json\")\nreviews  \u003d sqlContext.read.json(\"/zeppelin/datasets/yelp/dataset/yelp_academic_dataset_review.json\")\n\n\n",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943348_1895530662",
+      "id": "20161005-135903_1967464040",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n#### TODO : Create checkins and tips DataFrames\n",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943349_1895145913",
+      "id": "20161005-135903_1065293301",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch4\u003eTODO : Create checkins and tips DataFrames\u003c/h4\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n# checkin path file : \"/zeppelin/datasets/yelp/dataset/yelp_academic_dataset_checkin.json\"\n# tip path file \"/zeppelin/datasets/yelp/dataset/yelp_academic_dataset_tip.json\"\n",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943349_1895145913",
+      "id": "20161005-135903_638880282",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## Print and explore schemas",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943349_1895145913",
+      "id": "20161005-135903_1134674914",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch2\u003ePrint and explore schemas\u003c/h2\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\nreviews.printSchema()\nusers.printSchema()",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943349_1895145913",
+      "id": "20161005-135903_516563872",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "root\n |-- business_id: string (nullable \u003d true)\n |-- date: string (nullable \u003d true)\n |-- review_id: string (nullable \u003d true)\n |-- stars: long (nullable \u003d true)\n |-- text: string (nullable \u003d true)\n |-- type: string (nullable \u003d true)\n |-- user_id: string (nullable \u003d true)\n |-- votes: struct (nullable \u003d true)\n |    |-- cool: long (nullable \u003d true)\n |    |-- funny: long (nullable \u003d true)\n |    |-- useful: long (nullable \u003d true)\n\nroot\n |-- average_stars: double (nullable \u003d true)\n |-- compliments: struct (nullable \u003d true)\n |    |-- cool: long (nullable \u003d true)\n |    |-- cute: long (nullable \u003d true)\n |    |-- funny: long (nullable \u003d true)\n |    |-- hot: long (nullable \u003d true)\n |    |-- list: long (nullable \u003d true)\n |    |-- more: long (nullable \u003d true)\n |    |-- note: long (nullable \u003d true)\n |    |-- photos: long (nullable \u003d true)\n |    |-- plain: long (nullable \u003d true)\n |    |-- profile: long (nullable \u003d true)\n |    |-- writer: long (nullable \u003d true)\n |-- elite: array (nullable \u003d true)\n |    |-- element: long (containsNull \u003d true)\n |-- fans: long (nullable \u003d true)\n |-- friends: array (nullable \u003d true)\n |    |-- element: string (containsNull \u003d true)\n |-- name: string (nullable \u003d true)\n |-- review_count: long (nullable \u003d true)\n |-- type: string (nullable \u003d true)\n |-- user_id: string (nullable \u003d true)\n |-- votes: struct (nullable \u003d true)\n |    |-- cool: long (nullable \u003d true)\n |    |-- funny: long (nullable \u003d true)\n |    |-- useful: long (nullable \u003d true)\n |-- yelping_since: string (nullable \u003d true)\n\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n#### TODO: Print and explore schemas of others dataframes : bussines, checkins and tips",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943349_1895145913",
+      "id": "20161005-135903_1507679537",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch4\u003eTODO: Print and explore schemas of others dataframes : bussines, checkins and tips\u003c/h4\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943350_1896300159",
+      "id": "20161005-135903_1536903242",
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## Register DataFrames as tables",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943350_1896300159",
+      "id": "20161005-135903_375926280",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch2\u003eRegister DataFrames as tables\u003c/h2\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\nbusiness.registerTempTable(\"businessTable\")\nusers.registerTempTable(\"usersTable\")\nreviews.registerTempTable(\"reviewsTable\")",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943350_1896300159",
+      "id": "20161005-135903_1500567622",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n#### TODO : Register checkins and tips as tables",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943350_1896300159",
+      "id": "20161005-135903_1794581132",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch4\u003eTODO : Register checkins and tips as tables\u003c/h4\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943350_1896300159",
+      "id": "20161005-135903_1806691968",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## Explore DataFrames",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943351_1895915411",
+      "id": "20161005-135903_1021347219",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch2\u003eExplore DataFrames\u003c/h2\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Explore using Spark SQL DSL",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943351_1895915411",
+      "id": "20161005-135903_1661847713",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch3\u003eExplore using Spark SQL DSL\u003c/h3\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\nusers.show(10)\nreviews.show(10)",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943351_1895915411",
+      "id": "20161005-135903_809334030",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "+-------------+--------------------+--------------------+----+--------------------+---------+------------+----+--------------------+-------------------+-------------+\n|average_stars|         compliments|               elite|fans|             friends|     name|review_count|type|             user_id|              votes|yelping_since|\n+-------------+--------------------+--------------------+----+--------------------+---------+------------+----+--------------------+-------------------+-------------+\n|         4.14|[78,15,11,48,null...|        [2005, 2006]|  70|[rpOyqD_893cqmDAt...|   Russel|         108|user|18kPq7GPye-YQ3LyK...|      [245,167,280]|      2004-10|\n|         3.66|[1642,206,580,109...|[2005, 2006, 2007...|1179|[18kPq7GPye-YQ3Ly...|   Jeremy|        1274|user|rpOyqD_893cqmDAtJ...| [11093,7681,14199]|      2004-10|\n|          3.6|[145,23,120,101,4...|[2005, 2006, 2007...| 100|[18kPq7GPye-YQ3Ly...|  Michael|         442|user|4U9kSBLuBDU391x6b...|     [732,908,1483]|      2004-10|\n|         4.64|[null,2,null,null...|                  []|   2|[18kPq7GPye-YQ3Ly...|      Ken|          11|user|fHtTaujcyKvXglE33...|           [5,1,11]|      2004-10|\n|          3.8|[1,2,null,1,null,...|              [2005]|   4|[rpOyqD_893cqmDAt...|Katherine|          66|user|SIBCL7HBkrP4llolm...|         [13,11,34]|      2004-10|\n|         4.35|[3592,274,1507,27...|[2005, 2006, 2007...| 807|[18kPq7GPye-YQ3Ly...|     Joan|        1611|user|8J4IIYcqBlFch8T90...|[16794,13010,17705]|      2004-10|\n|         4.45|[14,4,2,8,1,1,5,n...|  [2005, 2006, 2007]|   6|[rpOyqD_893cqmDAt...|   George|          55|user|ysYmC-ufbdmVEX9yA...|         [25,35,39]|      2004-10|\n|         3.88|[1,null,null,1,nu...|              [2005]|   2|[i63u3SdbrLsP4Fxi...|     Mary|          60|user|WPOKvkacSKHx_bIG1...|        [34,32,131]|      2004-10|\n|         3.58|[4,1,8,5,null,2,3...|                  []|   7|[rpOyqD_893cqmDAt...|    Nader|         101|user|UTS9XcT14H2ZscRIf...|        [49,53,243]|      2004-10|\n|          4.3|[3,null,null,1,nu...|                  []|   0|[4U9kSBLuBDU391x6...|   Joseph|          20|user|qL7Astun3i7qwr2IL...|          [15,6,30]|      2004-10|\n+-------------+--------------------+--------------------+----+--------------------+---------+------------+----+--------------------+-------------------+-------------+\nonly showing top 10 rows\n\n+--------------------+----------+--------------------+-----+--------------------+------+--------------------+-------+\n|         business_id|      date|           review_id|stars|                text|  type|             user_id|  votes|\n+--------------------+----------+--------------------+-----+--------------------+------+--------------------+-------+\n|5UmKMjUEUNdYWqANh...|2012-08-01|Ya85v4eqdd6k9Od8H...|    4|Mr Hoagie is an i...|review|PUFPaY9KxDAcGqfso...|[0,0,0]|\n|5UmKMjUEUNdYWqANh...|2014-02-13|KPvLNJ21_4wbYNctr...|    5|Excellent food. S...|review|Iu6AxdBYGR4A0wspR...|[0,0,0]|\n|5UmKMjUEUNdYWqANh...|2015-10-31|fFSoGV46Yxuwbr3fH...|    5|Yes this place is...|review|auESFwWvW42h6alXg...|[0,0,0]|\n|UsFtqoBl7naz8AVUB...|2013-11-08|Di3exaUCFNw1V4kSN...|    5|All the food is g...|review|uK8tzraOp4M5u3uYr...|[0,0,0]|\n|UsFtqoBl7naz8AVUB...|2014-03-29|0Lua2-PbqEQMjD9r8...|    3|We checked this p...|review|I_47G-R2_egp7ME5u...|[0,0,0]|\n|UsFtqoBl7naz8AVUB...|2014-10-29|7N9j5YbBHBW6qguE5...|    1|Wing sauce is lik...|review|PP_xoMSYlGr2pb67B...|[0,0,0]|\n|UsFtqoBl7naz8AVUB...|2014-11-28|mjCJR33jvUNt41iJC...|    4|Cold cheap beer. ...|review|JPPhyFE-UE453zA6K...|[0,0,0]|\n|3eu6MEFlq2Dg7bQh8...|2014-02-27|Ieh3kfZ-5J9pLju4J...|    5|I highly recommen...|review|2d5HeDvZTDUNVog_W...|[0,0,0]|\n|3eu6MEFlq2Dg7bQh8...|2015-06-16|PU28OoBSHpZLkYGCm...|    5|I am a big believ...|review|BShxMIUwaJS378xcr...|[0,0,0]|\n|cE27W9VPgO88Qxe4o...|2012-08-19|XsA6AojkWjOHA4Fmu...|    3|Decent range some...|review|fhNxoMwwTipzjO8A9...|[0,0,1]|\n+--------------------+----------+--------------------+-----+--------------------+------+--------------------+-------+\nonly showing top 10 rows\n\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n#### TODO : Using DSL, expore the other DataFrames",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943351_1895915411",
+      "id": "20161005-135903_611468903",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch4\u003eTODO : Using DSL, expore the other DataFrames\u003c/h4\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943351_1895915411",
+      "id": "20161005-135903_470188903",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Explore using Spark SQL queries\n",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943352_1893991666",
+      "id": "20161005-135903_297994374",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch3\u003eExplore using Spark SQL queries\u003c/h3\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\nsqlContext.sql(\"select * from usersTable limit 10\").show()\nsqlContext.sql(\"select * from reviewsTable limit 11\").show()\n",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943352_1893991666",
+      "id": "20161005-135903_1250790069",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "+-------------+--------------------+--------------------+----+--------------------+---------+------------+----+--------------------+-------------------+-------------+\n|average_stars|         compliments|               elite|fans|             friends|     name|review_count|type|             user_id|              votes|yelping_since|\n+-------------+--------------------+--------------------+----+--------------------+---------+------------+----+--------------------+-------------------+-------------+\n|         4.14|[78,15,11,48,null...|        [2005, 2006]|  70|[rpOyqD_893cqmDAt...|   Russel|         108|user|18kPq7GPye-YQ3LyK...|      [245,167,280]|      2004-10|\n|         3.66|[1642,206,580,109...|[2005, 2006, 2007...|1179|[18kPq7GPye-YQ3Ly...|   Jeremy|        1274|user|rpOyqD_893cqmDAtJ...| [11093,7681,14199]|      2004-10|\n|          3.6|[145,23,120,101,4...|[2005, 2006, 2007...| 100|[18kPq7GPye-YQ3Ly...|  Michael|         442|user|4U9kSBLuBDU391x6b...|     [732,908,1483]|      2004-10|\n|         4.64|[null,2,null,null...|                  []|   2|[18kPq7GPye-YQ3Ly...|      Ken|          11|user|fHtTaujcyKvXglE33...|           [5,1,11]|      2004-10|\n|          3.8|[1,2,null,1,null,...|              [2005]|   4|[rpOyqD_893cqmDAt...|Katherine|          66|user|SIBCL7HBkrP4llolm...|         [13,11,34]|      2004-10|\n|         4.35|[3592,274,1507,27...|[2005, 2006, 2007...| 807|[18kPq7GPye-YQ3Ly...|     Joan|        1611|user|8J4IIYcqBlFch8T90...|[16794,13010,17705]|      2004-10|\n|         4.45|[14,4,2,8,1,1,5,n...|  [2005, 2006, 2007]|   6|[rpOyqD_893cqmDAt...|   George|          55|user|ysYmC-ufbdmVEX9yA...|         [25,35,39]|      2004-10|\n|         3.88|[1,null,null,1,nu...|              [2005]|   2|[i63u3SdbrLsP4Fxi...|     Mary|          60|user|WPOKvkacSKHx_bIG1...|        [34,32,131]|      2004-10|\n|         3.58|[4,1,8,5,null,2,3...|                  []|   7|[rpOyqD_893cqmDAt...|    Nader|         101|user|UTS9XcT14H2ZscRIf...|        [49,53,243]|      2004-10|\n|          4.3|[3,null,null,1,nu...|                  []|   0|[4U9kSBLuBDU391x6...|   Joseph|          20|user|qL7Astun3i7qwr2IL...|          [15,6,30]|      2004-10|\n+-------------+--------------------+--------------------+----+--------------------+---------+------------+----+--------------------+-------------------+-------------+\n\n+--------------------+----------+--------------------+-----+--------------------+------+--------------------+-------+\n|         business_id|      date|           review_id|stars|                text|  type|             user_id|  votes|\n+--------------------+----------+--------------------+-----+--------------------+------+--------------------+-------+\n|5UmKMjUEUNdYWqANh...|2012-08-01|Ya85v4eqdd6k9Od8H...|    4|Mr Hoagie is an i...|review|PUFPaY9KxDAcGqfso...|[0,0,0]|\n|5UmKMjUEUNdYWqANh...|2014-02-13|KPvLNJ21_4wbYNctr...|    5|Excellent food. S...|review|Iu6AxdBYGR4A0wspR...|[0,0,0]|\n|5UmKMjUEUNdYWqANh...|2015-10-31|fFSoGV46Yxuwbr3fH...|    5|Yes this place is...|review|auESFwWvW42h6alXg...|[0,0,0]|\n|UsFtqoBl7naz8AVUB...|2013-11-08|Di3exaUCFNw1V4kSN...|    5|All the food is g...|review|uK8tzraOp4M5u3uYr...|[0,0,0]|\n|UsFtqoBl7naz8AVUB...|2014-03-29|0Lua2-PbqEQMjD9r8...|    3|We checked this p...|review|I_47G-R2_egp7ME5u...|[0,0,0]|\n|UsFtqoBl7naz8AVUB...|2014-10-29|7N9j5YbBHBW6qguE5...|    1|Wing sauce is lik...|review|PP_xoMSYlGr2pb67B...|[0,0,0]|\n|UsFtqoBl7naz8AVUB...|2014-11-28|mjCJR33jvUNt41iJC...|    4|Cold cheap beer. ...|review|JPPhyFE-UE453zA6K...|[0,0,0]|\n|3eu6MEFlq2Dg7bQh8...|2014-02-27|Ieh3kfZ-5J9pLju4J...|    5|I highly recommen...|review|2d5HeDvZTDUNVog_W...|[0,0,0]|\n|3eu6MEFlq2Dg7bQh8...|2015-06-16|PU28OoBSHpZLkYGCm...|    5|I am a big believ...|review|BShxMIUwaJS378xcr...|[0,0,0]|\n|cE27W9VPgO88Qxe4o...|2012-08-19|XsA6AojkWjOHA4Fmu...|    3|Decent range some...|review|fhNxoMwwTipzjO8A9...|[0,0,1]|\n|cE27W9VPgO88Qxe4o...|2013-04-18|rkD7UDbQ9VM3Va6bI...|    1|Owning a driving ...|review|-6rEfobYjMxpUWLNx...|[0,0,1]|\n+--------------------+----------+--------------------+-----+--------------------+------+--------------------+-------+\n\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n#### TODO : Using SQL queries, expore the other DataFrames\n\n ",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943352_1893991666",
+      "id": "20161005-135903_2096807165",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch4\u003eTODO : Using SQL queries, expore the other DataFrames\u003c/h4\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943352_1893991666",
+      "id": "20161005-135903_1422857662",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### How many businesses and users are registered based on this yelp dataset ?",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943352_1893991666",
+      "id": "20161005-135903_1572970649",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch3\u003eHow many businesses and users are registered based on this yelp dataset ?\u003c/h3\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\nprint \"business record count \"+ str(business.count()) \nprint \"users record count \" + str(users.count())",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943353_1893606917",
+      "id": "20161005-135903_2067743158",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "business record count 77445\nusers record count 552339\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n#### TODO : How many reviews, checkins and tips are registered ?",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943353_1893606917",
+      "id": "20161005-135903_1384847224",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch4\u003eTODO : How many reviews, checkins and tips are registered ?\u003c/h4\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943353_1893606917",
+      "id": "20161005-135903_2126879346",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Find out the number of businesses from each city",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": false,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943353_1893606917",
+      "id": "20161005-135903_785397851",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch3\u003eFind out the number of business from each city\u003c/h3\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\nsqlContext.sql(\"select city, count(*) as count from businessTable group by city\").show()",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943353_1893606917",
+      "id": "20161005-135903_803466950",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "+--------------------+-----+\n|                city|count|\n+--------------------+-----+\n|          Pineville |    1|\n|              Monona|   79|\n|            Rockport|    1|\n|           Fort mill|    1|\n|           henderson|    1|\n|      Laveen Village|    3|\n|           Aspinwall|   13|\n|       Saint-laurent|    4|\n|        West Mifflin|   33|\n|             Buckeye|  131|\n|                Dane|    2|\n|       Montreal-West|    2|\n|           Brookline|    1|\n|              Laveen|   79|\n|      Deux-Montagnes|    1|\n|           Sun Lakes|   12|\n|         McAdenville|    1|\n|            Montreal|   88|\n|Sainte-Anne-De-Be...|    7|\n|          Blainville|    2|\n+--------------------+-----+\nonly showing top 20 rows\n\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Which are the top 10 cities based on number of businesses ?",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943354_1894761164",
+      "id": "20161005-135903_634985621",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch3\u003eWhich are the top 10 cities based on number of businesses ?\u003c/h3\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\nsqlContext.sql(\"select city, count(*) as count from businessTable group by city order by count desc\").show(10)\n",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943354_1894761164",
+      "id": "20161005-135903_2006783062",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "+----------+-----+\n|      city|count|\n+----------+-----+\n| Las Vegas|17423|\n|   Phoenix|10629|\n| Charlotte| 5189|\n|Scottsdale| 5139|\n|  Montréal| 3891|\n|Pittsburgh| 3337|\n| Edinburgh| 3272|\n|      Mesa| 3190|\n| Henderson| 2839|\n|     Tempe| 2773|\n+----------+-----+\nonly showing top 10 rows\n\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n#### TODO : Find our number of reviews from each day ",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943354_1894761164",
+      "id": "20161005-135903_1486944286",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch4\u003eTODO : Find our number of reviews from each day\u003c/h4\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943354_1894761164",
+      "id": "20161005-135903_1753589778",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n#### TODO : Which are the top 10 days based on number of reviews",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943354_1894761164",
+      "id": "20161005-135903_97856547",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch4\u003eTODO : Which are the top 10 days based on number of reviews\u003c/h4\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943354_1894761164",
+      "id": "20161005-135903_452310891",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n#### TODO : Find out the number of reviews for each star",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943355_1894376415",
+      "id": "20161005-135903_1162533923",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch4\u003eTODO : Find out the number of reviews for each star\u003c/h4\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943355_1894376415",
+      "id": "20161005-135903_13253024",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Find out the first registered users to yelp.com",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943355_1894376415",
+      "id": "20161005-135903_752003502",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch3\u003eFind out the first registered users to yelp.com\u003c/h3\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\nsqlContext.sql(\"select * from usersTable order by yelping_since asc\").show()",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943355_1894376415",
+      "id": "20161005-135903_455806384",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "+-------------+--------------------+--------------------+----+--------------------+---------+------------+----+--------------------+-------------------+-------------+\n|average_stars|         compliments|               elite|fans|             friends|     name|review_count|type|             user_id|              votes|yelping_since|\n+-------------+--------------------+--------------------+----+--------------------+---------+------------+----+--------------------+-------------------+-------------+\n|         4.14|[78,15,11,48,null...|        [2005, 2006]|  70|[rpOyqD_893cqmDAt...|   Russel|         108|user|18kPq7GPye-YQ3LyK...|      [245,167,280]|      2004-10|\n|          4.5|[null,null,null,n...|                  []|   0|                  []|     Carl|           2|user|gKhJyiCKkG6dHPNhr...|            [6,1,9]|      2004-10|\n|         3.88|[22,null,10,null,...|[2012, 2013, 2014...|  19|[rpOyqD_893cqmDAt...|   Andrew|         263|user|Re447krbp0VQVX3Dk...|      [175,157,665]|      2004-10|\n|          4.3|[3,null,null,1,nu...|                  []|   0|[4U9kSBLuBDU391x6...|   Joseph|          20|user|qL7Astun3i7qwr2IL...|          [15,6,30]|      2004-10|\n|         3.96|[5,1,null,1,1,2,4...|  [2006, 2007, 2008]|   6|[18kPq7GPye-YQ3Ly...|Christina|         287|user|z_5D4XEIlGAPjG3Os...|        [83,43,261]|      2004-10|\n|          3.6|[145,23,120,101,4...|[2005, 2006, 2007...| 100|[18kPq7GPye-YQ3Ly...|  Michael|         442|user|4U9kSBLuBDU391x6b...|     [732,908,1483]|      2004-10|\n|         4.17|[null,null,null,n...|                  []|   0|                  []|    Randy|          12|user|TBLwBZ4sdQNNixaoy...|            [2,2,3]|      2004-10|\n|         4.45|[14,4,2,8,1,1,5,n...|  [2005, 2006, 2007]|   6|[rpOyqD_893cqmDAt...|   George|          55|user|ysYmC-ufbdmVEX9yA...|         [25,35,39]|      2004-10|\n|         4.35|[3592,274,1507,27...|[2005, 2006, 2007...| 807|[18kPq7GPye-YQ3Ly...|     Joan|        1611|user|8J4IIYcqBlFch8T90...|[16794,13010,17705]|      2004-10|\n|         4.15|[39,null,8,23,1,5...|  [2009, 2010, 2011]|   9|[7uxXuCcpw9-mUS3O...|     Dave|         214|user|VVFxkYuyuYEX22aTV...|      [488,370,652]|      2004-10|\n|          3.8|[26,null,9,4,2,2,...|[2008, 2009, 2010...|  11|[rpOyqD_893cqmDAt...|    Kevin|         139|user|anTtulQ9G2b3SipCE...|      [134,167,277]|      2004-10|\n|          3.0|[null,null,null,n...|                  []|   1|[TgXQJsWCTVE4BFij...|     Teel|           5|user|5KwFISX_GfnFUQ0Vv...|           [1,2,16]|      2004-10|\n|          3.5|[1,null,null,null...|                  []|   2|[8CNEh7fSbLwDuAKh...| francine|           8|user|iemswP_ZAZbpjlEJd...|           [5,4,15]|      2004-10|\n|         3.66|[1642,206,580,109...|[2005, 2006, 2007...|1179|[18kPq7GPye-YQ3Ly...|   Jeremy|        1274|user|rpOyqD_893cqmDAtJ...| [11093,7681,14199]|      2004-10|\n|         3.88|[1,null,null,1,nu...|              [2005]|   2|[i63u3SdbrLsP4Fxi...|     Mary|          60|user|WPOKvkacSKHx_bIG1...|        [34,32,131]|      2004-10|\n|          3.0|[null,null,null,n...|                  []|   0|[u1Gr9T779Os7oeDI...|   Joseph|           2|user|Xnb_osPUHOHfinNQ3...|            [0,0,3]|      2004-10|\n|         3.22|[null,null,null,n...|                  []|   1|[tIdWbBmkvCQt2aT6...|    Larry|          94|user|82d-mm3hB2UelHwrp...|           [8,4,17]|      2004-10|\n|         4.64|[null,2,null,null...|                  []|   2|[18kPq7GPye-YQ3Ly...|      Ken|          11|user|fHtTaujcyKvXglE33...|           [5,1,11]|      2004-10|\n|         3.82|[1,2,1,null,null,...|                  []|   8|[18kPq7GPye-YQ3Ly...|   Yishan|          45|user|HDQixQ-WZEV0LVPJl...|         [19,44,48]|      2004-10|\n|         3.52|[3,1,1,1,5,null,1...|              [2007]|   7|[18kPq7GPye-YQ3Ly...|      Ryo|         170|user|wy6l_zUo7SN0qrvNR...|         [43,36,87]|      2004-10|\n+-------------+--------------------+--------------------+----+--------------------+---------+------------+----+--------------------+-------------------+-------------+\nonly showing top 20 rows\n\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n#### TODO : In which months was registered the most users ?",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943355_1894376415",
+      "id": "20161005-135903_135491890",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch4\u003eTODO : In which months was registered the most users ?\u003c/h4\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943356_1892452670",
+      "id": "20161005-135903_1506102953",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Retrive all the reviews for each business",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943356_1892452670",
+      "id": "20161005-135903_1625494502",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch3\u003eRetrive all the reviews for each business\u003c/h3\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\nsqlContext.sql(\"select b.business_id, b.name, b.city, b.stars, r.user_id, r.stars, r.text, r.date from businessTable as b join reviewsTable as r on b.business_id \u003d r.business_id \").show(50)",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943356_1892452670",
+      "id": "20161005-135903_593941703",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "+--------------------+----------------+----+-----+--------------------+-----+--------------------+----------+\n|         business_id|            name|city|stars|             user_id|stars|                text|      date|\n+--------------------+----------------+----+-----+--------------------+-----+--------------------+----------+\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|dcSUk4Cr7imHI2ipB...|    4|Great restaurant,...|2006-01-13|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|6QjQOjPYmuTm-mrts...|    5|When my wife an I...|2008-04-08|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|PShy2RYNadDUhJf4E...|    5|I thought the pri...|2008-05-27|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|nx2PS25Qe3MCEFUdO...|    5|Red White \u0026 Brew....|2008-08-07|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|G-_l9cBff45Aknkvk...|    4|I\u0027m a fan of the ...|2008-08-13|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|qVqHQx4AkiKFD0geY...|    4|Everyone\u0027s review...|2008-10-04|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|dKMzuhnwGh3hGxP0Q...|    4|I have to say, th...|2008-10-31|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|oCFQmDotqcyIYAY1J...|    3|My parents live i...|2008-12-19|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|FWW4j3wMpgsvTdvZh...|    4|I\u0027m a major fan o...|2009-01-12|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|bXJ9U9e_zn8K1xKwq...|    4|I absolutely love...|2009-02-11|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|vNFxfUDTPgZRgV3EH...|    5|Whenever we have ...|2009-02-28|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|C6Av_qoKe3H5-9BOn...|    5|We ordered a bowl...|2009-03-13|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|nbofxFWHORebBHh10...|    5|absolutely amazin...|2009-05-07|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|yAeo2D5NdtGuGG2o1...|    2|I didn\u0027t like thi...|2009-05-15|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|RknsoxpICgtuuv46u...|    4|We came to Red Wh...|2009-07-07|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|q0KigjVBtb6dfRjX3...|    4|I have a strict \"...|2009-09-17|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|EoTooNBcxu0Hy0-Xe...|    2|I don\u0027t understan...|2009-12-31|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|D97W7bC-zGoibmiCE...|    4|I found the best ...|2010-02-16|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|3hPmlMAP3PfHMiwNW...|    4|I cannot give it ...|2010-02-23|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|0jGPMGP5urtuzBDsq...|    5|Great Food, Good ...|2010-05-10|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|Zwtx7FLZcK5F2P0-T...|    4|I have been going...|2010-05-14|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|BuaNITlWZwJskEhBb...|    4|This is a popular...|2010-06-03|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|bf9toxBZ6tBozlVAx...|    5|We visited Red Wh...|2010-06-19|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|ngtohH7PP6AiLb2E3...|    5|My father-in-law ...|2010-07-18|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|EKwGhgLrM18ErVKKe...|    2|This place was ok...|2010-09-11|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|GjggdVEjRmatV_rQz...|    1|I would give this...|2010-10-13|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|jlr3OBS1_Y3Lqa-H3...|    3|at least the port...|2010-11-21|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|uBAMd01ZtGXaHrRD6...|    5|I don\u0027t believe w...|2010-11-24|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|cwWJ6ydDLjl0AUu_K...|    5|Large portions. G...|2011-01-08|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|S5zDAjR2JDPU6ZLWw...|    5|Love R,W\u0026B....The...|2011-02-10|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|cOTyqUKTyy98XixWc...|    4|The unlimited bre...|2011-02-18|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|9eY0M7voV1g_cm4dd...|    4|I have yet to eat...|2011-03-20|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|2EosrNis3zWr-u-vc...|    5|Arrived with nine...|2011-04-03|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|YNoT_j02m2Q5wa3tN...|    4|The food was grea...|2011-04-13|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|kJyR4gT1pfCcNjEY9...|    3|what i haven\u0027t re...|2011-05-24|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|8-mw_aotUGmP0k0s6...|    2|Disappointing foo...|2011-06-09|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|KT6aazXSAQsngVUYT...|    4|After months of t...|2011-06-26|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|Qz_WQ6blpBBSaEwso...|    5|This restaurant c...|2011-07-09|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|vmvCjcHVTFgLG7rFS...|    4|This is one of my...|2011-07-25|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|o2J22OK7xXL-sDPzA...|    4|It\u0027s a fact I giv...|2011-07-25|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|7lYUPgVDzJeJM7r5c...|    3|This place was ju...|2011-08-01|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|kFF_kOScHBkprmcy5...|    2|I don\u0027t understan...|2011-08-20|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|_8KAa1lhcX0JEmDqv...|    3|3 stars for: glut...|2011-09-23|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|s8fJCSltyub39Q1dq...|    3|Okay...so you get...|2011-10-02|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|NFYr9erhDtqgPtsS7...|    3|i ate here for lu...|2011-10-05|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|b8NuQaKS12nrs6gQZ...|    1|Wow, what a disap...|2011-12-18|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|pFXjuN07rRU1ELFcS...|    5|I go here at leas...|2012-01-03|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|TlVapUorkzfMmtrM2...|    4|Very good food, n...|2012-01-03|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|hHhHrjSfHocMAQ8Ns...|    4|Always hot yummy ...|2012-01-25|\n|-MgFDby-okrbKLBc-...|Red White \u0026 Brew|Mesa|  4.0|RYsqPA7mTe2YBkdG4...|    5|RW\u0026B is one of ou...|2012-03-04|\n+--------------------+----------------+----+-----+--------------------+-----+--------------------+----------+\nonly showing top 50 rows\n\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n#### TODO : Retrive all the reviews of \"Red White \u0026 Brew\" business",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943356_1892452670",
+      "id": "20161005-135903_812628856",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch4\u003eTODO : Retrive all the reviews of \u0026ldquo;Red White \u0026amp; Brew\u0026rdquo; business\u003c/h4\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943356_1892452670",
+      "id": "20161005-135903_1126960090",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n#### TODO : Retrive all the checkins for each business\n ",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943357_1892067922",
+      "id": "20161005-135903_992496762",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch4\u003eTODO : Retrive all the checkins for each business\u003c/h4\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943357_1892067922",
+      "id": "20161005-135903_779974452",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## Saving sql query results",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943357_1892067922",
+      "id": "20161005-135903_1669643768",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch2\u003eSaving sql query results\u003c/h2\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\nfrom pyspark.sql.types import *\nsqlContext.sql(\"select city, count(*) as count from business group by city order by count desc\").show()\nsqlContext.sql(\"select city, count(*) as count from business group by city order by count desc\").write.save(\"/zeppelin/datasets/yelp/output/sqlresult\")\n\n",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943357_1892067922",
+      "id": "20161005-135903_1079318665",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "+---------------+-----+\n|           city|count|\n+---------------+-----+\n|      Las Vegas|17423|\n|        Phoenix|10629|\n|      Charlotte| 5189|\n|     Scottsdale| 5139|\n|       Montréal| 3891|\n|     Pittsburgh| 3337|\n|      Edinburgh| 3272|\n|           Mesa| 3190|\n|      Henderson| 2839|\n|          Tempe| 2773|\n|       Chandler| 2425|\n|        Madison| 2104|\n|       Glendale| 1823|\n|        Gilbert| 1716|\n|         Peoria|  929|\n|      Karlsruhe|  898|\n|North Las Vegas|  819|\n|       Surprise|  587|\n|      Champaign|  462|\n|       Goodyear|  459|\n+---------------+-----+\nonly showing top 20 rows\n\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## Checking the saved result",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943357_1892067922",
+      "id": "20161005-135903_971495269",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch2\u003eChecking the saved result\u003c/h2\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\ndf \u003d sqlContext.read.load(\"/zeppelin/datasets/yelp/output/sqlresult\")\ndf.registerTempTable(\"test\")\nsqlContext.sql(\"select * from test order by count desc\").show()",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943358_1893222168",
+      "id": "20161005-135903_2095498170",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "+---------------+-----+\n|           city|count|\n+---------------+-----+\n|      Las Vegas|17423|\n|        Phoenix|10629|\n|      Charlotte| 5189|\n|     Scottsdale| 5139|\n|       Montréal| 3891|\n|     Pittsburgh| 3337|\n|      Edinburgh| 3272|\n|           Mesa| 3190|\n|      Henderson| 2839|\n|          Tempe| 2773|\n|       Chandler| 2425|\n|        Madison| 2104|\n|       Glendale| 1823|\n|        Gilbert| 1716|\n|         Peoria|  929|\n|      Karlsruhe|  898|\n|North Las Vegas|  819|\n|       Surprise|  587|\n|      Champaign|  462|\n|       Goodyear|  459|\n+---------------+-----+\nonly showing top 20 rows\n\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n## Run SQL directly of files",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943358_1893222168",
+      "id": "20161005-135903_986434211",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch2\u003eRun SQL directly of files\u003c/h2\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\ndf \u003d sqlContext.sql(\"select city, count(*) as count from json.`/zeppelin/datasets/yelp/dataset/yelp_academic_dataset_business.json` group by city order by count desc\")\ndf.show()",
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943358_1893222168",
+      "id": "20161005-135903_1379015715",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "+---------------+-----+\n|           city|count|\n+---------------+-----+\n|      Las Vegas|17423|\n|        Phoenix|10629|\n|      Charlotte| 5189|\n|     Scottsdale| 5139|\n|       Montréal| 3891|\n|     Pittsburgh| 3337|\n|      Edinburgh| 3272|\n|           Mesa| 3190|\n|      Henderson| 2839|\n|          Tempe| 2773|\n|       Chandler| 2425|\n|        Madison| 2104|\n|       Glendale| 1823|\n|        Gilbert| 1716|\n|         Peoria|  929|\n|      Karlsruhe|  898|\n|North Las Vegas|  819|\n|       Surprise|  587|\n|      Champaign|  462|\n|       Goodyear|  459|\n+---------------+-----+\nonly showing top 20 rows\n\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675943358_1893222168",
+      "id": "20161005-135903_1432987135",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Oct 5, 2016 1:59:03 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "SparkSqlPythonDevTalksParticipants",
+  "id": "2BY5QK5WB",
+  "angularObjects": {
+    "2BX6GZWYN": [],
+    "2BWPH49RG": [],
+    "2BZBF2J4T": [],
+    "2C115MB8A": [],
+    "2BX62UFU7": [],
+    "2BZZYRBFD": [],
+    "2BZD9FG1S": [],
+    "2BXFUR985": [],
+    "2BXGNBZEM": [],
+    "2BY16EG5G": [],
+    "2BY8D4ZAX": [],
+    "2BXGRS2Q1": [],
+    "2BYQRGQ1H": [],
+    "2BYUPG26W": [],
+    "2BY3UUBUK": []
+  },
+  "config": {},
+  "info": {}
+}

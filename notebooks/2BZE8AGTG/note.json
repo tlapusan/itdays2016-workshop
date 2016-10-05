@@ -1,0 +1,1303 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n#Initialize Spark context\n",
+      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675962510_-779461519",
+      "id": "20161005-135922_159880745",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch1\u003eInitialize Spark context\u003c/h1\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:22 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\nsc\nprint(sc)\n",
+      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675962511_-779846268",
+      "id": "20161005-135922_1158626183",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "\u003cpyspark.context.SparkContext object at 0x7f55d42e3310\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:22 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n# Importing classes\n",
+      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675962511_-779846268",
+      "id": "20161005-135922_2032007428",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch1\u003eImporting classes\u003c/h1\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:22 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\nfrom SparkPythonClassesDevTalks import Business, Review, User, Tip, Checkin\nimport json\n",
+      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675962511_-779846268",
+      "id": "20161005-135922_1920922307",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Oct 5, 2016 1:59:22 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n###  Creating RDDs from JSON files",
+      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675962512_-769458048",
+      "id": "20161005-135922_1199379579",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch3\u003eCreating RDDs from JSON files\u003c/h3\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:22 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark \n\n# Business (business_id, name, city, state, stars, review_count)\nbusinessLines \u003d sc.textFile(\"/zeppelin/datasets/yelp/yelp_academic_dataset_business.json\")\nbusinesses \u003d businessLines.map(lambda line : json.loads(line)).map(lambda fields : Business(fields[\u0027business_id\u0027], fields[\u0027name\u0027], fields[\u0027city\u0027], fields[\u0027state\u0027], float(fields[\u0027stars\u0027]), int(fields[\u0027review_count\u0027])))\n\n# User (user_id, name, review_count, average_stars, votes, yelping_since)\nuserLines \u003d sc.textFile(\"/zeppelin/datasets/yelp/yelp_academic_dataset_user.json\");\nusers \u003d userLines.map(lambda line : json.loads(line)).map(lambda fields : User(fields[\u0027user_id\u0027], fields[\u0027name\u0027], int(fields[\u0027review_count\u0027]), float(fields[\u0027average_stars\u0027]), fields[\u0027votes\u0027], fields[\u0027yelping_since\u0027]))\n\n# Review (business_id, user_id, stars, text, date, votes)\nreviewLines \u003d sc.textFile(\"/zeppelin/datasets/yelp/yelp_academic_dataset_review.json\")\nreviews \u003d reviewLines.map(lambda line : json.loads(line)).map(lambda fields : Review(fields[\u0027business_id\u0027], fields[\u0027user_id\u0027], float(fields[\u0027stars\u0027]), fields[\u0027text\u0027], fields[\u0027date\u0027], fields[\u0027votes\u0027]))\n",
+      "dateUpdated": "Oct 5, 2016 2:16:36 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675962512_-769458048",
+      "id": "20161005-135922_2073218064",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Oct 5, 2016 1:59:22 PM",
+      "dateStarted": "Oct 5, 2016 2:16:36 PM",
+      "dateFinished": "Oct 5, 2016 2:16:36 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\nprint users.count()",
+      "dateUpdated": "Oct 5, 2016 2:19:43 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475677081875_-814067018",
+      "id": "20161005-141801_1410131145",
+      "result": {
+        "code": "ERROR",
+        "type": "TEXT",
+        "msg": "Py4JJavaError: An error occurred while calling z:org.apache.spark.api.python.PythonRDD.collectAndServe.\n: org.apache.spark.SparkException: Job aborted due to stage failure: Task 2 in stage 6.0 failed 1 times, most recent failure: Lost task 2.0 in stage 6.0 (TID 32, localhost): org.apache.spark.api.python.PythonException: Traceback (most recent call last):\n  File \"/usr/spark/python/lib/pyspark.zip/pyspark/worker.py\", line 111, in main\n    process()\n  File \"/usr/spark/python/lib/pyspark.zip/pyspark/worker.py\", line 106, in process\n    serializer.dump_stream(func(split_index, iterator), outfile)\n  File \"/usr/spark/python/pyspark/rdd.py\", line 2346, in pipeline_func\n    return func(split, prev_func(split, iterator))\n  File \"/usr/spark/python/pyspark/rdd.py\", line 2346, in pipeline_func\n    return func(split, prev_func(split, iterator))\n  File \"/usr/spark/python/pyspark/rdd.py\", line 2346, in pipeline_func\n    return func(split, prev_func(split, iterator))\n  File \"/usr/spark/python/pyspark/rdd.py\", line 317, in func\n    return f(iterator)\n  File \"/usr/spark/python/pyspark/rdd.py\", line 1004, in \u003clambda\u003e\n    return self.mapPartitions(lambda i: [sum(1 for _ in i)]).sum()\n  File \"/usr/spark/python/pyspark/rdd.py\", line 1004, in \u003cgenexpr\u003e\n    return self.mapPartitions(lambda i: [sum(1 for _ in i)]).sum()\n  File \"\u003cstring\u003e\", line 4, in \u003clambda\u003e\nNameError: global name \u0027User\u0027 is not defined\n\n\tat org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:166)\n\tat org.apache.spark.api.python.PythonRunner$$anon$1.\u003cinit\u003e(PythonRDD.scala:207)\n\tat org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:125)\n\tat org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:70)\n\tat org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:306)\n\tat org.apache.spark.rdd.RDD.iterator(RDD.scala:270)\n\tat org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:66)\n\tat org.apache.spark.scheduler.Task.run(Task.scala:89)\n\tat org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:213)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n\tat java.lang.Thread.run(Thread.java:745)\n\nDriver stacktrace:\n\tat org.apache.spark.scheduler.DAGScheduler.org$apache$spark$scheduler$DAGScheduler$$failJobAndIndependentStages(DAGScheduler.scala:1431)\n\tat org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1419)\n\tat org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1418)\n\tat scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)\n\tat scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:47)\n\tat org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:1418)\n\tat org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:799)\n\tat org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:799)\n\tat scala.Option.foreach(Option.scala:236)\n\tat org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:799)\n\tat org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:1640)\n\tat org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:1599)\n\tat org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:1588)\n\tat org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:48)\n\tat org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:620)\n\tat org.apache.spark.SparkContext.runJob(SparkContext.scala:1832)\n\tat org.apache.spark.SparkContext.runJob(SparkContext.scala:1845)\n\tat org.apache.spark.SparkContext.runJob(SparkContext.scala:1858)\n\tat org.apache.spark.SparkContext.runJob(SparkContext.scala:1929)\n\tat org.apache.spark.rdd.RDD$$anonfun$collect$1.apply(RDD.scala:927)\n\tat org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:150)\n\tat org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:111)\n\tat org.apache.spark.rdd.RDD.withScope(RDD.scala:316)\n\tat org.apache.spark.rdd.RDD.collect(RDD.scala:926)\n\tat org.apache.spark.api.python.PythonRDD$.collectAndServe(PythonRDD.scala:405)\n\tat org.apache.spark.api.python.PythonRDD.collectAndServe(PythonRDD.scala)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:483)\n\tat py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:231)\n\tat py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:381)\n\tat py4j.Gateway.invoke(Gateway.java:259)\n\tat py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:133)\n\tat py4j.commands.CallCommand.execute(CallCommand.java:79)\n\tat py4j.GatewayConnection.run(GatewayConnection.java:209)\n\tat java.lang.Thread.run(Thread.java:745)\nCaused by: org.apache.spark.api.python.PythonException: Traceback (most recent call last):\n  File \"/usr/spark/python/lib/pyspark.zip/pyspark/worker.py\", line 111, in main\n    process()\n  File \"/usr/spark/python/lib/pyspark.zip/pyspark/worker.py\", line 106, in process\n    serializer.dump_stream(func(split_index, iterator), outfile)\n  File \"/usr/spark/python/pyspark/rdd.py\", line 2346, in pipeline_func\n    return func(split, prev_func(split, iterator))\n  File \"/usr/spark/python/pyspark/rdd.py\", line 2346, in pipeline_func\n    return func(split, prev_func(split, iterator))\n  File \"/usr/spark/python/pyspark/rdd.py\", line 2346, in pipeline_func\n    return func(split, prev_func(split, iterator))\n  File \"/usr/spark/python/pyspark/rdd.py\", line 317, in func\n    return f(iterator)\n  File \"/usr/spark/python/pyspark/rdd.py\", line 1004, in \u003clambda\u003e\n    return self.mapPartitions(lambda i: [sum(1 for _ in i)]).sum()\n  File \"/usr/spark/python/pyspark/rdd.py\", line 1004, in \u003cgenexpr\u003e\n    return self.mapPartitions(lambda i: [sum(1 for _ in i)]).sum()\n  File \"\u003cstring\u003e\", line 4, in \u003clambda\u003e\nNameError: global name \u0027User\u0027 is not defined\n\n\tat org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:166)\n\tat org.apache.spark.api.python.PythonRunner$$anon$1.\u003cinit\u003e(PythonRDD.scala:207)\n\tat org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:125)\n\tat org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:70)\n\tat org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:306)\n\tat org.apache.spark.rdd.RDD.iterator(RDD.scala:270)\n\tat org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:66)\n\tat org.apache.spark.scheduler.Task.run(Task.scala:89)\n\tat org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:213)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n\t... 1 more\n\n(\u003cclass \u0027py4j.protocol.Py4JJavaError\u0027\u003e, Py4JJavaError(u\u0027An error occurred while calling z:org.apache.spark.api.python.PythonRDD.collectAndServe.\\n\u0027, JavaObject id\u003do245), \u003ctraceback object at 0x7ff09ef9fab8\u003e)"
+      },
+      "dateCreated": "Oct 5, 2016 2:18:01 PM",
+      "dateStarted": "Oct 5, 2016 2:19:43 PM",
+      "dateFinished": "Oct 5, 2016 2:19:43 PM",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n#### TODO : Create checkins and tips RDDs",
+      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675962513_-769842797",
+      "id": "20161005-135922_1834078143",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch4\u003eTODO : Create checkins and tips RDDs\u003c/h4\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:22 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\n# Checkin (business_id, checkin_info)\n# path \"/zeppelin/datasets/yelp/dataset/yelp_academic_dataset_checkin.json\"\n\n# Tip (business_id, user_id, text, date, likes)\n# path \"/zeppelin/datasets/yelp/dataset/yelp_academic_dataset_tip.json\"\n\n",
+      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675962513_-769842797",
+      "id": "20161005-135922_1748811836",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Oct 5, 2016 1:59:22 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Explore RDDs",
+      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675962513_-769842797",
+      "id": "20161005-135922_1196281740",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch3\u003eExplore RDDs\u003c/h3\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:22 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\nprint \"business : \" +  businesses.first().display()\nprint \"review : \" + reviews.first().display()\nfor user in users.take(10):\n    print \"user : \" + user.display()\n",
+      "dateUpdated": "Oct 5, 2016 2:17:43 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675962514_-768688550",
+      "id": "20161005-135922_710048057",
+      "result": {
+        "code": "ERROR",
+        "type": "TEXT",
+        "msg": "Py4JJavaError: An error occurred while calling z:org.apache.spark.api.python.PythonRDD.runJob.\n: org.apache.spark.SparkException: Job aborted due to stage failure: Task 0 in stage 2.0 failed 1 times, most recent failure: Lost task 0.0 in stage 2.0 (TID 2, localhost): org.apache.spark.api.python.PythonException: Traceback (most recent call last):\n  File \"/usr/spark/python/lib/pyspark.zip/pyspark/worker.py\", line 111, in main\n    process()\n  File \"/usr/spark/python/lib/pyspark.zip/pyspark/worker.py\", line 106, in process\n    serializer.dump_stream(func(split_index, iterator), outfile)\n  File \"/usr/spark/python/lib/pyspark.zip/pyspark/serializers.py\", line 263, in dump_stream\n    vs \u003d list(itertools.islice(iterator, batch))\n  File \"/usr/spark/python/pyspark/rdd.py\", line 1293, in takeUpToNumLeft\n    yield next(iterator)\n  File \"\u003cstring\u003e\", line 2, in \u003clambda\u003e\nNameError: global name \u0027Business\u0027 is not defined\n\n\tat org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:166)\n\tat org.apache.spark.api.python.PythonRunner$$anon$1.\u003cinit\u003e(PythonRDD.scala:207)\n\tat org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:125)\n\tat org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:70)\n\tat org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:306)\n\tat org.apache.spark.rdd.RDD.iterator(RDD.scala:270)\n\tat org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:66)\n\tat org.apache.spark.scheduler.Task.run(Task.scala:89)\n\tat org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:213)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n\tat java.lang.Thread.run(Thread.java:745)\n\nDriver stacktrace:\n\tat org.apache.spark.scheduler.DAGScheduler.org$apache$spark$scheduler$DAGScheduler$$failJobAndIndependentStages(DAGScheduler.scala:1431)\n\tat org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1419)\n\tat org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1418)\n\tat scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)\n\tat scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:47)\n\tat org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:1418)\n\tat org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:799)\n\tat org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:799)\n\tat scala.Option.foreach(Option.scala:236)\n\tat org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:799)\n\tat org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:1640)\n\tat org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:1599)\n\tat org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:1588)\n\tat org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:48)\n\tat org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:620)\n\tat org.apache.spark.SparkContext.runJob(SparkContext.scala:1832)\n\tat org.apache.spark.SparkContext.runJob(SparkContext.scala:1845)\n\tat org.apache.spark.SparkContext.runJob(SparkContext.scala:1858)\n\tat org.apache.spark.api.python.PythonRDD$.runJob(PythonRDD.scala:393)\n\tat org.apache.spark.api.python.PythonRDD.runJob(PythonRDD.scala)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:483)\n\tat py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:231)\n\tat py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:381)\n\tat py4j.Gateway.invoke(Gateway.java:259)\n\tat py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:133)\n\tat py4j.commands.CallCommand.execute(CallCommand.java:79)\n\tat py4j.GatewayConnection.run(GatewayConnection.java:209)\n\tat java.lang.Thread.run(Thread.java:745)\nCaused by: org.apache.spark.api.python.PythonException: Traceback (most recent call last):\n  File \"/usr/spark/python/lib/pyspark.zip/pyspark/worker.py\", line 111, in main\n    process()\n  File \"/usr/spark/python/lib/pyspark.zip/pyspark/worker.py\", line 106, in process\n    serializer.dump_stream(func(split_index, iterator), outfile)\n  File \"/usr/spark/python/lib/pyspark.zip/pyspark/serializers.py\", line 263, in dump_stream\n    vs \u003d list(itertools.islice(iterator, batch))\n  File \"/usr/spark/python/pyspark/rdd.py\", line 1293, in takeUpToNumLeft\n    yield next(iterator)\n  File \"\u003cstring\u003e\", line 2, in \u003clambda\u003e\nNameError: global name \u0027Business\u0027 is not defined\n\n\tat org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:166)\n\tat org.apache.spark.api.python.PythonRunner$$anon$1.\u003cinit\u003e(PythonRDD.scala:207)\n\tat org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:125)\n\tat org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:70)\n\tat org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:306)\n\tat org.apache.spark.rdd.RDD.iterator(RDD.scala:270)\n\tat org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:66)\n\tat org.apache.spark.scheduler.Task.run(Task.scala:89)\n\tat org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:213)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n\t... 1 more\n\n(\u003cclass \u0027py4j.protocol.Py4JJavaError\u0027\u003e, Py4JJavaError(u\u0027An error occurred while calling z:org.apache.spark.api.python.PythonRDD.runJob.\\n\u0027, JavaObject id\u003do179), \u003ctraceback object at 0x7ff09ef9fe18\u003e)"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:22 PM",
+      "dateStarted": "Oct 5, 2016 2:17:27 PM",
+      "dateFinished": "Oct 5, 2016 2:17:28 PM",
+      "status": "ERROR",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n#### TODO : Explore checkins and tips RDDs",
+      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675962514_-768688550",
+      "id": "20161005-135922_1235056635",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch4\u003eTODO : Explore checkins and tips RDDs\u003c/h4\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:22 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n",
+      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675962514_-768688550",
+      "id": "20161005-135922_1202611156",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Oct 5, 2016 1:59:22 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### How many businesses and users are registered based on this yelp dataset ?\n",
+      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675962515_-769073299",
+      "id": "20161005-135922_1857484034",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch3\u003eHow many businesses and users are registered based on this yelp dataset ?\u003c/h3\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:22 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\nprint \"Number of businesses is : \" +  `businesses.count()`\nprint \"Number of users is : \" + `users.count()`",
+      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675962515_-769073299",
+      "id": "20161005-135922_1460982364",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "Number of businesses is : 77445\nNumber of users is : 552339\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:22 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n#### TODO : How many reviews, checkins and tips are registered ?\n",
+      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675962515_-769073299",
+      "id": "20161005-135922_1972655594",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch4\u003eTODO : How many reviews, checkins and tips are registered ?\u003c/h4\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:22 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n",
+      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675962515_-769073299",
+      "id": "20161005-135922_1091582031",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Oct 5, 2016 1:59:22 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Find out the number of businesses from each city",
+      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675962516_-770997044",
+      "id": "20161005-135922_416799626",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch3\u003eFind out the number of businesses from each city\u003c/h3\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:22 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\ncityBusiness \u003d businesses.map(lambda business : (business.city, 1))\ncityBusiness \u003d cityBusiness.reduceByKey(lambda a,b : a + b)\n\nfor city in cityBusiness.take(10):\n    print city\n",
+      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675962516_-770997044",
+      "id": "20161005-135922_1772121342",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "(u\u0027\u0027, 2)\n(u\u0027McKees Rocks\u0027, 14)\n(u\u0027Millvale\u0027, 4)\n(u\u0027Inverkeithing\u0027, 2)\n(u\u0027Dormont\u0027, 6)\n(u\u0027Aspinwall\u0027, 13)\n(u\u0027Morristown\u0027, 4)\n(u\u0027North Las Vegas\u0027, 819)\n(u\u0027Victoria Park\u0027, 1)\n(u\u0027Independence\u0027, 1)\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:22 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Which are the top 10 cities based on number of businesses ?",
+      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675962516_-770997044",
+      "id": "20161005-135922_1053576997",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch3\u003eWhich are the top 10 cities based on number of businesses ?\u003c/h3\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:22 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\ncityBusiness \u003d cityBusiness.map(lambda (a,b) : (b,a)).sortByKey(0)\n\nfor city in cityBusiness.take(10):\n    print city\n",
+      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675962516_-770997044",
+      "id": "20161005-135922_2120141555",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "(17423, u\u0027Las Vegas\u0027)\n(10629, u\u0027Phoenix\u0027)\n(5189, u\u0027Charlotte\u0027)\n(5139, u\u0027Scottsdale\u0027)\n(3891, u\u0027Montr\\xe9al\u0027)\n(3337, u\u0027Pittsburgh\u0027)\n(3272, u\u0027Edinburgh\u0027)\n(3190, u\u0027Mesa\u0027)\n(2839, u\u0027Henderson\u0027)\n(2773, u\u0027Tempe\u0027)\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:22 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n#### TODO : Find our number of reviews from each day",
+      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675962516_-770997044",
+      "id": "20161005-135922_1492342073",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch4\u003eTODO : Find our number of reviews from each day\u003c/h4\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:22 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n",
+      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675962517_-771381792",
+      "id": "20161005-135922_853411141",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Oct 5, 2016 1:59:22 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n#### TODO : Which are the top 10 days based on number of reviews ?\n",
+      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675962517_-771381792",
+      "id": "20161005-135922_1857536348",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch4\u003eTODO : Which are the top 10 days based on number of reviews ?\u003c/h4\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:22 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark \n",
+      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "config": {
+        "tableHide": false,
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "editorHide": false,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675962517_-771381792",
+      "id": "20161005-135922_1723242283",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Oct 5, 2016 1:59:22 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n#### TODO: What is the number of reviews for each star ?",
+      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675962517_-771381792",
+      "id": "20161005-135922_607018073",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch4\u003eTODO: What is the number of reviews for each star ?\u003c/h4\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:22 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n",
+      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675962517_-771381792",
+      "id": "20161005-135922_1721274804",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Oct 5, 2016 1:59:22 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Find out the first registered users to yelp.com",
+      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675962518_-770227546",
+      "id": "20161005-135922_922030362",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch3\u003eFind out the first registered users to yelp.com\u003c/h3\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:22 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\nusersRegister \u003d users.map(lambda user : (user.yelping_since, user)).sortByKey()\n\nfor userRegister in usersRegister.take(10):\n    print userRegister[0] + \", \" + userRegister[1].display()\n",
+      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "tableHide": false,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675962518_-770227546",
+      "id": "20161005-135922_1680398112",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "2004-10, u\u002718kPq7GPye-YQ3LyKyAZPw\u0027, u\u0027Russel\u0027, 108, 4.14, {u\u0027funny\u0027: 167, u\u0027useful\u0027: 280, u\u0027cool\u0027: 245}, u\u00272004-10\u0027\n2004-10, u\u0027rpOyqD_893cqmDAtJLbdog\u0027, u\u0027Jeremy\u0027, 1274, 3.66, {u\u0027funny\u0027: 7681, u\u0027useful\u0027: 14199, u\u0027cool\u0027: 11093}, u\u00272004-10\u0027\n2004-10, u\u00274U9kSBLuBDU391x6bxU-YA\u0027, u\u0027Michael\u0027, 442, 3.6, {u\u0027funny\u0027: 908, u\u0027useful\u0027: 1483, u\u0027cool\u0027: 732}, u\u00272004-10\u0027\n2004-10, u\u0027fHtTaujcyKvXglE33Z5yIw\u0027, u\u0027Ken\u0027, 11, 4.64, {u\u0027funny\u0027: 1, u\u0027useful\u0027: 11, u\u0027cool\u0027: 5}, u\u00272004-10\u0027\n2004-10, u\u0027SIBCL7HBkrP4llolm4SC2A\u0027, u\u0027Katherine\u0027, 66, 3.8, {u\u0027funny\u0027: 11, u\u0027useful\u0027: 34, u\u0027cool\u0027: 13}, u\u00272004-10\u0027\n2004-10, u\u00278J4IIYcqBlFch8T90N923A\u0027, u\u0027Joan\u0027, 1611, 4.35, {u\u0027funny\u0027: 13010, u\u0027useful\u0027: 17705, u\u0027cool\u0027: 16794}, u\u00272004-10\u0027\n2004-10, u\u0027ysYmC-ufbdmVEX9yAv-VEQ\u0027, u\u0027George\u0027, 55, 4.45, {u\u0027funny\u0027: 35, u\u0027useful\u0027: 39, u\u0027cool\u0027: 25}, u\u00272004-10\u0027\n2004-10, u\u0027WPOKvkacSKHx_bIG1alFiA\u0027, u\u0027Mary\u0027, 60, 3.88, {u\u0027funny\u0027: 32, u\u0027useful\u0027: 131, u\u0027cool\u0027: 34}, u\u00272004-10\u0027\n2004-10, u\u0027UTS9XcT14H2ZscRIf0MYHQ\u0027, u\u0027Nader\u0027, 101, 3.58, {u\u0027funny\u0027: 53, u\u0027useful\u0027: 243, u\u0027cool\u0027: 49}, u\u00272004-10\u0027\n2004-10, u\u0027qL7Astun3i7qwr2IL5iowA\u0027, u\u0027Joseph\u0027, 20, 4.3, {u\u0027funny\u0027: 6, u\u0027useful\u0027: 30, u\u0027cool\u0027: 15}, u\u00272004-10\u0027\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:22 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n#### TODO : In which months was registered the most users ?",
+      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675962518_-770227546",
+      "id": "20161005-135922_842175336",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch4\u003eTODO : In which months was registered the most users ?\u003c/h4\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:22 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\n",
+      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "tableHide": false,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675962518_-770227546",
+      "id": "20161005-135922_268808619",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Oct 5, 2016 1:59:22 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n### Retrieve all the reviews for each business",
+      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675962518_-770227546",
+      "id": "20161005-135922_249958256",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch3\u003eRetrieve all the reviews for each business\u003c/h3\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:22 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n\npairBusinesses \u003d businesses.map(lambda business : (business.business_id, business))\npairReviews \u003d reviews.map(lambda review : (review.business_id, review))\n\nprint pairBusinesses.first()\nprint pairReviews.first()\n\nbusinessReviews \u003d pairBusinesses.join(pairReviews)\n\nfor businessReview in businessReviews.take(10):\n    print businessReview[0] + \", \" + businessReview[1][0].name + \", \" + businessReview[1][1].text",
+      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675962518_-770227546",
+      "id": "20161005-135922_752179291",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "(u\u00275UmKMjUEUNdYWqANhGckJw\u0027, \u003cSparkPythonClassesDevTalks.Business instance at 0x7f55d3800758\u003e)\n(u\u00275UmKMjUEUNdYWqANhGckJw\u0027, \u003cSparkPythonClassesDevTalks.Review instance at 0x7f55d3800b48\u003e)\n6sNvLW4fVBWEgze71pGDZQ, TGI Friday\u0027s, Flat Iron Steak was prepared very well, delivered Medium Rare exactly. Exemplary service and friendly staff.  My iced tea glass was refilled regularly. Nothing to complain about here. Good chain restaurant with predictably good quality and predictably good service.\n6sNvLW4fVBWEgze71pGDZQ, TGI Friday\u0027s, Previous experiences with TGI Fridays were so blah that I have not come back in five years. My friends and I nicknamed TGIF as \"That Glop is Food?\". And then I remembered this place has karaoke.  I didn\u0027t want to hear some drunk dude screaming \"Do Ya Think I\u0027m Sexy?\".  Well, not when I didn\u0027t have an ear infection or wasn\u0027t drunk. But my nephew decided, \"TGI Fridays!\" as we pondered the restaurant choices at Aliante Casino. And no karaoke that night! \n\nWe got seated right away. This new beautiful casino has several new restaurants. This TGIF is one of the best looking in their chain.  It\u0027s got some dark woods and bright colors inside. It was super clean with less than half the tables filled. The bar is a very classy looking place, and the bartenders were energetic as they heard tales from gamblers who just lost their shirts. We gave our drink orders and our waitress came back quickly with our drinks and took our food order.\n\nI chose the Mac and Cheese with grilled chicken breast. My nephew had the full rack of ribs. My brother had the pork chop with mashed potatoes. Our food came out in about 20 minutes. My dish was excellent. Al dente pasta was tossed with light creamy white cheeses, and topped with grated cheese.  There was a smallish grilled chicken breast. It was a winner and a great deal for $6.00. It was easily the best value on the menu. The pork chop ($13) was nicely  grilled with a creamy side of mashed potatoes.  It was small portion-wise that I wished had two pork chops even at a slightly higher price. My nephew\u0027s full rack of ribs ($16) came with crispy fries, not  greasy at all.   The cole slaw taste-wise was flat as a a bad karaoke singer\u0027s pitch. But overall, each one of us gave this place a thumbs up.\n\nSince we have a lively time whenever we\u0027re together, the waitress was around to check on us, but not intrusive. She was prompt with refills. clearing off plates, bringing the check and running it through the machine.  We had a very nice time.  This time I could honestly say \"TGIF -Thank God It was Fine\".\n6sNvLW4fVBWEgze71pGDZQ, TGI Friday\u0027s, The food was ok. It didn\u0027t leave me wanting more, but it wasn\u0027t bad enough not to eat. The restaurant is clean, the wait staff is nice. What more can I say? It was the only non-fast-food-place open in the casino before 4pm.\n6sNvLW4fVBWEgze71pGDZQ, TGI Friday\u0027s, My mother lives near the Aliante Station, and inside, is TGI Friday\u0027s.  On this particular day, they have a steak and lobster tail special (from 3:00 to 6:00 p.m.) for $13.99.  After 6:00 p.m., it goes up to $18.99.  We were a couple minutes late, and the manager, Chris, comped us the early rate.  Super props go out to Chris!  We used that extra money for the specialty drinks...yummy, and $5. I believe the steak was a sirloin, cut thick, and cooked to order.  We both ordered it medium-rare, and the chef got it right.  It was juicy and nicely seasoned.  My mom loved the lobster tail, which was a hearty portion, not the micro-tails that some casino\u0027s offer (I\u0027m thinking Tony Roma\u0027s in the Fremont).  The meal was an excellent value, as it came with a \"loaded baked potato\" and fresh veggies.  The service was great.  This is more like a 4.5 star rating.\n6sNvLW4fVBWEgze71pGDZQ, TGI Friday\u0027s, This TGI Fridays is near our house and we visit every month or so.  Food is always good and the drinks are also great.  Their service, unfortunately, seems to be hit or miss.  One time we might get a friendly, dynamic server and the next time get someone that takes over 30 minutes to take your drink/food order.  Too bad.\n6sNvLW4fVBWEgze71pGDZQ, TGI Friday\u0027s, SIT AT THE BAR!! Fair mixture on drinks (not watered or soda\u0027d down) and good music (at the bar). Of course the food is tastey.\n6sNvLW4fVBWEgze71pGDZQ, TGI Friday\u0027s, This is probably my favorite TGI Friday\u0027s in Las Vegas. Come to think of it, probably the only one I ever been too in Vegas. \n\nA good time to go to TGI Friday\u0027s, is probably after busy hours, in between 1pm - 3pm. That\u0027s when its probably quiet, and that you have the waiter\u0027s full attention. I think, this is the time, where they show their best qualities at TGI Friday\u0027s. Coming during the usual busy hours, of course you won\u0027t have their full attention, and you\u0027ll have cooks speeding up food orders. If your food is undercooked or not to your liking, then your struggling to wave down the waiter, who\u0027s probably running around, like a chicken with his head cut off. But when you go there during the not so busy hours, I find that TGI Friday\u0027s tend to be more pleasing. \n\nWe went there around 1:30pm, and right away, we were greeted and sat in the bar area. Just a few seconds later, we was greeted again, to take our drink order. Of course it being slow hour, the one who greeted us when we came in, was also our waiter, so that\u0027s why it didn\u0027t really take long to wait for a waiter. I was really impress with the politeness and quickness of the waiter, bringing our drinks and entertaining us. \n\nAfter a good amount of time to look through the menu. We started off with our usual Nachos, which were really good, and I ate most of it. The wife ordered her Sirloin and I had my New York steak and Shrimp. I also had an Ultimate Mudslide, which is better then Applebees, where you can\u0027t really taste the alcohol at Applebees, but you can at TGI Friday\u0027s. We got our order and, I really like the way they did the meat, and my sides. It was cooked to perfection. My wife\u0027s Sirloin, was undercooked. But with the immediate response from the waiter. She was able to explain her situation and the waiter was polite to return her Sirloin to the kitchen. Just a matter of minutes, that the waiter returned with a better cooked Sirloin. \n\nEverything to me, taste great, that I ate everything on my plate. Unfortunately I was to full for dessert, but my wife loved the cheesecake I had last time, so she ordered one for herself. Sure enough, she liked it and the presentation of the dessert was really nice. \n\nI was really satisfied with the place, with the staff and the food. I would really recommend this place, during the slow hours (Usually after lunch time, and before dinner time). Its where you get better quality service from the staff and the cooks.\n6sNvLW4fVBWEgze71pGDZQ, TGI Friday\u0027s, I gave TGI Friday\u0027s a good review back when it was a great value.  Well, things have changed.\n\nMy mother is a seasoned citizen.  She collects her coupons from Smith\u0027s grocery store, and loves to use them.  One of the coupons is a two-fer-one at TGI Fridays.  Her youngest son was going out of state for about six months, and she wanted us to send him off, with full belly off a comped meal.  Oh my, she was in for a surprise.\n\nIn the past, if four adults had two coupons, two could eat free.  The coupons were laid out on the table, and the waiter (very polite...we can\u0027t kill the messenger) advised only one coupon per table.  When confronted with value versus togetherness, value won, and we sat at different tables.  Seems a little silly, huh?  It didn\u0027t stop there.  This TGI Fridays advertises steak and lobster for $13.99 if you are there before 6:00 p.m.  When me and the hungry wife both ordered that meal, the waiter swooped in with more bad news, since we were using the coupon, we would be charged the regular price for the steak and lobster!  So, now it\u0027s $18.99 for two steak and lobster dinners.  Well, we\u0027d get some of that back, because we had the kid with us, and kids eat free on Tuesday night.  Well, not exactly.  The waiter offered the final apology, stating that the customer must chose one promotion.  If the kid eats free, then the steak and lobster dinners will be charged. \n\nThis was quite upsetting to my mother.  She loved to land upon this restaurant and abuse the freebies.  \n\nOkay, on to the food.  The steak was tiny, but it was cooked right.  It had  garlic butter on the top.  A nice, tasty addition.  The lobster tail was also tiny, but tasty.  They didn\u0027t gyp on on the baked potato, it was big.  There was some steamed broccoli, most of which was neglected.  Maybe they should promo \"all you can eat steamed broccoli\"?  The broccoli was fine.  The wife had a margarita.  It was still happy hour, and the waiter had no bad new for us on the discount for that, $5, and a good value.  \n\nI\u0027d say that we got what we paid for.  This meal at full price is not worth the money.  For those of you who frown upon coupons...you better bring them, and try to use them, if you are going to try to get value at this place.\n6sNvLW4fVBWEgze71pGDZQ, TGI Friday\u0027s, It\u0027s a sad day when one of your favorite places looses it\u0027s sparkle.  Mark D. is my husband and to him this chain can do no wrong.  To me, I\u0027m a little bit harder to please.  (Yep, I\u0027m a food grump.)  I guess I just expect to get what I order and how I want it.  I know picky picky picky.  The last three times I\u0027ve gone here my order has been wrong and while I try to be passive-aggressive about it, the next time I just might get angry.  \n\nFridays does offer some amazing deals if you are part of their stripes program or if you sign up for text message deals.  So far we have not had a problem redeeming them.  I love the happy hour deals they offer and I wish they would let the entire dinning area share those deals instead of just the bar.  The bar was packed when we went in today and would have just sat there if a clean table was available.  \n\nThe food is okay, it\u0027s probably the reason we keep coming back.  I love the nachos and if you can get them half price at happy hour they are the best value on the menu.  I\u0027m not a big drinker but I have ordered a drink called \"strawberry shortcake\" it was basically a strawberry milkshake with a shot of booze in it and it got me buzzing pretty good.  The cheesecake is also quite good.  I will be back I\u0027m sure of it, but if my order gets messed up again some poor server will feel my rage.  (J/K, I am really not that mean.)\n6sNvLW4fVBWEgze71pGDZQ, TGI Friday\u0027s, TGIF has always been a fun establishment for me growing up.  I use ot go there all the time with my friends and dive into their famous potato skins.  However, as time went on, I stopped going and haven\u0027t been back there for about 3 years... until I moved to Las Vegas.\n\nAliante station has a great TGIFs.  Their wait staff is on top of it and even gave me the \"two minute\" rule, whereby they return and check to see if your food is ok within two minutes after serving you.  I have been there 3 times with my wife and both times we loved it.\n\nFOR VALENTINES DAY -- I HIGHLY RECOMMEND IT!\n\nVday for sure is great -- we went last year and you get two free desserts (red velvet cake) and they had a great deal for couples -- 2 surf and turf (steak/lobster tails) for $8.99 ea.  The steaks were 8oz NY strip and the lobster tail was 4oz.  Not huge on the lobster side, but the meal was plenty enough food for most people -- and at $8.99, it was a steal.\n\nBeing that I don\u0027t drink -- the bar is not in this review.  However, I can say that during a sporting event, it\u0027s often packed.  Lots of excitement going on, so I am sure bar flys will love the atmosphere.\n\nOver all, the place is very clean, nice wait staff and the food is very good.  Not just good, but it was very good.  Steaks cooked perfectly.  I am glad it\u0027s nearby, as it\u0027s nice to drop on by and have a decent meal.  The prices are a bit higher than normal -- but for the amount of food you get, it\u0027s worth it I think.  :-)\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:22 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n#### TODO : Retrieve all the reviews of “Red White \u0026 Brew” business",
+      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675962519_-770612295",
+      "id": "20161005-135922_182069114",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch4\u003eTODO : Retrieve all the reviews of “Red White \u0026amp; Brew” business\u003c/h4\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:22 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n",
+      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675962519_-770612295",
+      "id": "20161005-135922_930043747",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Oct 5, 2016 1:59:22 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n#### TODO : Retrieve all the checkins for each business \n",
+      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675962519_-770612295",
+      "id": "20161005-135922_155997041",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch4\u003eTODO : Retrieve all the checkins for each business\u003c/h4\u003e\n"
+      },
+      "dateCreated": "Oct 5, 2016 1:59:22 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\n",
+      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675962519_-770612295",
+      "id": "20161005-135922_266192259",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Oct 5, 2016 1:59:22 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "config": {
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1475675962519_-770612295",
+      "id": "20161005-135922_1416086261",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Oct 5, 2016 1:59:22 PM",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "SparkBatchPythonDevTalksParticipants",
+  "id": "2BZE8AGTG",
+  "angularObjects": {
+    "2C11WF1C7": [],
+    "2BZM32DSW": [],
+    "2C17GFUNT": [],
+    "2BZFRHP3F": [],
+    "2BXUA1JE8": [],
+    "2BZQSZGTT": [],
+    "2BY4YG9DT": [],
+    "2BZ13HVJQ": [],
+    "2BYYZQVH7": [],
+    "2BYSR3EC4": [],
+    "2BWWNHQMZ": [],
+    "2BWUVKVXR": [],
+    "2C16CTUBT": [],
+    "2C16DVCXQ": [],
+    "2BZEUQYYJ": []
+  },
+  "config": {},
+  "info": {}
+}
