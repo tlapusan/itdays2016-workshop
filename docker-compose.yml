@@ -6,8 +6,10 @@ zeppelin:
       -Dspark.driver.memory=1g
       -Dspark.executor.memory=2g
     MASTER: local[*]
+    SPARK_SUBMIT_OPTIONS: --files /zeppelin/classes/SparkPythonClassesDevTalks.py
   ports:
     - 8080:8080
   volumes:
     - ./data:/zeppelin/datasets/yelp
     - ./notebooks:/zeppelin/notebook
+    - ./classes:/zeppelin/classes
