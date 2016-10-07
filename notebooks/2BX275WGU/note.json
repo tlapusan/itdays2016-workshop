@@ -36,7 +36,7 @@
     },
     {
       "text": "%pyspark\nfrom pyspark.sql import SQLContext\nsc\n",
-      "dateUpdated": "Oct 5, 2016 1:59:15 PM",
+      "dateUpdated": "Oct 7, 2016 2:18:06 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -63,8 +63,9 @@
         "msg": ""
       },
       "dateCreated": "Oct 5, 2016 1:59:15 PM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Oct 7, 2016 2:18:06 PM",
+      "dateFinished": "Oct 7, 2016 2:18:06 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -102,8 +103,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%pyspark\n\nusers \u003d sqlContext.read.json(\"/zeppelin/datasets/yelp/dataset/yelp_academic_dataset_user.json\")\nusers.registerTempTable(\"userTable\")",
-      "dateUpdated": "Oct 5, 2016 1:59:15 PM",
+      "text": "%pyspark\n\nusers \u003d sqlContext.read.json(\"/zeppelin/datasets/yelp/yelp_academic_dataset_user.json\")\nusers.registerTempTable(\"userTable\")",
+      "dateUpdated": "Oct 7, 2016 2:18:08 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -130,13 +131,14 @@
         "msg": ""
       },
       "dateCreated": "Oct 5, 2016 1:59:15 PM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Oct 7, 2016 2:18:08 PM",
+      "dateFinished": "Oct 7, 2016 2:18:15 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%sql\nselect review_count, count(*) as count from userTable group by review_count",
-      "dateUpdated": "Oct 5, 2016 1:59:15 PM",
+      "dateUpdated": "Oct 7, 2016 2:18:16 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/sql",
@@ -176,18 +178,19 @@
       "jobName": "paragraph_1475675955392_1524814968",
       "id": "20161005-135915_1112444037",
       "result": {
-        "code": "SUCCESS",
-        "type": "TABLE",
-        "msg": "review_count\tcount\n31\t2258\n231\t91\n631\t8\n431\t24\n1031\t2\n831\t3\n32\t2243\n632\t10\n232\t67\n832\t5\n432\t21\n1032\t1\n1232\t1\n1432\t1\n33\t2067\n233\t92\n433\t22\n833\t5\n1033\t1\n633\t4\n5833\t1\n1233\t2\n1633\t1\n34\t1942\n434\t18\n834\t4\n234\t79\n1234\t2\n634\t8\n2034\t1\n1034\t1\n1434\t1\n35\t1836\n235\t68\n435\t12\n635\t5\n1035\t2\n835\t1\n36\t1853\n836\t2\n236\t60\n636\t2\n436\t12\n1036\t2\n37\t1699\n237\t75\n437\t19\n637\t5\n837\t2\n1037\t1\n38\t1634\n1638\t1\n438\t19\n638\t5\n238\t75\n838\t2\n1238\t1\n39\t1600\n239\t74\n439\t22\n839\t4\n639\t7\n1039\t1\n40\t1510\n240\t89\n840\t3\n440\t15\n640\t5\n1040\t2\n1240\t1\n1440\t1\n41\t1484\n241\t72\n441\t16\n3241\t1\n1041\t1\n641\t7\n841\t4\n442\t20\n42\t1378\n242\t77\n642\t2\n1042\t2\n1442\t2\n842\t1\n43\t1361\n1443\t1\n243\t59\n643\t10\n443\t21\n843\t3\n1043\t1\n1843\t1\n1243\t2\n44\t1346\n244\t77\n644\t12\n444\t21\n844\t4\n1844\t1\n1244\t1\n2844\t1\n1444\t3\n1044\t1\n45\t1256\n1045\t1\n445\t18\n245\t77\n845\t4\n1445\t2\n645\t11\n46\t1157\n246\t65\n646\t3\n1046\t4\n446\t18\n1246\t3\n47\t1192\n247\t70\n447\t19\n1447\t1\n1047\t2\n647\t7\n847\t2\n1247\t1\n48\t1118\n248\t73\n1448\t1\n448\t12\n1048\t3\n1248\t1\n5648\t1\n848\t1\n648\t2\n49\t1051\n449\t16\n249\t49\n1049\t1\n849\t1\n2449\t1\n1249\t1\n649\t4\n50\t1033\n450\t21\n1050\t4\n250\t74\n650\t5\n850\t2\n1250\t1\n5050\t1\n2650\t1\n51\t1030\n251\t61\n1051\t4\n651\t7\n851\t4\n451\t10\n2451\t1\n52\t974\n652\t10\n252\t61\n452\t12\n852\t1\n1452\t1\n53\t959\n253\t65\n653\t11\n453\t15\n1053\t1\n2853\t1\n1653\t1\n853\t4\n3653\t1\n54\t924\n254\t79\n654\t9\n1054\t1\n454\t22\n1654\t2\n1254\t1\n854\t2\n55\t922\n255\t75\n455\t19\n1655\t1\n855\t3\n655\t7\n56\t835\n256\t61\n456\t21\n656\t5\n1056\t1\n57\t798\n857\t3\n257\t60\n457\t20\n1057\t1\n657\t5\n2057\t1\n58\t826\n258\t82\n1258\t2\n658\t8\n458\t12\n858\t6\n1858\t1\n1658\t1\n1058\t2\n59\t756\n1859\t1\n259\t66\n459\t12\n659\t10\n859\t3\n1059\t2\n60\t753\n460\t20\n260\t59\n2060\t1\n1060\t3\n660\t4\n1260\t2\n61\t732\n461\t16\n261\t70\n661\t6\n861\t3\n1061\t1\n1261\t1\n62\t693\n262\t56\n1062\t3\n1662\t2\n462\t20\n662\t4\n862\t3\n263\t67\n63\t731\n863\t3\n463\t19\n663\t6\n2263\t1\n1863\t1\n1263\t2\n64\t698\n864\t4\n264\t70\n464\t20\n664\t5\n1064\t1\n65\t630\n265\t57\n465\t17\n665\t3\n865\t4\n1065\t1\n1465\t1\n66\t674\n266\t42\n1266\t1\n666\t8\n466\t16\n1066\t3\n866\t2\n67\t595\n267\t62\n667\t10\n467\t14\n867\t3\n1067\t1\n1267\t1\n68\t658\n268\t62\n868\t4\n468\t15\n1268\t1\n1068\t1\n668\t5\n69\t623\n2469\t1\n269\t50\n469\t11\n3069\t1\n869\t4\n1269\t1\n669\t4\n1469\t2\n1069\t1\n70\t541\n270\t59\n470\t17\n1070\t1\n1670\t2\n670\t3\n870\t2\n1270\t1\n71\t576\n471\t19\n271\t56\n671\t11\n2671\t1\n871\t5\n72\t574\n472\t12\n272\t57\n1072\t3\n672\t5\n872\t3\n1472\t1\n73\t498\n473\t17\n673\t8\n273\t49\n1073\t1\n3473\t1\n873\t1\n1274\t1\n74\t503\n274\t62\n674\t11\n474\t17\n874\t4\n75\t536\n675\t6\n275\t53\n875\t2\n1075\t1\n475\t12\n1275\t1\n76\t513\n276\t61\n1276\t1\n476\t15\n676\t3\n1076\t1\n1476\t1\n876\t1\n277\t50\n77\t472\n677\t6\n477\t9\n877\t3\n1077\t2\n1877\t1\n78\t498\n278\t52\n478\t18\n878\t6\n678\t2\n1478\t1\n1278\t1\n79\t471\n2879\t1\n279\t35\n679\t3\n479\t14\n1879\t1\n2079\t1\n1079\t1\n879\t1\n80\t487\n280\t53\n680\t1\n3480\t1\n480\t15\n1480\t1\n1280\t2\n880\t3\n1680\t1\n81\t472\n281\t49\n1081\t3\n681\t5\n1481\t1\n481\t12\n881\t2\n2681\t1\n82\t413\n482\t21\n282\t55\n1482\t1\n1682\t1\n882\t4\n2282\t1\n682\t3\n83\t439\n283\t48\n1083\t3\n483\t12\n683\t7\n1883\t1\n84\t405\n284\t45\n484\t13\n684\t5\n1284\t1\n1084\t1\n85\t422\n285\t50\n485\t15\n685\t7\n885\t3\n1085\t1\n1485\t1\n86\t409\n686\t4\n286\t53\n886\t2\n1086\t2\n486\t15\n287\t52\n87\t398\n487\t17\n1087\t1\n1487\t1\n687\t3\n2487\t1\n887\t1\n88\t405\n488\t10\n688\t9\n288\t56\n888\t4\n1088\t1\n1488\t1\n89\t418\n289\t54\n489\t10\n689\t12\n1089\t3\n889\t1\n90\t390\n290\t48\n490\t16\n890\t3\n690\t5\n1290\t1\n91\t380\n291\t52\n491\t12\n1291\t1\n1491\t1\n691\t4\n1091\t2\n1691\t1\n92\t358\n292\t59\n492\t19\n1092\t2\n692\t5\n892\t2\n93\t371\n2093\t1\n293\t39\n693\t8\n493\t20\n1293\t3\n893\t3\n94\t373\n294\t49\n494\t19\n694\t6\n1094\t1\n1694\t1\n894\t2\n95\t341\n495\t12\n295\t40\n1495\t1\n1095\t1\n695\t3\n895\t2\n96\t299\n296\t47\n696\t5\n496\t14\n896\t2\n1296\t1\n1496\t1\n297\t46\n97\t347\n1097\t2\n497\t17\n697\t7\n98\t330\n498\t12\n298\t41\n698\t3\n1698\t1\n1098\t1\n898\t1\n299\t50\n99\t316\n1099\t1\n699\t6\n499\t12\n2099\t1\n899\t1\n100\t326\n300\t43\n500\t21\n700\t6\n1100\t5\n900\t2\n101\t336\n501\t18\n301\t52\n2301\t1\n901\t2\n701\t8\n1301\t1\n502\t14\n102\t357\n302\t52\n902\t3\n702\t8\n103\t330\n1903\t1\n503\t22\n303\t29\n1303\t2\n703\t6\n903\t3\n1503\t1\n104\t306\n504\t16\n304\t46\n704\t8\n904\t4\n1504\t1\n1304\t1\n305\t51\n105\t324\n905\t2\n505\t8\n2105\t1\n705\t7\n306\t56\n106\t320\n506\t10\n706\t4\n906\t2\n107\t325\n307\t49\n2107\t1\n707\t6\n507\t17\n1107\t3\n907\t1\n1907\t1\n108\t285\n308\t36\n508\t18\n908\t5\n708\t3\n1508\t1\n509\t12\n109\t267\n309\t49\n2109\t1\n909\t4\n1109\t3\n709\t3\n110\t278\n510\t17\n910\t2\n310\t32\n1310\t1\n710\t2\n1510\t1\n111\t298\n1111\t2\n311\t40\n511\t10\n711\t5\n911\t2\n312\t44\n112\t306\n1512\t3\n712\t10\n512\t9\n912\t2\n1912\t1\n1112\t1\n1312\t1\n113\t246\n313\t35\n513\t9\n1713\t1\n713\t8\n1113\t1\n114\t283\n314\t39\n914\t2\n514\t9\n1514\t1\n1914\t1\n714\t2\n115\t290\n315\t32\n515\t6\n715\t8\n915\t4\n1315\t1\n1515\t1\n1115\t1\n1715\t1\n116\t272\n1116\t3\n916\t6\n316\t45\n516\t13\n716\t5\n1516\t1\n1316\t1\n117\t261\n517\t18\n1317\t1\n1717\t1\n317\t45\n917\t3\n717\t4\n1117\t3\n2517\t1\n118\t247\n518\t12\n918\t2\n1718\t1\n318\t42\n718\t8\n1118\t1\n1318\t1\n519\t13\n119\t253\n319\t36\n1319\t1\n1119\t1\n919\t3\n719\t4\n120\t258\n320\t37\n720\t4\n520\t15\n10320\t1\n2520\t1\n1320\t1\n121\t239\n321\t38\n521\t6\n921\t3\n721\t2\n1521\t1\n1321\t1\n1121\t2\n122\t257\n1722\t1\n322\t37\n722\t5\n922\t2\n522\t13\n1322\t1\n123\t231\n1123\t3\n323\t41\n723\t3\n1523\t1\n1323\t2\n523\t12\n923\t1\n124\t242\n324\t45\n924\t2\n524\t8\n724\t2\n1724\t1\n325\t49\n725\t3\n125\t239\n525\t12\n925\t2\n126\t217\n326\t58\n726\t5\n526\t7\n926\t1\n1526\t1\n127\t237\n927\t3\n327\t43\n727\t4\n527\t15\n1327\t1\n2127\t1\n1527\t1\n328\t34\n128\t243\n728\t5\n528\t17\n1328\t1\n2329\t1\n129\t234\n929\t4\n329\t32\n8529\t1\n729\t3\n529\t10\n1529\t1\n1329\t1\n130\t186\n530\t11\n930\t2\n330\t45\n1130\t3\n730\t3\n131\t234\n331\t43\n1131\t1\n931\t1\n531\t19\n731\t4\n332\t45\n132\t196\n1132\t3\n1532\t1\n732\t3\n532\t9\n133\t185\n333\t32\n1533\t1\n533\t10\n733\t5\n1133\t1\n933\t1\n1333\t1\n134\t205\n334\t41\n3934\t1\n734\t3\n1334\t1\n534\t9\n934\t1\n135\t200\n335\t43\n535\t18\n735\t4\n935\t1\n1135\t1\n136\t212\n336\t26\n536\t11\n1136\t4\n3336\t1\n736\t2\n936\t4\n137\t205\n1137\t3\n537\t14\n337\t24\n937\t3\n737\t2\n1937\t1\n138\t207\n938\t1\n338\t28\n538\t15\n738\t7\n1338\t1\n139\t198\n539\t7\n339\t26\n1539\t1\n1139\t1\n2539\t1\n939\t1\n2339\t1\n739\t1\n3539\t1\n340\t31\n140\t201\n540\t18\n1740\t3\n740\t7\n1540\t1\n2540\t1\n940\t1\n1140\t1\n141\t192\n541\t13\n1541\t2\n341\t38\n741\t5\n941\t1\n1341\t1\n142\t183\n742\t6\n342\t32\n1342\t1\n542\t12\n942\t1\n143\t164\n343\t33\n543\t11\n743\t6\n1343\t1\n1143\t1\n1943\t1\n144\t185\n344\t32\n944\t1\n744\t3\n544\t15\n1144\t1\n145\t172\n745\t4\n345\t26\n545\t9\n945\t2\n146\t167\n746\t11\n346\t28\n1146\t3\n3146\t1\n546\t8\n1346\t1\n1946\t1\n147\t172\n347\t43\n547\t7\n1547\t2\n1147\t3\n747\t3\n947\t1\n2547\t1\n548\t17\n148\t203\n348\t27\n748\t5\n948\t4\n1748\t1\n149\t171\n549\t16\n349\t32\n749\t4\n1349\t2\n949\t1\n150\t170\n550\t16\n350\t29\n1950\t1\n750\t4\n3750\t1\n950\t2\n1750\t2\n1350\t1\n2550\t1\n151\t158\n351\t27\n551\t14\n751\t5\n352\t36\n1552\t1\n152\t155\n552\t11\n1352\t3\n752\t6\n1152\t2\n553\t16\n3953\t1\n153\t159\n353\t25\n753\t4\n953\t2\n1153\t2\n154\t193\n354\t30\n754\t7\n554\t7\n1754\t1\n1154\t1\n954\t1\n155\t152\n555\t14\n755\t7\n955\t3\n355\t33\n3155\t1\n1155\t2\n1355\t2\n156\t154\n556\t9\n356\t21\n1556\t1\n756\t5\n956\t2\n157\t158\n1557\t1\n557\t4\n357\t27\n1157\t2\n757\t5\n957\t3\n158\t139\n1758\t1\n958\t2\n558\t16\n358\t28\n758\t6\n1158\t2\n1558\t1\n1958\t1\n159\t166\n359\t30\n959\t1\n559\t14\n759\t7\n1359\t1\n360\t19\n160\t146\n960\t5\n2160\t1\n560\t5\n760\t7\n1560\t2\n1760\t1\n161\t166\n961\t3\n561\t7\n361\t31\n761\t3\n2161\t1\n362\t31\n162\t150\n562\t12\n762\t8\n962\t2\n1562\t1\n2162\t1\n1162\t1\n563\t6\n163\t148\n763\t5\n363\t35\n963\t1\n1963\t1\n1163\t1\n364\t52\n164\t144\n564\t13\n764\t7\n1364\t1\n165\t162\n565\t15\n365\t28\n1565\t1\n2165\t1\n765\t3\n1165\t1\n766\t1\n166\t117\n1166\t3\n366\t33\n566\t8\n966\t2\n1566\t1\n167\t133\n367\t26\n567\t15\n767\t5\n2167\t1\n1567\t1\n1167\t2\n1367\t2\n1967\t1\n568\t7\n168\t138\n368\t28\n1768\t1\n1168\t1\n768\t2\n1568\t1\n968\t1\n169\t129\n569\t8\n369\t21\n1569\t1\n769\t4\n170\t136\n370\t28\n570\t12\n770\t6\n970\t1\n571\t14\n171\t124\n371\t37\n771\t3\n1571\t1\n971\t2\n1171\t3\n172\t130\n772\t6\n\n\u003cfont color\u003dred\u003eResults are limited by 1000.\u003c/font\u003e"
+        "code": "ERROR",
+        "type": "TEXT",
+        "msg": "org.apache.spark.sql.AnalysisException: Table not found: userTable; line 1 pos 44\n\tat org.apache.spark.sql.catalyst.analysis.package$AnalysisErrorAt.failAnalysis(package.scala:42)\n\tat org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveRelations$.getTable(Analyzer.scala:306)\n\tat org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveRelations$$anonfun$apply$9.applyOrElse(Analyzer.scala:315)\n\tat org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveRelations$$anonfun$apply$9.applyOrElse(Analyzer.scala:310)\n\tat org.apache.spark.sql.catalyst.plans.logical.LogicalPlan$$anonfun$resolveOperators$1.apply(LogicalPlan.scala:57)\n\tat org.apache.spark.sql.catalyst.plans.logical.LogicalPlan$$anonfun$resolveOperators$1.apply(LogicalPlan.scala:57)\n\tat org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(TreeNode.scala:53)\n\tat org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.resolveOperators(LogicalPlan.scala:56)\n\tat org.apache.spark.sql.catalyst.plans.logical.LogicalPlan$$anonfun$1.apply(LogicalPlan.scala:54)\n\tat org.apache.spark.sql.catalyst.plans.logical.LogicalPlan$$anonfun$1.apply(LogicalPlan.scala:54)\n\tat org.apache.spark.sql.catalyst.trees.TreeNode$$anonfun$4.apply(TreeNode.scala:265)\n\tat scala.collection.Iterator$$anon$11.next(Iterator.scala:328)\n\tat scala.collection.Iterator$class.foreach(Iterator.scala:727)\n\tat scala.collection.AbstractIterator.foreach(Iterator.scala:1157)\n\tat scala.collection.generic.Growable$class.$plus$plus$eq(Growable.scala:48)\n\tat scala.collection.mutable.ArrayBuffer.$plus$plus$eq(ArrayBuffer.scala:103)\n\tat scala.collection.mutable.ArrayBuffer.$plus$plus$eq(ArrayBuffer.scala:47)\n\tat scala.collection.TraversableOnce$class.to(TraversableOnce.scala:273)\n\tat scala.collection.AbstractIterator.to(Iterator.scala:1157)\n\tat scala.collection.TraversableOnce$class.toBuffer(TraversableOnce.scala:265)\n\tat scala.collection.AbstractIterator.toBuffer(Iterator.scala:1157)\n\tat scala.collection.TraversableOnce$class.toArray(TraversableOnce.scala:252)\n\tat scala.collection.AbstractIterator.toArray(Iterator.scala:1157)\n\tat org.apache.spark.sql.catalyst.trees.TreeNode.transformChildren(TreeNode.scala:305)\n\tat org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.resolveOperators(LogicalPlan.scala:54)\n\tat org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveRelations$.apply(Analyzer.scala:310)\n\tat org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveRelations$.apply(Analyzer.scala:300)\n\tat org.apache.spark.sql.catalyst.rules.RuleExecutor$$anonfun$execute$1$$anonfun$apply$1.apply(RuleExecutor.scala:83)\n\tat org.apache.spark.sql.catalyst.rules.RuleExecutor$$anonfun$execute$1$$anonfun$apply$1.apply(RuleExecutor.scala:80)\n\tat scala.collection.LinearSeqOptimized$class.foldLeft(LinearSeqOptimized.scala:111)\n\tat scala.collection.immutable.List.foldLeft(List.scala:84)\n\tat org.apache.spark.sql.catalyst.rules.RuleExecutor$$anonfun$execute$1.apply(RuleExecutor.scala:80)\n\tat org.apache.spark.sql.catalyst.rules.RuleExecutor$$anonfun$execute$1.apply(RuleExecutor.scala:72)\n\tat scala.collection.immutable.List.foreach(List.scala:318)\n\tat org.apache.spark.sql.catalyst.rules.RuleExecutor.execute(RuleExecutor.scala:72)\n\tat org.apache.spark.sql.execution.QueryExecution.analyzed$lzycompute(QueryExecution.scala:36)\n\tat org.apache.spark.sql.execution.QueryExecution.analyzed(QueryExecution.scala:36)\n\tat org.apache.spark.sql.execution.QueryExecution.assertAnalyzed(QueryExecution.scala:34)\n\tat org.apache.spark.sql.DataFrame.\u003cinit\u003e(DataFrame.scala:133)\n\tat org.apache.spark.sql.DataFrame$.apply(DataFrame.scala:52)\n\tat org.apache.spark.sql.SQLContext.sql(SQLContext.scala:817)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:483)\n\tat org.apache.zeppelin.spark.SparkSqlInterpreter.interpret(SparkSqlInterpreter.java:138)\n\tat org.apache.zeppelin.interpreter.ClassloaderInterpreter.interpret(ClassloaderInterpreter.java:57)\n\tat org.apache.zeppelin.interpreter.LazyOpenInterpreter.interpret(LazyOpenInterpreter.java:93)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreterServer$InterpretJob.jobRun(RemoteInterpreterServer.java:295)\n\tat org.apache.zeppelin.scheduler.Job.run(Job.java:171)\n\tat org.apache.zeppelin.scheduler.FIFOScheduler$1.run(FIFOScheduler.java:139)\n\tat java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)\n\tat java.util.concurrent.FutureTask.run(FutureTask.java:266)\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)\n\tat java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n\tat java.lang.Thread.run(Thread.java:745)\n"
       },
       "dateCreated": "Oct 5, 2016 1:59:15 PM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Oct 7, 2016 2:18:16 PM",
+      "dateFinished": "Oct 7, 2016 2:18:16 PM",
+      "status": "ERROR",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%pyspark\nusers.printSchema()",
-      "dateUpdated": "Oct 5, 2016 1:59:15 PM",
+      "dateUpdated": "Oct 7, 2016 2:18:28 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -214,8 +217,9 @@
         "msg": "root\n |-- average_stars: double (nullable \u003d true)\n |-- compliments: struct (nullable \u003d true)\n |    |-- cool: long (nullable \u003d true)\n |    |-- cute: long (nullable \u003d true)\n |    |-- funny: long (nullable \u003d true)\n |    |-- hot: long (nullable \u003d true)\n |    |-- list: long (nullable \u003d true)\n |    |-- more: long (nullable \u003d true)\n |    |-- note: long (nullable \u003d true)\n |    |-- photos: long (nullable \u003d true)\n |    |-- plain: long (nullable \u003d true)\n |    |-- profile: long (nullable \u003d true)\n |    |-- writer: long (nullable \u003d true)\n |-- elite: array (nullable \u003d true)\n |    |-- element: long (containsNull \u003d true)\n |-- fans: long (nullable \u003d true)\n |-- friends: array (nullable \u003d true)\n |    |-- element: string (containsNull \u003d true)\n |-- name: string (nullable \u003d true)\n |-- review_count: long (nullable \u003d true)\n |-- type: string (nullable \u003d true)\n |-- user_id: string (nullable \u003d true)\n |-- votes: struct (nullable \u003d true)\n |    |-- cool: long (nullable \u003d true)\n |    |-- funny: long (nullable \u003d true)\n |    |-- useful: long (nullable \u003d true)\n |-- yelping_since: string (nullable \u003d true)\n\n"
       },
       "dateCreated": "Oct 5, 2016 1:59:15 PM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Oct 7, 2016 2:18:28 PM",
+      "dateFinished": "Oct 7, 2016 2:18:28 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -514,21 +518,21 @@
   "name": "SparkMLPythonDevTalksParticipants",
   "id": "2BX275WGU",
   "angularObjects": {
-    "2BX6GZWYN": [],
-    "2BWPH49RG": [],
-    "2BZBF2J4T": [],
-    "2C115MB8A": [],
-    "2BX62UFU7": [],
-    "2BZZYRBFD": [],
-    "2BZD9FG1S": [],
-    "2BXFUR985": [],
-    "2BXGNBZEM": [],
-    "2BY16EG5G": [],
-    "2BY8D4ZAX": [],
-    "2BXGRS2Q1": [],
-    "2BYQRGQ1H": [],
-    "2BYUPG26W": [],
-    "2BY3UUBUK": []
+    "2BZHNY8YW": [],
+    "2BXH27H7Y": [],
+    "2BXSYDWQJ": [],
+    "2BXVEEXUD": [],
+    "2BZ3ZH5DD": [],
+    "2BZVMRK3C": [],
+    "2BXYUVPDU": [],
+    "2BZF8WBGC": [],
+    "2BWD4U18K": [],
+    "2BY9TUPDW": [],
+    "2BWQ2A68P": [],
+    "2BY8CJRFY": [],
+    "2BWNHA89P": [],
+    "2BWC4685H": [],
+    "2BZ2FXK85": []
   },
   "config": {},
   "info": {}

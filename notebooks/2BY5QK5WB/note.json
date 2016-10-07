@@ -36,7 +36,7 @@
     },
     {
       "text": "%pyspark\nfrom pyspark.sql import SQLContext\nsc\nsqlContext \u003d SQLContext(sc)",
-      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "dateUpdated": "Oct 7, 2016 1:52:23 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -63,8 +63,9 @@
         "msg": ""
       },
       "dateCreated": "Oct 5, 2016 1:59:03 PM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Oct 7, 2016 1:52:24 PM",
+      "dateFinished": "Oct 7, 2016 1:52:46 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -102,8 +103,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%pyspark\nbusiness \u003d sqlContext.read.json(\"/zeppelin/datasets/yelp/dataset/yelp_academic_dataset_business.json\")\nusers    \u003d sqlContext.read.json(\"/zeppelin/datasets/yelp/dataset/yelp_academic_dataset_user.json\")\nreviews  \u003d sqlContext.read.json(\"/zeppelin/datasets/yelp/dataset/yelp_academic_dataset_review.json\")\n\n\n",
-      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "text": "%pyspark\nbusiness \u003d sqlContext.read.json(\"/zeppelin/datasets/yelp/yelp_academic_dataset_business.json\")\nusers    \u003d sqlContext.read.json(\"/zeppelin/datasets/yelp/yelp_academic_dataset_user.json\")\nreviews  \u003d sqlContext.read.json(\"/zeppelin/datasets/yelp/yelp_academic_dataset_review.json\")\n\n\n",
+      "dateUpdated": "Oct 7, 2016 2:15:57 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -130,8 +131,9 @@
         "msg": ""
       },
       "dateCreated": "Oct 5, 2016 1:59:03 PM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Oct 7, 2016 2:15:57 PM",
+      "dateFinished": "Oct 7, 2016 2:16:39 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -1805,21 +1807,21 @@
   "name": "SparkSqlPythonDevTalksParticipants",
   "id": "2BY5QK5WB",
   "angularObjects": {
-    "2BX6GZWYN": [],
-    "2BWPH49RG": [],
-    "2BZBF2J4T": [],
-    "2C115MB8A": [],
-    "2BX62UFU7": [],
-    "2BZZYRBFD": [],
-    "2BZD9FG1S": [],
-    "2BXFUR985": [],
-    "2BXGNBZEM": [],
-    "2BY16EG5G": [],
-    "2BY8D4ZAX": [],
-    "2BXGRS2Q1": [],
-    "2BYQRGQ1H": [],
-    "2BYUPG26W": [],
-    "2BY3UUBUK": []
+    "2BZHNY8YW": [],
+    "2BXH27H7Y": [],
+    "2BXSYDWQJ": [],
+    "2BXVEEXUD": [],
+    "2BZ3ZH5DD": [],
+    "2BZVMRK3C": [],
+    "2BXYUVPDU": [],
+    "2BZF8WBGC": [],
+    "2BWD4U18K": [],
+    "2BY9TUPDW": [],
+    "2BWQ2A68P": [],
+    "2BY8CJRFY": [],
+    "2BWNHA89P": [],
+    "2BWC4685H": [],
+    "2BZ2FXK85": []
   },
   "config": {},
   "info": {}

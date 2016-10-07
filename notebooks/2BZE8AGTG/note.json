@@ -36,7 +36,7 @@
     },
     {
       "text": "%pyspark\nsc\nprint(sc)\n",
-      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "dateUpdated": "Oct 7, 2016 1:59:34 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -60,11 +60,12 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\u003cpyspark.context.SparkContext object at 0x7f55d42e3310\u003e\n"
+        "msg": "\u003cpyspark.context.SparkContext object at 0x7fa81f9d8310\u003e\n"
       },
       "dateCreated": "Oct 5, 2016 1:59:22 PM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Oct 7, 2016 1:59:34 PM",
+      "dateFinished": "Oct 7, 2016 1:59:34 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -103,7 +104,7 @@
     },
     {
       "text": "%pyspark\nfrom SparkPythonClassesDevTalks import Business, Review, User, Tip, Checkin\nimport json\n",
-      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "dateUpdated": "Oct 7, 2016 1:59:39 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -130,8 +131,9 @@
         "msg": ""
       },
       "dateCreated": "Oct 5, 2016 1:59:22 PM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Oct 7, 2016 1:59:39 PM",
+      "dateFinished": "Oct 7, 2016 1:59:39 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -170,7 +172,7 @@
     },
     {
       "text": "%pyspark \n\n# Business (business_id, name, city, state, stars, review_count)\nbusinessLines \u003d sc.textFile(\"/zeppelin/datasets/yelp/yelp_academic_dataset_business.json\")\nbusinesses \u003d businessLines.map(lambda line : json.loads(line)).map(lambda fields : Business(fields[\u0027business_id\u0027], fields[\u0027name\u0027], fields[\u0027city\u0027], fields[\u0027state\u0027], float(fields[\u0027stars\u0027]), int(fields[\u0027review_count\u0027])))\n\n# User (user_id, name, review_count, average_stars, votes, yelping_since)\nuserLines \u003d sc.textFile(\"/zeppelin/datasets/yelp/yelp_academic_dataset_user.json\");\nusers \u003d userLines.map(lambda line : json.loads(line)).map(lambda fields : User(fields[\u0027user_id\u0027], fields[\u0027name\u0027], int(fields[\u0027review_count\u0027]), float(fields[\u0027average_stars\u0027]), fields[\u0027votes\u0027], fields[\u0027yelping_since\u0027]))\n\n# Review (business_id, user_id, stars, text, date, votes)\nreviewLines \u003d sc.textFile(\"/zeppelin/datasets/yelp/yelp_academic_dataset_review.json\")\nreviews \u003d reviewLines.map(lambda line : json.loads(line)).map(lambda fields : Review(fields[\u0027business_id\u0027], fields[\u0027user_id\u0027], float(fields[\u0027stars\u0027]), fields[\u0027text\u0027], fields[\u0027date\u0027], fields[\u0027votes\u0027]))\n",
-      "dateUpdated": "Oct 5, 2016 2:16:36 PM",
+      "dateUpdated": "Oct 7, 2016 1:59:44 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -197,43 +199,9 @@
         "msg": ""
       },
       "dateCreated": "Oct 5, 2016 1:59:22 PM",
-      "dateStarted": "Oct 5, 2016 2:16:36 PM",
-      "dateFinished": "Oct 5, 2016 2:16:36 PM",
+      "dateStarted": "Oct 7, 2016 1:59:44 PM",
+      "dateFinished": "Oct 7, 2016 1:59:44 PM",
       "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "text": "%pyspark\nprint users.count()",
-      "dateUpdated": "Oct 5, 2016 2:19:43 PM",
-      "config": {
-        "colWidth": 12.0,
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
-        "enabled": true,
-        "editorMode": "ace/mode/scala"
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "jobName": "paragraph_1475677081875_-814067018",
-      "id": "20161005-141801_1410131145",
-      "result": {
-        "code": "ERROR",
-        "type": "TEXT",
-        "msg": "Py4JJavaError: An error occurred while calling z:org.apache.spark.api.python.PythonRDD.collectAndServe.\n: org.apache.spark.SparkException: Job aborted due to stage failure: Task 2 in stage 6.0 failed 1 times, most recent failure: Lost task 2.0 in stage 6.0 (TID 32, localhost): org.apache.spark.api.python.PythonException: Traceback (most recent call last):\n  File \"/usr/spark/python/lib/pyspark.zip/pyspark/worker.py\", line 111, in main\n    process()\n  File \"/usr/spark/python/lib/pyspark.zip/pyspark/worker.py\", line 106, in process\n    serializer.dump_stream(func(split_index, iterator), outfile)\n  File \"/usr/spark/python/pyspark/rdd.py\", line 2346, in pipeline_func\n    return func(split, prev_func(split, iterator))\n  File \"/usr/spark/python/pyspark/rdd.py\", line 2346, in pipeline_func\n    return func(split, prev_func(split, iterator))\n  File \"/usr/spark/python/pyspark/rdd.py\", line 2346, in pipeline_func\n    return func(split, prev_func(split, iterator))\n  File \"/usr/spark/python/pyspark/rdd.py\", line 317, in func\n    return f(iterator)\n  File \"/usr/spark/python/pyspark/rdd.py\", line 1004, in \u003clambda\u003e\n    return self.mapPartitions(lambda i: [sum(1 for _ in i)]).sum()\n  File \"/usr/spark/python/pyspark/rdd.py\", line 1004, in \u003cgenexpr\u003e\n    return self.mapPartitions(lambda i: [sum(1 for _ in i)]).sum()\n  File \"\u003cstring\u003e\", line 4, in \u003clambda\u003e\nNameError: global name \u0027User\u0027 is not defined\n\n\tat org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:166)\n\tat org.apache.spark.api.python.PythonRunner$$anon$1.\u003cinit\u003e(PythonRDD.scala:207)\n\tat org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:125)\n\tat org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:70)\n\tat org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:306)\n\tat org.apache.spark.rdd.RDD.iterator(RDD.scala:270)\n\tat org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:66)\n\tat org.apache.spark.scheduler.Task.run(Task.scala:89)\n\tat org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:213)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n\tat java.lang.Thread.run(Thread.java:745)\n\nDriver stacktrace:\n\tat org.apache.spark.scheduler.DAGScheduler.org$apache$spark$scheduler$DAGScheduler$$failJobAndIndependentStages(DAGScheduler.scala:1431)\n\tat org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1419)\n\tat org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1418)\n\tat scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)\n\tat scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:47)\n\tat org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:1418)\n\tat org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:799)\n\tat org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:799)\n\tat scala.Option.foreach(Option.scala:236)\n\tat org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:799)\n\tat org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:1640)\n\tat org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:1599)\n\tat org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:1588)\n\tat org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:48)\n\tat org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:620)\n\tat org.apache.spark.SparkContext.runJob(SparkContext.scala:1832)\n\tat org.apache.spark.SparkContext.runJob(SparkContext.scala:1845)\n\tat org.apache.spark.SparkContext.runJob(SparkContext.scala:1858)\n\tat org.apache.spark.SparkContext.runJob(SparkContext.scala:1929)\n\tat org.apache.spark.rdd.RDD$$anonfun$collect$1.apply(RDD.scala:927)\n\tat org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:150)\n\tat org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:111)\n\tat org.apache.spark.rdd.RDD.withScope(RDD.scala:316)\n\tat org.apache.spark.rdd.RDD.collect(RDD.scala:926)\n\tat org.apache.spark.api.python.PythonRDD$.collectAndServe(PythonRDD.scala:405)\n\tat org.apache.spark.api.python.PythonRDD.collectAndServe(PythonRDD.scala)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:483)\n\tat py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:231)\n\tat py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:381)\n\tat py4j.Gateway.invoke(Gateway.java:259)\n\tat py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:133)\n\tat py4j.commands.CallCommand.execute(CallCommand.java:79)\n\tat py4j.GatewayConnection.run(GatewayConnection.java:209)\n\tat java.lang.Thread.run(Thread.java:745)\nCaused by: org.apache.spark.api.python.PythonException: Traceback (most recent call last):\n  File \"/usr/spark/python/lib/pyspark.zip/pyspark/worker.py\", line 111, in main\n    process()\n  File \"/usr/spark/python/lib/pyspark.zip/pyspark/worker.py\", line 106, in process\n    serializer.dump_stream(func(split_index, iterator), outfile)\n  File \"/usr/spark/python/pyspark/rdd.py\", line 2346, in pipeline_func\n    return func(split, prev_func(split, iterator))\n  File \"/usr/spark/python/pyspark/rdd.py\", line 2346, in pipeline_func\n    return func(split, prev_func(split, iterator))\n  File \"/usr/spark/python/pyspark/rdd.py\", line 2346, in pipeline_func\n    return func(split, prev_func(split, iterator))\n  File \"/usr/spark/python/pyspark/rdd.py\", line 317, in func\n    return f(iterator)\n  File \"/usr/spark/python/pyspark/rdd.py\", line 1004, in \u003clambda\u003e\n    return self.mapPartitions(lambda i: [sum(1 for _ in i)]).sum()\n  File \"/usr/spark/python/pyspark/rdd.py\", line 1004, in \u003cgenexpr\u003e\n    return self.mapPartitions(lambda i: [sum(1 for _ in i)]).sum()\n  File \"\u003cstring\u003e\", line 4, in \u003clambda\u003e\nNameError: global name \u0027User\u0027 is not defined\n\n\tat org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:166)\n\tat org.apache.spark.api.python.PythonRunner$$anon$1.\u003cinit\u003e(PythonRDD.scala:207)\n\tat org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:125)\n\tat org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:70)\n\tat org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:306)\n\tat org.apache.spark.rdd.RDD.iterator(RDD.scala:270)\n\tat org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:66)\n\tat org.apache.spark.scheduler.Task.run(Task.scala:89)\n\tat org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:213)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n\t... 1 more\n\n(\u003cclass \u0027py4j.protocol.Py4JJavaError\u0027\u003e, Py4JJavaError(u\u0027An error occurred while calling z:org.apache.spark.api.python.PythonRDD.collectAndServe.\\n\u0027, JavaObject id\u003do245), \u003ctraceback object at 0x7ff09ef9fab8\u003e)"
-      },
-      "dateCreated": "Oct 5, 2016 2:18:01 PM",
-      "dateStarted": "Oct 5, 2016 2:19:43 PM",
-      "dateFinished": "Oct 5, 2016 2:19:43 PM",
-      "status": "ERROR",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -339,7 +307,7 @@
     },
     {
       "text": "%pyspark\n\nprint \"business : \" +  businesses.first().display()\nprint \"review : \" + reviews.first().display()\nfor user in users.take(10):\n    print \"user : \" + user.display()\n",
-      "dateUpdated": "Oct 5, 2016 2:17:43 PM",
+      "dateUpdated": "Oct 7, 2016 1:59:51 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -361,14 +329,14 @@
       "jobName": "paragraph_1475675962514_-768688550",
       "id": "20161005-135922_710048057",
       "result": {
-        "code": "ERROR",
+        "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Py4JJavaError: An error occurred while calling z:org.apache.spark.api.python.PythonRDD.runJob.\n: org.apache.spark.SparkException: Job aborted due to stage failure: Task 0 in stage 2.0 failed 1 times, most recent failure: Lost task 0.0 in stage 2.0 (TID 2, localhost): org.apache.spark.api.python.PythonException: Traceback (most recent call last):\n  File \"/usr/spark/python/lib/pyspark.zip/pyspark/worker.py\", line 111, in main\n    process()\n  File \"/usr/spark/python/lib/pyspark.zip/pyspark/worker.py\", line 106, in process\n    serializer.dump_stream(func(split_index, iterator), outfile)\n  File \"/usr/spark/python/lib/pyspark.zip/pyspark/serializers.py\", line 263, in dump_stream\n    vs \u003d list(itertools.islice(iterator, batch))\n  File \"/usr/spark/python/pyspark/rdd.py\", line 1293, in takeUpToNumLeft\n    yield next(iterator)\n  File \"\u003cstring\u003e\", line 2, in \u003clambda\u003e\nNameError: global name \u0027Business\u0027 is not defined\n\n\tat org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:166)\n\tat org.apache.spark.api.python.PythonRunner$$anon$1.\u003cinit\u003e(PythonRDD.scala:207)\n\tat org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:125)\n\tat org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:70)\n\tat org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:306)\n\tat org.apache.spark.rdd.RDD.iterator(RDD.scala:270)\n\tat org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:66)\n\tat org.apache.spark.scheduler.Task.run(Task.scala:89)\n\tat org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:213)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n\tat java.lang.Thread.run(Thread.java:745)\n\nDriver stacktrace:\n\tat org.apache.spark.scheduler.DAGScheduler.org$apache$spark$scheduler$DAGScheduler$$failJobAndIndependentStages(DAGScheduler.scala:1431)\n\tat org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1419)\n\tat org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:1418)\n\tat scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)\n\tat scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:47)\n\tat org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:1418)\n\tat org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:799)\n\tat org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:799)\n\tat scala.Option.foreach(Option.scala:236)\n\tat org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:799)\n\tat org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:1640)\n\tat org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:1599)\n\tat org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:1588)\n\tat org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:48)\n\tat org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:620)\n\tat org.apache.spark.SparkContext.runJob(SparkContext.scala:1832)\n\tat org.apache.spark.SparkContext.runJob(SparkContext.scala:1845)\n\tat org.apache.spark.SparkContext.runJob(SparkContext.scala:1858)\n\tat org.apache.spark.api.python.PythonRDD$.runJob(PythonRDD.scala:393)\n\tat org.apache.spark.api.python.PythonRDD.runJob(PythonRDD.scala)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:483)\n\tat py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:231)\n\tat py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:381)\n\tat py4j.Gateway.invoke(Gateway.java:259)\n\tat py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:133)\n\tat py4j.commands.CallCommand.execute(CallCommand.java:79)\n\tat py4j.GatewayConnection.run(GatewayConnection.java:209)\n\tat java.lang.Thread.run(Thread.java:745)\nCaused by: org.apache.spark.api.python.PythonException: Traceback (most recent call last):\n  File \"/usr/spark/python/lib/pyspark.zip/pyspark/worker.py\", line 111, in main\n    process()\n  File \"/usr/spark/python/lib/pyspark.zip/pyspark/worker.py\", line 106, in process\n    serializer.dump_stream(func(split_index, iterator), outfile)\n  File \"/usr/spark/python/lib/pyspark.zip/pyspark/serializers.py\", line 263, in dump_stream\n    vs \u003d list(itertools.islice(iterator, batch))\n  File \"/usr/spark/python/pyspark/rdd.py\", line 1293, in takeUpToNumLeft\n    yield next(iterator)\n  File \"\u003cstring\u003e\", line 2, in \u003clambda\u003e\nNameError: global name \u0027Business\u0027 is not defined\n\n\tat org.apache.spark.api.python.PythonRunner$$anon$1.read(PythonRDD.scala:166)\n\tat org.apache.spark.api.python.PythonRunner$$anon$1.\u003cinit\u003e(PythonRDD.scala:207)\n\tat org.apache.spark.api.python.PythonRunner.compute(PythonRDD.scala:125)\n\tat org.apache.spark.api.python.PythonRDD.compute(PythonRDD.scala:70)\n\tat org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:306)\n\tat org.apache.spark.rdd.RDD.iterator(RDD.scala:270)\n\tat org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:66)\n\tat org.apache.spark.scheduler.Task.run(Task.scala:89)\n\tat org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:213)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)\n\t... 1 more\n\n(\u003cclass \u0027py4j.protocol.Py4JJavaError\u0027\u003e, Py4JJavaError(u\u0027An error occurred while calling z:org.apache.spark.api.python.PythonRDD.runJob.\\n\u0027, JavaObject id\u003do179), \u003ctraceback object at 0x7ff09ef9fe18\u003e)"
+        "msg": "business : u\u00275UmKMjUEUNdYWqANhGckJw\u0027, u\u0027Mr Hoagie\u0027, Dravosburg, PA, 3.5, 7\nreview : u\u00275UmKMjUEUNdYWqANhGckJw\u0027, u\u0027PUFPaY9KxDAcGqfsorJp3Q\u0027, 4.0, u\u0027Mr Hoagie is an institution. Walking in, it does seem like a throwback to 30 years ago, old fashioned menu board, booths out of the 70s, and a large selection of food. Their speciality is the Italian Hoagie, and it is voted the best in the area year after year. I usually order the burger, while the patties are obviously cooked from frozen, all of the other ingredients are very fresh. Overall, its a good alternative to Subway, which is down the road.\u0027, 2012-08-01, {u\u0027funny\u0027: 0, u\u0027useful\u0027: 0, u\u0027cool\u0027: 0}\nuser : u\u002718kPq7GPye-YQ3LyKyAZPw\u0027, u\u0027Russel\u0027, 108, 4.14, {u\u0027funny\u0027: 167, u\u0027useful\u0027: 282, u\u0027cool\u0027: 246}, u\u00272004-10\u0027\nuser : u\u0027rpOyqD_893cqmDAtJLbdog\u0027, u\u0027Jeremy\u0027, 1292, 3.67, {u\u0027funny\u0027: 8399, u\u0027useful\u0027: 15242, u\u0027cool\u0027: 12091}, u\u00272004-10\u0027\nuser : u\u00274U9kSBLuBDU391x6bxU-YA\u0027, u\u0027Michael\u0027, 395, 3.68, {u\u0027funny\u0027: 722, u\u0027useful\u0027: 1349, u\u0027cool\u0027: 657}, u\u00272004-10\u0027\nuser : u\u0027fHtTaujcyKvXglE33Z5yIw\u0027, u\u0027Ken\u0027, 11, 4.64, {u\u0027funny\u0027: 1, u\u0027useful\u0027: 11, u\u0027cool\u0027: 5}, u\u00272004-10\u0027\nuser : u\u0027SIBCL7HBkrP4llolm4SC2A\u0027, u\u0027Katherine\u0027, 66, 3.8, {u\u0027funny\u0027: 13, u\u0027useful\u0027: 37, u\u0027cool\u0027: 16}, u\u00272004-10\u0027\nuser : u\u00278J4IIYcqBlFch8T90N923A\u0027, u\u0027Joan\u0027, 1632, 4.35, {u\u0027funny\u0027: 13357, u\u0027useful\u0027: 18183, u\u0027cool\u0027: 17177}, u\u00272004-10\u0027\nuser : u\u0027ysYmC-ufbdmVEX9yAv-VEQ\u0027, u\u0027George\u0027, 55, 4.45, {u\u0027funny\u0027: 35, u\u0027useful\u0027: 39, u\u0027cool\u0027: 25}, u\u00272004-10\u0027\nuser : u\u0027WPOKvkacSKHx_bIG1alFiA\u0027, u\u0027Mary\u0027, 60, 3.88, {u\u0027funny\u0027: 34, u\u0027useful\u0027: 135, u\u0027cool\u0027: 34}, u\u00272004-10\u0027\nuser : u\u0027UTS9XcT14H2ZscRIf0MYHQ\u0027, u\u0027Nader\u0027, 102, 3.59, {u\u0027funny\u0027: 58, u\u0027useful\u0027: 251, u\u0027cool\u0027: 52}, u\u00272004-10\u0027\nuser : u\u00271blidZhgxDVSBuJ_dbTU6g\u0027, u\u0027Kiffen\u0027, 1, 5.0, {u\u0027funny\u0027: 0, u\u0027useful\u0027: 1, u\u0027cool\u0027: 0}, u\u00272004-10\u0027\n"
       },
       "dateCreated": "Oct 5, 2016 1:59:22 PM",
-      "dateStarted": "Oct 5, 2016 2:17:27 PM",
-      "dateFinished": "Oct 5, 2016 2:17:28 PM",
-      "status": "ERROR",
+      "dateStarted": "Oct 7, 2016 1:59:51 PM",
+      "dateFinished": "Oct 7, 2016 1:59:52 PM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -1282,21 +1250,21 @@
   "name": "SparkBatchPythonDevTalksParticipants",
   "id": "2BZE8AGTG",
   "angularObjects": {
-    "2C11WF1C7": [],
-    "2BZM32DSW": [],
-    "2C17GFUNT": [],
-    "2BZFRHP3F": [],
-    "2BXUA1JE8": [],
-    "2BZQSZGTT": [],
-    "2BY4YG9DT": [],
-    "2BZ13HVJQ": [],
-    "2BYYZQVH7": [],
-    "2BYSR3EC4": [],
-    "2BWWNHQMZ": [],
-    "2BWUVKVXR": [],
-    "2C16CTUBT": [],
-    "2C16DVCXQ": [],
-    "2BZEUQYYJ": []
+    "2BZHNY8YW": [],
+    "2BXH27H7Y": [],
+    "2BXSYDWQJ": [],
+    "2BXVEEXUD": [],
+    "2BZ3ZH5DD": [],
+    "2BZVMRK3C": [],
+    "2BXYUVPDU": [],
+    "2BZF8WBGC": [],
+    "2BWD4U18K": [],
+    "2BY9TUPDW": [],
+    "2BWQ2A68P": [],
+    "2BY8CJRFY": [],
+    "2BWNHA89P": [],
+    "2BWC4685H": [],
+    "2BZ2FXK85": []
   },
   "config": {},
   "info": {}
