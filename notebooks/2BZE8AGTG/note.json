@@ -36,7 +36,7 @@
     },
     {
       "text": "%pyspark\nsc\nprint(sc)\n",
-      "dateUpdated": "Oct 7, 2016 1:59:34 PM",
+      "dateUpdated": "Nov 12, 2016 11:00:36 AM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -60,11 +60,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "\u003cpyspark.context.SparkContext object at 0x7fa81f9d8310\u003e\n"
+        "msg": "\u003cpyspark.context.SparkContext object at 0x7fd214064950\u003e\n"
       },
       "dateCreated": "Oct 5, 2016 1:59:22 PM",
-      "dateStarted": "Oct 7, 2016 1:59:34 PM",
-      "dateFinished": "Oct 7, 2016 1:59:34 PM",
+      "dateStarted": "Nov 12, 2016 11:00:36 AM",
+      "dateFinished": "Nov 12, 2016 11:00:36 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -104,7 +104,7 @@
     },
     {
       "text": "%pyspark\nfrom SparkPythonClassesDevTalks import Business, Review, User, Tip, Checkin\nimport json\n",
-      "dateUpdated": "Oct 7, 2016 1:59:39 PM",
+      "dateUpdated": "Nov 12, 2016 11:00:40 AM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -131,8 +131,8 @@
         "msg": ""
       },
       "dateCreated": "Oct 5, 2016 1:59:22 PM",
-      "dateStarted": "Oct 7, 2016 1:59:39 PM",
-      "dateFinished": "Oct 7, 2016 1:59:39 PM",
+      "dateStarted": "Nov 12, 2016 11:00:40 AM",
+      "dateFinished": "Nov 12, 2016 11:00:40 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -172,7 +172,7 @@
     },
     {
       "text": "%pyspark \n\n# Business (business_id, name, city, state, stars, review_count)\nbusinessLines \u003d sc.textFile(\"/zeppelin/datasets/yelp/yelp_academic_dataset_business.json\")\nbusinesses \u003d businessLines.map(lambda line : json.loads(line)).map(lambda fields : Business(fields[\u0027business_id\u0027], fields[\u0027name\u0027], fields[\u0027city\u0027], fields[\u0027state\u0027], float(fields[\u0027stars\u0027]), int(fields[\u0027review_count\u0027])))\n\n# User (user_id, name, review_count, average_stars, votes, yelping_since)\nuserLines \u003d sc.textFile(\"/zeppelin/datasets/yelp/yelp_academic_dataset_user.json\");\nusers \u003d userLines.map(lambda line : json.loads(line)).map(lambda fields : User(fields[\u0027user_id\u0027], fields[\u0027name\u0027], int(fields[\u0027review_count\u0027]), float(fields[\u0027average_stars\u0027]), fields[\u0027votes\u0027], fields[\u0027yelping_since\u0027]))\n\n# Review (business_id, user_id, stars, text, date, votes)\nreviewLines \u003d sc.textFile(\"/zeppelin/datasets/yelp/yelp_academic_dataset_review.json\")\nreviews \u003d reviewLines.map(lambda line : json.loads(line)).map(lambda fields : Review(fields[\u0027business_id\u0027], fields[\u0027user_id\u0027], float(fields[\u0027stars\u0027]), fields[\u0027text\u0027], fields[\u0027date\u0027], fields[\u0027votes\u0027]))\n",
-      "dateUpdated": "Oct 7, 2016 1:59:44 PM",
+      "dateUpdated": "Nov 12, 2016 11:00:42 AM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -199,8 +199,8 @@
         "msg": ""
       },
       "dateCreated": "Oct 5, 2016 1:59:22 PM",
-      "dateStarted": "Oct 7, 2016 1:59:44 PM",
-      "dateFinished": "Oct 7, 2016 1:59:44 PM",
+      "dateStarted": "Nov 12, 2016 11:00:42 AM",
+      "dateFinished": "Nov 12, 2016 11:00:42 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -239,8 +239,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%pyspark\n\n# Checkin (business_id, checkin_info)\n# path \"/zeppelin/datasets/yelp/dataset/yelp_academic_dataset_checkin.json\"\n\n# Tip (business_id, user_id, text, date, likes)\n# path \"/zeppelin/datasets/yelp/dataset/yelp_academic_dataset_tip.json\"\n\n",
-      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "text": "%pyspark\n\n# Checkin (business_id, checkin_info)\n# path \"/zeppelin/datasets/yelp/yelp_academic_dataset_checkin.json\"\n\n# Tip (business_id, user_id, text, date, likes)\n# path \"/zeppelin/datasets/yelp/yelp_academic_dataset_tip.json\"\n\n",
+      "dateUpdated": "Nov 12, 2016 11:01:51 AM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -253,7 +253,8 @@
           "groups": [],
           "scatter": {}
         },
-        "enabled": true
+        "enabled": true,
+        "lineNumbers": true
       },
       "settings": {
         "params": {},
@@ -267,8 +268,9 @@
         "msg": ""
       },
       "dateCreated": "Oct 5, 2016 1:59:22 PM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Nov 12, 2016 11:01:51 AM",
+      "dateFinished": "Nov 12, 2016 11:01:51 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -307,7 +309,7 @@
     },
     {
       "text": "%pyspark\n\nprint \"business : \" +  businesses.first().display()\nprint \"review : \" + reviews.first().display()\nfor user in users.take(10):\n    print \"user : \" + user.display()\n",
-      "dateUpdated": "Oct 7, 2016 1:59:51 PM",
+      "dateUpdated": "Nov 12, 2016 11:01:55 AM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -334,8 +336,8 @@
         "msg": "business : u\u00275UmKMjUEUNdYWqANhGckJw\u0027, u\u0027Mr Hoagie\u0027, Dravosburg, PA, 3.5, 7\nreview : u\u00275UmKMjUEUNdYWqANhGckJw\u0027, u\u0027PUFPaY9KxDAcGqfsorJp3Q\u0027, 4.0, u\u0027Mr Hoagie is an institution. Walking in, it does seem like a throwback to 30 years ago, old fashioned menu board, booths out of the 70s, and a large selection of food. Their speciality is the Italian Hoagie, and it is voted the best in the area year after year. I usually order the burger, while the patties are obviously cooked from frozen, all of the other ingredients are very fresh. Overall, its a good alternative to Subway, which is down the road.\u0027, 2012-08-01, {u\u0027funny\u0027: 0, u\u0027useful\u0027: 0, u\u0027cool\u0027: 0}\nuser : u\u002718kPq7GPye-YQ3LyKyAZPw\u0027, u\u0027Russel\u0027, 108, 4.14, {u\u0027funny\u0027: 167, u\u0027useful\u0027: 282, u\u0027cool\u0027: 246}, u\u00272004-10\u0027\nuser : u\u0027rpOyqD_893cqmDAtJLbdog\u0027, u\u0027Jeremy\u0027, 1292, 3.67, {u\u0027funny\u0027: 8399, u\u0027useful\u0027: 15242, u\u0027cool\u0027: 12091}, u\u00272004-10\u0027\nuser : u\u00274U9kSBLuBDU391x6bxU-YA\u0027, u\u0027Michael\u0027, 395, 3.68, {u\u0027funny\u0027: 722, u\u0027useful\u0027: 1349, u\u0027cool\u0027: 657}, u\u00272004-10\u0027\nuser : u\u0027fHtTaujcyKvXglE33Z5yIw\u0027, u\u0027Ken\u0027, 11, 4.64, {u\u0027funny\u0027: 1, u\u0027useful\u0027: 11, u\u0027cool\u0027: 5}, u\u00272004-10\u0027\nuser : u\u0027SIBCL7HBkrP4llolm4SC2A\u0027, u\u0027Katherine\u0027, 66, 3.8, {u\u0027funny\u0027: 13, u\u0027useful\u0027: 37, u\u0027cool\u0027: 16}, u\u00272004-10\u0027\nuser : u\u00278J4IIYcqBlFch8T90N923A\u0027, u\u0027Joan\u0027, 1632, 4.35, {u\u0027funny\u0027: 13357, u\u0027useful\u0027: 18183, u\u0027cool\u0027: 17177}, u\u00272004-10\u0027\nuser : u\u0027ysYmC-ufbdmVEX9yAv-VEQ\u0027, u\u0027George\u0027, 55, 4.45, {u\u0027funny\u0027: 35, u\u0027useful\u0027: 39, u\u0027cool\u0027: 25}, u\u00272004-10\u0027\nuser : u\u0027WPOKvkacSKHx_bIG1alFiA\u0027, u\u0027Mary\u0027, 60, 3.88, {u\u0027funny\u0027: 34, u\u0027useful\u0027: 135, u\u0027cool\u0027: 34}, u\u00272004-10\u0027\nuser : u\u0027UTS9XcT14H2ZscRIf0MYHQ\u0027, u\u0027Nader\u0027, 102, 3.59, {u\u0027funny\u0027: 58, u\u0027useful\u0027: 251, u\u0027cool\u0027: 52}, u\u00272004-10\u0027\nuser : u\u00271blidZhgxDVSBuJ_dbTU6g\u0027, u\u0027Kiffen\u0027, 1, 5.0, {u\u0027funny\u0027: 0, u\u0027useful\u0027: 1, u\u0027cool\u0027: 0}, u\u00272004-10\u0027\n"
       },
       "dateCreated": "Oct 5, 2016 1:59:22 PM",
-      "dateStarted": "Oct 7, 2016 1:59:51 PM",
-      "dateFinished": "Oct 7, 2016 1:59:52 PM",
+      "dateStarted": "Nov 12, 2016 11:01:55 AM",
+      "dateFinished": "Nov 12, 2016 11:01:55 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -375,7 +377,7 @@
     },
     {
       "text": "%pyspark\n",
-      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "dateUpdated": "Nov 12, 2016 10:37:08 AM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -402,8 +404,9 @@
         "msg": ""
       },
       "dateCreated": "Oct 5, 2016 1:59:22 PM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Nov 12, 2016 10:37:08 AM",
+      "dateFinished": "Nov 12, 2016 10:37:08 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -442,7 +445,7 @@
     },
     {
       "text": "%pyspark\nprint \"Number of businesses is : \" +  `businesses.count()`\nprint \"Number of users is : \" + `users.count()`",
-      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "dateUpdated": "Nov 12, 2016 11:00:59 AM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -466,11 +469,12 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "Number of businesses is : 77445\nNumber of users is : 552339\n"
+        "msg": "Number of businesses is : 85901\nNumber of users is : 206556\n"
       },
       "dateCreated": "Oct 5, 2016 1:59:22 PM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Nov 12, 2016 11:00:59 AM",
+      "dateFinished": "Nov 12, 2016 11:01:02 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -508,8 +512,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%pyspark\n",
-      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "text": "%pyspark\n\n",
+      "dateUpdated": "Nov 12, 2016 10:40:03 AM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -536,8 +540,9 @@
         "msg": ""
       },
       "dateCreated": "Oct 5, 2016 1:59:22 PM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Nov 12, 2016 10:40:03 AM",
+      "dateFinished": "Nov 12, 2016 10:40:03 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -576,7 +581,7 @@
     },
     {
       "text": "%pyspark\n\ncityBusiness \u003d businesses.map(lambda business : (business.city, 1))\ncityBusiness \u003d cityBusiness.reduceByKey(lambda a,b : a + b)\n\nfor city in cityBusiness.take(10):\n    print city\n",
-      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "dateUpdated": "Nov 12, 2016 11:01:06 AM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -600,11 +605,12 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "(u\u0027\u0027, 2)\n(u\u0027McKees Rocks\u0027, 14)\n(u\u0027Millvale\u0027, 4)\n(u\u0027Inverkeithing\u0027, 2)\n(u\u0027Dormont\u0027, 6)\n(u\u0027Aspinwall\u0027, 13)\n(u\u0027Morristown\u0027, 4)\n(u\u0027North Las Vegas\u0027, 819)\n(u\u0027Victoria Park\u0027, 1)\n(u\u0027Independence\u0027, 1)\n"
+        "msg": "(u\u0027\u0027, 2)\n(u\"L\u0027\\xcele-Bizard\", 2)\n(u\u0027McKees Rocks\u0027, 17)\n(u\u0027Victoria Park\u0027, 1)\n(u\u0027Scotesdale\u0027, 1)\n(u\u0027Old Scottsdale\u0027, 1)\n(u\u0027Metro Phoenix\u0027, 1)\n(u\u0027St Leonard\u0027, 1)\n(u\u0027North Queensferry\u0027, 2)\n(u\u0027Weingarten (Baden)\u0027, 3)\n"
       },
       "dateCreated": "Oct 5, 2016 1:59:22 PM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Nov 12, 2016 11:01:07 AM",
+      "dateFinished": "Nov 12, 2016 11:01:08 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -642,8 +648,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%pyspark\ncityBusiness \u003d cityBusiness.map(lambda (a,b) : (b,a)).sortByKey(0)\n\nfor city in cityBusiness.take(10):\n    print city\n",
-      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "text": "%pyspark\ncityBusinessSorted \u003d cityBusiness.map(lambda (a,b) : (b,a)).sortByKey(0)\n\nfor city in cityBusinessSorted.take(10):\n    print city\n",
+      "dateUpdated": "Nov 12, 2016 11:01:21 AM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -667,11 +673,12 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "(17423, u\u0027Las Vegas\u0027)\n(10629, u\u0027Phoenix\u0027)\n(5189, u\u0027Charlotte\u0027)\n(5139, u\u0027Scottsdale\u0027)\n(3891, u\u0027Montr\\xe9al\u0027)\n(3337, u\u0027Pittsburgh\u0027)\n(3272, u\u0027Edinburgh\u0027)\n(3190, u\u0027Mesa\u0027)\n(2839, u\u0027Henderson\u0027)\n(2773, u\u0027Tempe\u0027)\n"
+        "msg": "(19328, u\u0027Las Vegas\u0027)\n(11852, u\u0027Phoenix\u0027)\n(5695, u\u0027Charlotte\u0027)\n(5638, u\u0027Scottsdale\u0027)\n(4371, u\u0027Montr\\xe9al\u0027)\n(3638, u\u0027Mesa\u0027)\n(3628, u\u0027Pittsburgh\u0027)\n(3360, u\u0027Edinburgh\u0027)\n(3145, u\u0027Henderson\u0027)\n(3043, u\u0027Tempe\u0027)\n"
       },
       "dateCreated": "Oct 5, 2016 1:59:22 PM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Nov 12, 2016 11:01:21 AM",
+      "dateFinished": "Nov 12, 2016 11:01:21 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -710,7 +717,7 @@
     },
     {
       "text": "%pyspark\n",
-      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "dateUpdated": "Nov 12, 2016 10:51:30 AM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -737,8 +744,9 @@
         "msg": ""
       },
       "dateCreated": "Oct 5, 2016 1:59:22 PM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Nov 12, 2016 10:51:30 AM",
+      "dateFinished": "Nov 12, 2016 10:51:30 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -777,7 +785,7 @@
     },
     {
       "text": "%pyspark \n",
-      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "dateUpdated": "Nov 12, 2016 10:51:36 AM",
       "config": {
         "tableHide": false,
         "colWidth": 12.0,
@@ -806,8 +814,9 @@
         "msg": ""
       },
       "dateCreated": "Oct 5, 2016 1:59:22 PM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Nov 12, 2016 10:51:36 AM",
+      "dateFinished": "Nov 12, 2016 10:51:36 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -845,8 +854,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%pyspark\n",
-      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "text": "%pyspark\n\n",
+      "dateUpdated": "Nov 12, 2016 10:55:49 AM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -873,8 +882,9 @@
         "msg": ""
       },
       "dateCreated": "Oct 5, 2016 1:59:22 PM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Nov 12, 2016 10:55:49 AM",
+      "dateFinished": "Nov 12, 2016 10:55:49 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -1049,7 +1059,7 @@
     },
     {
       "text": "%pyspark\n\npairBusinesses \u003d businesses.map(lambda business : (business.business_id, business))\npairReviews \u003d reviews.map(lambda review : (review.business_id, review))\n\nprint pairBusinesses.first()\nprint pairReviews.first()\n\nbusinessReviews \u003d pairBusinesses.join(pairReviews)\n\nfor businessReview in businessReviews.take(10):\n    print businessReview[0] + \", \" + businessReview[1][0].name + \", \" + businessReview[1][1].text",
-      "dateUpdated": "Oct 5, 2016 1:59:22 PM",
+      "dateUpdated": "Nov 12, 2016 11:01:28 AM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -1073,11 +1083,12 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "(u\u00275UmKMjUEUNdYWqANhGckJw\u0027, \u003cSparkPythonClassesDevTalks.Business instance at 0x7f55d3800758\u003e)\n(u\u00275UmKMjUEUNdYWqANhGckJw\u0027, \u003cSparkPythonClassesDevTalks.Review instance at 0x7f55d3800b48\u003e)\n6sNvLW4fVBWEgze71pGDZQ, TGI Friday\u0027s, Flat Iron Steak was prepared very well, delivered Medium Rare exactly. Exemplary service and friendly staff.  My iced tea glass was refilled regularly. Nothing to complain about here. Good chain restaurant with predictably good quality and predictably good service.\n6sNvLW4fVBWEgze71pGDZQ, TGI Friday\u0027s, Previous experiences with TGI Fridays were so blah that I have not come back in five years. My friends and I nicknamed TGIF as \"That Glop is Food?\". And then I remembered this place has karaoke.  I didn\u0027t want to hear some drunk dude screaming \"Do Ya Think I\u0027m Sexy?\".  Well, not when I didn\u0027t have an ear infection or wasn\u0027t drunk. But my nephew decided, \"TGI Fridays!\" as we pondered the restaurant choices at Aliante Casino. And no karaoke that night! \n\nWe got seated right away. This new beautiful casino has several new restaurants. This TGIF is one of the best looking in their chain.  It\u0027s got some dark woods and bright colors inside. It was super clean with less than half the tables filled. The bar is a very classy looking place, and the bartenders were energetic as they heard tales from gamblers who just lost their shirts. We gave our drink orders and our waitress came back quickly with our drinks and took our food order.\n\nI chose the Mac and Cheese with grilled chicken breast. My nephew had the full rack of ribs. My brother had the pork chop with mashed potatoes. Our food came out in about 20 minutes. My dish was excellent. Al dente pasta was tossed with light creamy white cheeses, and topped with grated cheese.  There was a smallish grilled chicken breast. It was a winner and a great deal for $6.00. It was easily the best value on the menu. The pork chop ($13) was nicely  grilled with a creamy side of mashed potatoes.  It was small portion-wise that I wished had two pork chops even at a slightly higher price. My nephew\u0027s full rack of ribs ($16) came with crispy fries, not  greasy at all.   The cole slaw taste-wise was flat as a a bad karaoke singer\u0027s pitch. But overall, each one of us gave this place a thumbs up.\n\nSince we have a lively time whenever we\u0027re together, the waitress was around to check on us, but not intrusive. She was prompt with refills. clearing off plates, bringing the check and running it through the machine.  We had a very nice time.  This time I could honestly say \"TGIF -Thank God It was Fine\".\n6sNvLW4fVBWEgze71pGDZQ, TGI Friday\u0027s, The food was ok. It didn\u0027t leave me wanting more, but it wasn\u0027t bad enough not to eat. The restaurant is clean, the wait staff is nice. What more can I say? It was the only non-fast-food-place open in the casino before 4pm.\n6sNvLW4fVBWEgze71pGDZQ, TGI Friday\u0027s, My mother lives near the Aliante Station, and inside, is TGI Friday\u0027s.  On this particular day, they have a steak and lobster tail special (from 3:00 to 6:00 p.m.) for $13.99.  After 6:00 p.m., it goes up to $18.99.  We were a couple minutes late, and the manager, Chris, comped us the early rate.  Super props go out to Chris!  We used that extra money for the specialty drinks...yummy, and $5. I believe the steak was a sirloin, cut thick, and cooked to order.  We both ordered it medium-rare, and the chef got it right.  It was juicy and nicely seasoned.  My mom loved the lobster tail, which was a hearty portion, not the micro-tails that some casino\u0027s offer (I\u0027m thinking Tony Roma\u0027s in the Fremont).  The meal was an excellent value, as it came with a \"loaded baked potato\" and fresh veggies.  The service was great.  This is more like a 4.5 star rating.\n6sNvLW4fVBWEgze71pGDZQ, TGI Friday\u0027s, This TGI Fridays is near our house and we visit every month or so.  Food is always good and the drinks are also great.  Their service, unfortunately, seems to be hit or miss.  One time we might get a friendly, dynamic server and the next time get someone that takes over 30 minutes to take your drink/food order.  Too bad.\n6sNvLW4fVBWEgze71pGDZQ, TGI Friday\u0027s, SIT AT THE BAR!! Fair mixture on drinks (not watered or soda\u0027d down) and good music (at the bar). Of course the food is tastey.\n6sNvLW4fVBWEgze71pGDZQ, TGI Friday\u0027s, This is probably my favorite TGI Friday\u0027s in Las Vegas. Come to think of it, probably the only one I ever been too in Vegas. \n\nA good time to go to TGI Friday\u0027s, is probably after busy hours, in between 1pm - 3pm. That\u0027s when its probably quiet, and that you have the waiter\u0027s full attention. I think, this is the time, where they show their best qualities at TGI Friday\u0027s. Coming during the usual busy hours, of course you won\u0027t have their full attention, and you\u0027ll have cooks speeding up food orders. If your food is undercooked or not to your liking, then your struggling to wave down the waiter, who\u0027s probably running around, like a chicken with his head cut off. But when you go there during the not so busy hours, I find that TGI Friday\u0027s tend to be more pleasing. \n\nWe went there around 1:30pm, and right away, we were greeted and sat in the bar area. Just a few seconds later, we was greeted again, to take our drink order. Of course it being slow hour, the one who greeted us when we came in, was also our waiter, so that\u0027s why it didn\u0027t really take long to wait for a waiter. I was really impress with the politeness and quickness of the waiter, bringing our drinks and entertaining us. \n\nAfter a good amount of time to look through the menu. We started off with our usual Nachos, which were really good, and I ate most of it. The wife ordered her Sirloin and I had my New York steak and Shrimp. I also had an Ultimate Mudslide, which is better then Applebees, where you can\u0027t really taste the alcohol at Applebees, but you can at TGI Friday\u0027s. We got our order and, I really like the way they did the meat, and my sides. It was cooked to perfection. My wife\u0027s Sirloin, was undercooked. But with the immediate response from the waiter. She was able to explain her situation and the waiter was polite to return her Sirloin to the kitchen. Just a matter of minutes, that the waiter returned with a better cooked Sirloin. \n\nEverything to me, taste great, that I ate everything on my plate. Unfortunately I was to full for dessert, but my wife loved the cheesecake I had last time, so she ordered one for herself. Sure enough, she liked it and the presentation of the dessert was really nice. \n\nI was really satisfied with the place, with the staff and the food. I would really recommend this place, during the slow hours (Usually after lunch time, and before dinner time). Its where you get better quality service from the staff and the cooks.\n6sNvLW4fVBWEgze71pGDZQ, TGI Friday\u0027s, I gave TGI Friday\u0027s a good review back when it was a great value.  Well, things have changed.\n\nMy mother is a seasoned citizen.  She collects her coupons from Smith\u0027s grocery store, and loves to use them.  One of the coupons is a two-fer-one at TGI Fridays.  Her youngest son was going out of state for about six months, and she wanted us to send him off, with full belly off a comped meal.  Oh my, she was in for a surprise.\n\nIn the past, if four adults had two coupons, two could eat free.  The coupons were laid out on the table, and the waiter (very polite...we can\u0027t kill the messenger) advised only one coupon per table.  When confronted with value versus togetherness, value won, and we sat at different tables.  Seems a little silly, huh?  It didn\u0027t stop there.  This TGI Fridays advertises steak and lobster for $13.99 if you are there before 6:00 p.m.  When me and the hungry wife both ordered that meal, the waiter swooped in with more bad news, since we were using the coupon, we would be charged the regular price for the steak and lobster!  So, now it\u0027s $18.99 for two steak and lobster dinners.  Well, we\u0027d get some of that back, because we had the kid with us, and kids eat free on Tuesday night.  Well, not exactly.  The waiter offered the final apology, stating that the customer must chose one promotion.  If the kid eats free, then the steak and lobster dinners will be charged. \n\nThis was quite upsetting to my mother.  She loved to land upon this restaurant and abuse the freebies.  \n\nOkay, on to the food.  The steak was tiny, but it was cooked right.  It had  garlic butter on the top.  A nice, tasty addition.  The lobster tail was also tiny, but tasty.  They didn\u0027t gyp on on the baked potato, it was big.  There was some steamed broccoli, most of which was neglected.  Maybe they should promo \"all you can eat steamed broccoli\"?  The broccoli was fine.  The wife had a margarita.  It was still happy hour, and the waiter had no bad new for us on the discount for that, $5, and a good value.  \n\nI\u0027d say that we got what we paid for.  This meal at full price is not worth the money.  For those of you who frown upon coupons...you better bring them, and try to use them, if you are going to try to get value at this place.\n6sNvLW4fVBWEgze71pGDZQ, TGI Friday\u0027s, It\u0027s a sad day when one of your favorite places looses it\u0027s sparkle.  Mark D. is my husband and to him this chain can do no wrong.  To me, I\u0027m a little bit harder to please.  (Yep, I\u0027m a food grump.)  I guess I just expect to get what I order and how I want it.  I know picky picky picky.  The last three times I\u0027ve gone here my order has been wrong and while I try to be passive-aggressive about it, the next time I just might get angry.  \n\nFridays does offer some amazing deals if you are part of their stripes program or if you sign up for text message deals.  So far we have not had a problem redeeming them.  I love the happy hour deals they offer and I wish they would let the entire dinning area share those deals instead of just the bar.  The bar was packed when we went in today and would have just sat there if a clean table was available.  \n\nThe food is okay, it\u0027s probably the reason we keep coming back.  I love the nachos and if you can get them half price at happy hour they are the best value on the menu.  I\u0027m not a big drinker but I have ordered a drink called \"strawberry shortcake\" it was basically a strawberry milkshake with a shot of booze in it and it got me buzzing pretty good.  The cheesecake is also quite good.  I will be back I\u0027m sure of it, but if my order gets messed up again some poor server will feel my rage.  (J/K, I am really not that mean.)\n6sNvLW4fVBWEgze71pGDZQ, TGI Friday\u0027s, TGIF has always been a fun establishment for me growing up.  I use ot go there all the time with my friends and dive into their famous potato skins.  However, as time went on, I stopped going and haven\u0027t been back there for about 3 years... until I moved to Las Vegas.\n\nAliante station has a great TGIFs.  Their wait staff is on top of it and even gave me the \"two minute\" rule, whereby they return and check to see if your food is ok within two minutes after serving you.  I have been there 3 times with my wife and both times we loved it.\n\nFOR VALENTINES DAY -- I HIGHLY RECOMMEND IT!\n\nVday for sure is great -- we went last year and you get two free desserts (red velvet cake) and they had a great deal for couples -- 2 surf and turf (steak/lobster tails) for $8.99 ea.  The steaks were 8oz NY strip and the lobster tail was 4oz.  Not huge on the lobster side, but the meal was plenty enough food for most people -- and at $8.99, it was a steal.\n\nBeing that I don\u0027t drink -- the bar is not in this review.  However, I can say that during a sporting event, it\u0027s often packed.  Lots of excitement going on, so I am sure bar flys will love the atmosphere.\n\nOver all, the place is very clean, nice wait staff and the food is very good.  Not just good, but it was very good.  Steaks cooked perfectly.  I am glad it\u0027s nearby, as it\u0027s nice to drop on by and have a decent meal.  The prices are a bit higher than normal -- but for the amount of food you get, it\u0027s worth it I think.  :-)\n"
+        "msg": "(u\u00275UmKMjUEUNdYWqANhGckJw\u0027, \u003cSparkPythonClassesDevTalks.Business instance at 0x7fd214442830\u003e)\n(u\u00275UmKMjUEUNdYWqANhGckJw\u0027, \u003cSparkPythonClassesDevTalks.Review instance at 0x7fd214442d40\u003e)\ns_rPbgLOpWDgulVn9wd7GQ, Chuy\u0027s Mesquite Broiler, this is a decent little Mexican joint with a dash of American. Good burritos, chicken and fajitas. The free chip and salsa bar is nice and they have plenty of booze to choose from. \nI enjoy coming here on the weekends for breakfast as there is hardly anyone there and you can get a nice, filling burrito.\nThis location inparticular has it\u0027s regulars and the people that work here are always friendly and accomodating. \nI always feel comfortable eating here.\ns_rPbgLOpWDgulVn9wd7GQ, Chuy\u0027s Mesquite Broiler, Quite very good lil\u0027 neighborhood joint. \n\nYou order your food at the counter but they do bring it out to you. They have special for every day of the week! Like today its Tri-Tip sandwich, pretty nice. Their margaritas are honest and good tasting, and bunch of different kinds of beer does not hurt either. \nHowever, we came there for their $.99 street tacos and were not disapointed even a little bit - tasty, fresh, warm, jucy, delicious little things! \"I could be eating those whole day long, man!\" - Is what one of my friends said. \"When are we coming back?!?\" - Was reply from the other. \nI also had been there before on my own for dinner, and it was delicious. Fact that meet (fish) is broiled instead of fried gives this place an lot of \"Brownie Points\" in my book. Or maybe its cuz mesquite broiled Mahi is so good? Or was it pork? No, wait! It was salmon! Yes, for sure it was that. Unless it was white fish or chicken. Ahhhhh......... Screw it! I give up. its all flippin\u0027 good.\n\nPS: Wait times are kinds longer then expected. BUT........ it IS worth it. However, i did dogged a star for that. There, now you know.\ns_rPbgLOpWDgulVn9wd7GQ, Chuy\u0027s Mesquite Broiler, Great service, order at the counter, nice specials, good standards, ok salsa and fun ambiance. I have just never had anything that wowed me or tasted \"just right\" so I gave it three stars.\ns_rPbgLOpWDgulVn9wd7GQ, Chuy\u0027s Mesquite Broiler, This location has closed.\ns_rPbgLOpWDgulVn9wd7GQ, Chuy\u0027s Mesquite Broiler, Sorry folks, Chuy\u0027s is no longer open at this location. It is now a restaurant called \"Bisquits\"\u0027 serving breakfast and lunch.\npKp50rYh0iWZYKiWmWmLow, Travel Thru Time, This place is literally FILLED with goodies.  The selection is awesome, with lots of quality vintage clothing and antiques.  However, nothing has a price on it and the store is way too over-stuffed which makes it very difficult to maneuver.  The owner is very friendly but perhaps a bit overly chatty.  The shopping experience is a bit annoying, but I would go back because the merchandise is so good.\npKp50rYh0iWZYKiWmWmLow, Travel Thru Time, Please note this store is NO LONGER at the Central Ave address.  It is now on the SE corner of 15th Ave and Thomas.  The owner Corinne is the sweetest lady in the world and she remembers how she obtained EVERY item in here store.  She now has prices on a majority of the clothing.  The new location is a bit smaller than the Central Ave location, but definately more organized and neater, and as Kimby S stated, her merchandise is SO good.  This place is worth the trip if you\u0027re into vintage clothing!\npKp50rYh0iWZYKiWmWmLow, Travel Thru Time, So in certain science fiction/fantasy novels, there\u0027s this shop that exists only some of the time, and it\u0027s packed with peculiar goodies, and it might be a gateway to another dimension?\n\nThis is that shop. Note the name. That\u0027s your tip-off.\n\nIf you carry a large purse or tote bag, lock it in your vehicle, as the aisles here are very, very narrow. The vintage clothing selection was huge and looked amazing, but I literally didn\u0027t dare turn to look at it for fear of sending a shelf of china flying. Clothing is something for next time.\n\nThere is a LOT of glass and china for the space, and it\u0027s not the same five dish patterns that you\u0027ll find in every antique mall. If you\u0027re looking for something specific, I imagine that the best approach is to act as if you\u0027re in the sheep\u0027s knitting shop in Through the Looking Glass. Follow the shelves with your eyes slooooowwwwwly up to the ceiling, hoping that your item will not ascend hastily through the ceiling to escape you. If that fails, shut your eyes, think hard about what you want, then try again. There\u0027s a better than average chance that it will appear.\n\nThere\u0027s also all sorts of jewelry and tiny bits of things. The delight of this shop is that it\u0027s not \"curated\" or \"precious,\" but it somehow has a point of view, and the owner is truly the nicest person ever. This is a store for when you\u0027re in the mood to browse and chat and stumble over remarkable things -- not for when you\u0027re on the track of a list of home decor -- as it requires exploration and nothing is priced; and if you take the experience for what it is, it is literally a refreshing step back to a simpler time with better housewares, some of which you can buy and take home.\n\nIt doesn\u0027t hurt that it\u0027s now part of the most adorable vintage strip mall in Phoenix, along with the Purple Lizard (your one-stop Instant Wise Southwestern Woman boutique), Southwest Gardener (all that glitters for your landscaping), and the Original Hamburger Works (what Fuddruckers aspired to be, with authenticity).\n\nOn my visit, the back door gave only onto the mall\u0027s shared internal patio (a charming place for a winter lunch), but depending on your timing, your luck may be different.\npKp50rYh0iWZYKiWmWmLow, Travel Thru Time, I love this place!! I was hunting for a vintage hat for a Kentucky Derby party and called this store. The lady who answered was the owner and assured me that she could help. The store was packed with items from floor to ceiling but she knew where everything was. I brought the dress I planned to wear and she completed the outfit with a vintage pill box hat, matching gloves and the perfect earrings. If you need retro outfit advice, this gal can help!\nYYcLG6uNWpCPOmbq1B1xMg, Arcadia Villa Apartments, Promises promises! always tomorrow .... guess what procrastinators unite tomorrow! these people are the worst when it comes to getting repairs done to your apartment OR if you do not mind things broken or maybe you ARE handy and can fix them yourself ...then yeah this is the place for you! if your apartment happens to be outdated it will stay outdated and no accommodations will be given no extras will be put in nothing from the old apartment to replace this apartment!  the property management team should be noted and called as such, \"shift the blame!\"They never take responsibility for anything and they do \u0026 for sure not blame themselves for not getting the work done or doing follow up with their maintenance man. One maintenance man to handle 300 apartments I think is unreasonable!  I told them I would hire a handyman if he is too busy taking care of other emergencies that are more important than mine. My refrigerator door is found open every single time I leave the house currently it\u0027s held together by two pieces of duct tape this is been going on for over two months. And no I will not let anybody into my apartment to do repairs while I\u0027m not home!  that\u0027s my right as a tenant and I am going to maintain that. When it doesn\u0027t get done ....basically you didn\u0027t call us back ... it\u0027s always my fault ... so I withheld the rent and they evicted me ! When she damn well knows that my apartment needs to be repaired. can you believe that! Straight up ratchet motherfuckers living and working up in this place! don\u0027t even bother unless you need the area for convenience! safety is not their concern! the door slammed into my daughters foot and she didn\u0027t even ask if she needed to go to the hospital...that her I\u0027m talking about is April! if you need her she can be easily reached to Sweettalk you to get you to take the place once in you are trapped for a year and they have no remorse when it\u0027s time to do paperwork for the court because of course they never do any wrong !they\u0027re right they do nothing all day every day shoot the shit, look pretty and not get a damn thing done for their tenants ! \nhave a good day and I hope I saved you a trip from the  from hell apartment complex they sent such nice pictures appear u should see what the gate looks like in the back here that hit my daughters foot !treacherous! dangerous! they should be ashamed calling this a gated community I don\u0027t feel safe! every tom Dick and Harry walks in here in the middle of the night slamming the gate shut!\n"
       },
       "dateCreated": "Oct 5, 2016 1:59:22 PM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Nov 12, 2016 11:01:28 AM",
+      "dateFinished": "Nov 12, 2016 11:01:33 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -1250,21 +1261,21 @@
   "name": "SparkBatchPythonDevTalksParticipants",
   "id": "2BZE8AGTG",
   "angularObjects": {
-    "2BZHNY8YW": [],
-    "2BXH27H7Y": [],
-    "2BXSYDWQJ": [],
-    "2BXVEEXUD": [],
-    "2BZ3ZH5DD": [],
-    "2BZVMRK3C": [],
-    "2BXYUVPDU": [],
-    "2BZF8WBGC": [],
-    "2BWD4U18K": [],
-    "2BY9TUPDW": [],
-    "2BWQ2A68P": [],
-    "2BY8CJRFY": [],
-    "2BWNHA89P": [],
-    "2BWC4685H": [],
-    "2BZ2FXK85": []
+    "2C3WZUK33": [],
+    "2C1YA5D2F": [],
+    "2C2S9E6XK": [],
+    "2C381K1GS": [],
+    "2BZPA1EZS": [],
+    "2BZV245P9": [],
+    "2C43YS5P2": [],
+    "2BZTQ77CG": [],
+    "2C1UP5V1X": [],
+    "2C1D5ZAWQ": [],
+    "2C2P2YH1D": [],
+    "2BZTHUGNC": [],
+    "2C1WZ6MNJ": [],
+    "2C1FTY57N": [],
+    "2C1N9QYZB": []
   },
   "config": {},
   "info": {}

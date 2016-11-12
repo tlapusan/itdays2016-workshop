@@ -36,7 +36,7 @@
     },
     {
       "text": "%pyspark\nfrom pyspark.sql import SQLContext\nsc\nsqlContext \u003d SQLContext(sc)",
-      "dateUpdated": "Oct 7, 2016 1:52:23 PM",
+      "dateUpdated": "Nov 12, 2016 11:02:33 AM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -63,8 +63,8 @@
         "msg": ""
       },
       "dateCreated": "Oct 5, 2016 1:59:03 PM",
-      "dateStarted": "Oct 7, 2016 1:52:24 PM",
-      "dateFinished": "Oct 7, 2016 1:52:46 PM",
+      "dateStarted": "Nov 12, 2016 11:02:33 AM",
+      "dateFinished": "Nov 12, 2016 11:02:33 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -104,7 +104,7 @@
     },
     {
       "text": "%pyspark\nbusiness \u003d sqlContext.read.json(\"/zeppelin/datasets/yelp/yelp_academic_dataset_business.json\")\nusers    \u003d sqlContext.read.json(\"/zeppelin/datasets/yelp/yelp_academic_dataset_user.json\")\nreviews  \u003d sqlContext.read.json(\"/zeppelin/datasets/yelp/yelp_academic_dataset_review.json\")\n\n\n",
-      "dateUpdated": "Oct 7, 2016 2:15:57 PM",
+      "dateUpdated": "Nov 12, 2016 11:02:38 AM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -131,8 +131,8 @@
         "msg": ""
       },
       "dateCreated": "Oct 5, 2016 1:59:03 PM",
-      "dateStarted": "Oct 7, 2016 2:15:57 PM",
-      "dateFinished": "Oct 7, 2016 2:16:39 PM",
+      "dateStarted": "Nov 12, 2016 11:02:38 AM",
+      "dateFinished": "Nov 12, 2016 11:02:44 AM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -171,8 +171,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%pyspark\n# checkin path file : \"/zeppelin/datasets/yelp/dataset/yelp_academic_dataset_checkin.json\"\n# tip path file \"/zeppelin/datasets/yelp/dataset/yelp_academic_dataset_tip.json\"\n",
-      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "text": "%pyspark\n# checkin path file : \"/zeppelin/datasets/yelp/yelp_academic_dataset_checkin.json\"\n# tip path file \"/zeppelin/datasets/yelp/yelp_academic_dataset_tip.json\"\n\n",
+      "dateUpdated": "Nov 12, 2016 11:18:43 AM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -199,8 +199,9 @@
         "msg": ""
       },
       "dateCreated": "Oct 5, 2016 1:59:03 PM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Nov 12, 2016 11:18:43 AM",
+      "dateFinished": "Nov 12, 2016 11:18:43 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -239,7 +240,7 @@
     },
     {
       "text": "%pyspark\nreviews.printSchema()\nusers.printSchema()",
-      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "dateUpdated": "Nov 12, 2016 11:04:41 AM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -266,13 +267,14 @@
         "msg": "root\n |-- business_id: string (nullable \u003d true)\n |-- date: string (nullable \u003d true)\n |-- review_id: string (nullable \u003d true)\n |-- stars: long (nullable \u003d true)\n |-- text: string (nullable \u003d true)\n |-- type: string (nullable \u003d true)\n |-- user_id: string (nullable \u003d true)\n |-- votes: struct (nullable \u003d true)\n |    |-- cool: long (nullable \u003d true)\n |    |-- funny: long (nullable \u003d true)\n |    |-- useful: long (nullable \u003d true)\n\nroot\n |-- average_stars: double (nullable \u003d true)\n |-- compliments: struct (nullable \u003d true)\n |    |-- cool: long (nullable \u003d true)\n |    |-- cute: long (nullable \u003d true)\n |    |-- funny: long (nullable \u003d true)\n |    |-- hot: long (nullable \u003d true)\n |    |-- list: long (nullable \u003d true)\n |    |-- more: long (nullable \u003d true)\n |    |-- note: long (nullable \u003d true)\n |    |-- photos: long (nullable \u003d true)\n |    |-- plain: long (nullable \u003d true)\n |    |-- profile: long (nullable \u003d true)\n |    |-- writer: long (nullable \u003d true)\n |-- elite: array (nullable \u003d true)\n |    |-- element: long (containsNull \u003d true)\n |-- fans: long (nullable \u003d true)\n |-- friends: array (nullable \u003d true)\n |    |-- element: string (containsNull \u003d true)\n |-- name: string (nullable \u003d true)\n |-- review_count: long (nullable \u003d true)\n |-- type: string (nullable \u003d true)\n |-- user_id: string (nullable \u003d true)\n |-- votes: struct (nullable \u003d true)\n |    |-- cool: long (nullable \u003d true)\n |    |-- funny: long (nullable \u003d true)\n |    |-- useful: long (nullable \u003d true)\n |-- yelping_since: string (nullable \u003d true)\n\n"
       },
       "dateCreated": "Oct 5, 2016 1:59:03 PM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Nov 12, 2016 11:04:41 AM",
+      "dateFinished": "Nov 12, 2016 11:04:41 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\n#### TODO: Print and explore schemas of others dataframes : bussines, checkins and tips",
-      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "text": "%md\n#### TODO: Print and explore schemas of others dataframes : business, checkins and tips",
+      "dateUpdated": "Nov 12, 2016 11:05:39 AM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/markdown",
@@ -297,16 +299,17 @@
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
-        "msg": "\u003ch4\u003eTODO: Print and explore schemas of others dataframes : bussines, checkins and tips\u003c/h4\u003e\n"
+        "msg": "\u003ch4\u003eTODO: Print and explore schemas of others dataframes : business, checkins and tips\u003c/h4\u003e\n"
       },
       "dateCreated": "Oct 5, 2016 1:59:03 PM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Nov 12, 2016 11:05:37 AM",
+      "dateFinished": "Nov 12, 2016 11:05:37 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%pyspark\n",
-      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "dateUpdated": "Nov 12, 2016 11:06:12 AM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -327,9 +330,15 @@
       },
       "jobName": "paragraph_1475675943350_1896300159",
       "id": "20161005-135903_1536903242",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
       "dateCreated": "Oct 5, 2016 1:59:03 PM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Nov 12, 2016 11:06:12 AM",
+      "dateFinished": "Nov 12, 2016 11:06:12 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -368,7 +377,7 @@
     },
     {
       "text": "%pyspark\nbusiness.registerTempTable(\"businessTable\")\nusers.registerTempTable(\"usersTable\")\nreviews.registerTempTable(\"reviewsTable\")",
-      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "dateUpdated": "Nov 12, 2016 11:06:15 AM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -395,8 +404,9 @@
         "msg": ""
       },
       "dateCreated": "Oct 5, 2016 1:59:03 PM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Nov 12, 2016 11:06:15 AM",
+      "dateFinished": "Nov 12, 2016 11:06:16 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -435,7 +445,7 @@
     },
     {
       "text": "%pyspark\n",
-      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "dateUpdated": "Nov 12, 2016 11:18:55 AM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -462,8 +472,9 @@
         "msg": ""
       },
       "dateCreated": "Oct 5, 2016 1:59:03 PM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Nov 12, 2016 11:18:55 AM",
+      "dateFinished": "Nov 12, 2016 11:18:55 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -536,7 +547,7 @@
     },
     {
       "text": "%pyspark\nusers.show(10)\nreviews.show(10)",
-      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "dateUpdated": "Nov 12, 2016 11:07:23 AM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -560,16 +571,17 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "+-------------+--------------------+--------------------+----+--------------------+---------+------------+----+--------------------+-------------------+-------------+\n|average_stars|         compliments|               elite|fans|             friends|     name|review_count|type|             user_id|              votes|yelping_since|\n+-------------+--------------------+--------------------+----+--------------------+---------+------------+----+--------------------+-------------------+-------------+\n|         4.14|[78,15,11,48,null...|        [2005, 2006]|  70|[rpOyqD_893cqmDAt...|   Russel|         108|user|18kPq7GPye-YQ3LyK...|      [245,167,280]|      2004-10|\n|         3.66|[1642,206,580,109...|[2005, 2006, 2007...|1179|[18kPq7GPye-YQ3Ly...|   Jeremy|        1274|user|rpOyqD_893cqmDAtJ...| [11093,7681,14199]|      2004-10|\n|          3.6|[145,23,120,101,4...|[2005, 2006, 2007...| 100|[18kPq7GPye-YQ3Ly...|  Michael|         442|user|4U9kSBLuBDU391x6b...|     [732,908,1483]|      2004-10|\n|         4.64|[null,2,null,null...|                  []|   2|[18kPq7GPye-YQ3Ly...|      Ken|          11|user|fHtTaujcyKvXglE33...|           [5,1,11]|      2004-10|\n|          3.8|[1,2,null,1,null,...|              [2005]|   4|[rpOyqD_893cqmDAt...|Katherine|          66|user|SIBCL7HBkrP4llolm...|         [13,11,34]|      2004-10|\n|         4.35|[3592,274,1507,27...|[2005, 2006, 2007...| 807|[18kPq7GPye-YQ3Ly...|     Joan|        1611|user|8J4IIYcqBlFch8T90...|[16794,13010,17705]|      2004-10|\n|         4.45|[14,4,2,8,1,1,5,n...|  [2005, 2006, 2007]|   6|[rpOyqD_893cqmDAt...|   George|          55|user|ysYmC-ufbdmVEX9yA...|         [25,35,39]|      2004-10|\n|         3.88|[1,null,null,1,nu...|              [2005]|   2|[i63u3SdbrLsP4Fxi...|     Mary|          60|user|WPOKvkacSKHx_bIG1...|        [34,32,131]|      2004-10|\n|         3.58|[4,1,8,5,null,2,3...|                  []|   7|[rpOyqD_893cqmDAt...|    Nader|         101|user|UTS9XcT14H2ZscRIf...|        [49,53,243]|      2004-10|\n|          4.3|[3,null,null,1,nu...|                  []|   0|[4U9kSBLuBDU391x6...|   Joseph|          20|user|qL7Astun3i7qwr2IL...|          [15,6,30]|      2004-10|\n+-------------+--------------------+--------------------+----+--------------------+---------+------------+----+--------------------+-------------------+-------------+\nonly showing top 10 rows\n\n+--------------------+----------+--------------------+-----+--------------------+------+--------------------+-------+\n|         business_id|      date|           review_id|stars|                text|  type|             user_id|  votes|\n+--------------------+----------+--------------------+-----+--------------------+------+--------------------+-------+\n|5UmKMjUEUNdYWqANh...|2012-08-01|Ya85v4eqdd6k9Od8H...|    4|Mr Hoagie is an i...|review|PUFPaY9KxDAcGqfso...|[0,0,0]|\n|5UmKMjUEUNdYWqANh...|2014-02-13|KPvLNJ21_4wbYNctr...|    5|Excellent food. S...|review|Iu6AxdBYGR4A0wspR...|[0,0,0]|\n|5UmKMjUEUNdYWqANh...|2015-10-31|fFSoGV46Yxuwbr3fH...|    5|Yes this place is...|review|auESFwWvW42h6alXg...|[0,0,0]|\n|UsFtqoBl7naz8AVUB...|2013-11-08|Di3exaUCFNw1V4kSN...|    5|All the food is g...|review|uK8tzraOp4M5u3uYr...|[0,0,0]|\n|UsFtqoBl7naz8AVUB...|2014-03-29|0Lua2-PbqEQMjD9r8...|    3|We checked this p...|review|I_47G-R2_egp7ME5u...|[0,0,0]|\n|UsFtqoBl7naz8AVUB...|2014-10-29|7N9j5YbBHBW6qguE5...|    1|Wing sauce is lik...|review|PP_xoMSYlGr2pb67B...|[0,0,0]|\n|UsFtqoBl7naz8AVUB...|2014-11-28|mjCJR33jvUNt41iJC...|    4|Cold cheap beer. ...|review|JPPhyFE-UE453zA6K...|[0,0,0]|\n|3eu6MEFlq2Dg7bQh8...|2014-02-27|Ieh3kfZ-5J9pLju4J...|    5|I highly recommen...|review|2d5HeDvZTDUNVog_W...|[0,0,0]|\n|3eu6MEFlq2Dg7bQh8...|2015-06-16|PU28OoBSHpZLkYGCm...|    5|I am a big believ...|review|BShxMIUwaJS378xcr...|[0,0,0]|\n|cE27W9VPgO88Qxe4o...|2012-08-19|XsA6AojkWjOHA4Fmu...|    3|Decent range some...|review|fhNxoMwwTipzjO8A9...|[0,0,1]|\n+--------------------+----------+--------------------+-----+--------------------+------+--------------------+-------+\nonly showing top 10 rows\n\n"
+        "msg": "+-------------+--------------------+--------------------+----+--------------------+---------+------------+----+--------------------+-------------------+-------------+\n|average_stars|         compliments|               elite|fans|             friends|     name|review_count|type|             user_id|              votes|yelping_since|\n+-------------+--------------------+--------------------+----+--------------------+---------+------------+----+--------------------+-------------------+-------------+\n|         4.14|[76,15,11,48,null...|        [2005, 2006]|  69|[rpOyqD_893cqmDAt...|   Russel|         108|user|18kPq7GPye-YQ3LyK...|      [246,167,282]|      2004-10|\n|         3.67|[1675,204,594,111...|[2005, 2006, 2007...|1345|[18kPq7GPye-YQ3Ly...|   Jeremy|        1292|user|rpOyqD_893cqmDAtJ...| [12091,8399,15242]|      2004-10|\n|         3.68|[134,22,96,99,4,1...|[2005, 2006, 2007...| 105|[18kPq7GPye-YQ3Ly...|  Michael|         395|user|4U9kSBLuBDU391x6b...|     [657,722,1349]|      2004-10|\n|         4.64|[null,2,null,null...|                  []|   2|[18kPq7GPye-YQ3Ly...|      Ken|          11|user|fHtTaujcyKvXglE33...|           [5,1,11]|      2004-10|\n|          3.8|[1,2,null,1,null,...|              [2005]|   5|[rpOyqD_893cqmDAt...|Katherine|          66|user|SIBCL7HBkrP4llolm...|         [16,13,37]|      2004-10|\n|         4.35|[3712,273,1527,27...|[2005, 2006, 2007...| 824|[18kPq7GPye-YQ3Ly...|     Joan|        1632|user|8J4IIYcqBlFch8T90...|[17177,13357,18183]|      2004-10|\n|         4.45|[13,4,2,8,1,1,5,n...|  [2005, 2006, 2007]|   6|[rpOyqD_893cqmDAt...|   George|          55|user|ysYmC-ufbdmVEX9yA...|         [25,35,39]|      2004-10|\n|         3.88|[1,null,null,1,nu...|              [2005]|   2|[i63u3SdbrLsP4Fxi...|     Mary|          60|user|WPOKvkacSKHx_bIG1...|        [34,34,135]|      2004-10|\n|         3.59|[5,1,8,5,null,2,3...|                  []|   7|[rpOyqD_893cqmDAt...|    Nader|         102|user|UTS9XcT14H2ZscRIf...|        [52,58,251]|      2004-10|\n|          5.0|[null,null,null,1...|                  []|   0|[rpOyqD_893cqmDAt...|   Kiffen|           1|user|1blidZhgxDVSBuJ_d...|            [0,0,1]|      2004-10|\n+-------------+--------------------+--------------------+----+--------------------+---------+------------+----+--------------------+-------------------+-------------+\nonly showing top 10 rows\n\n+--------------------+----------+--------------------+-----+--------------------+------+--------------------+-------+\n|         business_id|      date|           review_id|stars|                text|  type|             user_id|  votes|\n+--------------------+----------+--------------------+-----+--------------------+------+--------------------+-------+\n|5UmKMjUEUNdYWqANh...|2012-08-01|Ya85v4eqdd6k9Od8H...|    4|Mr Hoagie is an i...|review|PUFPaY9KxDAcGqfso...|[0,0,0]|\n|5UmKMjUEUNdYWqANh...|2014-02-13|KPvLNJ21_4wbYNctr...|    5|Excellent food. S...|review|Iu6AxdBYGR4A0wspR...|[0,0,0]|\n|5UmKMjUEUNdYWqANh...|2015-10-31|fFSoGV46Yxuwbr3fH...|    5|Yes this place is...|review|auESFwWvW42h6alXg...|[0,1,1]|\n|5UmKMjUEUNdYWqANh...|2015-12-26|pVMIt0a_QsKtuDfWV...|    3|PROS: Italian hoa...|review|qiczib2fO_1VBG8Io...|[0,0,0]|\n|5UmKMjUEUNdYWqANh...|2016-04-08|AEyiQ_Y44isJmNbMT...|    2|First the only re...|review|qEE5EvV-f-s7yHC0Z...|[0,0,1]|\n|5UmKMjUEUNdYWqANh...|2016-04-10|V-bqYx62zpxfH2oFk...|    1|Normally, I do no...|review|jBoH6qKGO7wdYyg_Y...|[0,0,0]|\n|5UmKMjUEUNdYWqANh...|2016-05-11|3saY_LVFUpkAfd9t8...|    4|I like this place...|review|bWrodc7hN_T4q2r-r...|[0,0,0]|\n|UsFtqoBl7naz8AVUB...|2013-11-08|Di3exaUCFNw1V4kSN...|    5|All the food is g...|review|uK8tzraOp4M5u3uYr...|[0,0,0]|\n|UsFtqoBl7naz8AVUB...|2014-03-29|0Lua2-PbqEQMjD9r8...|    3|We checked this p...|review|I_47G-R2_egp7ME5u...|[0,0,0]|\n|UsFtqoBl7naz8AVUB...|2014-10-29|7N9j5YbBHBW6qguE5...|    1|Wing sauce is lik...|review|PP_xoMSYlGr2pb67B...|[0,0,0]|\n+--------------------+----------+--------------------+-----+--------------------+------+--------------------+-------+\nonly showing top 10 rows\n\n"
       },
       "dateCreated": "Oct 5, 2016 1:59:03 PM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Nov 12, 2016 11:07:23 AM",
+      "dateFinished": "Nov 12, 2016 11:07:23 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\n#### TODO : Using DSL, expore the other DataFrames",
-      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "text": "%md\n#### TODO : Using DSL, explore the other DataFrames",
+      "dateUpdated": "Nov 12, 2016 11:07:50 AM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/markdown",
@@ -594,16 +606,17 @@
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
-        "msg": "\u003ch4\u003eTODO : Using DSL, expore the other DataFrames\u003c/h4\u003e\n"
+        "msg": "\u003ch4\u003eTODO : Using DSL, explore the other DataFrames\u003c/h4\u003e\n"
       },
       "dateCreated": "Oct 5, 2016 1:59:03 PM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Nov 12, 2016 11:07:48 AM",
+      "dateFinished": "Nov 12, 2016 11:07:48 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%pyspark\n",
-      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "dateUpdated": "Nov 12, 2016 11:08:24 AM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -630,8 +643,9 @@
         "msg": ""
       },
       "dateCreated": "Oct 5, 2016 1:59:03 PM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Nov 12, 2016 11:08:24 AM",
+      "dateFinished": "Nov 12, 2016 11:08:24 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -670,7 +684,7 @@
     },
     {
       "text": "%pyspark\nsqlContext.sql(\"select * from usersTable limit 10\").show()\nsqlContext.sql(\"select * from reviewsTable limit 11\").show()\n",
-      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "dateUpdated": "Nov 12, 2016 11:08:55 AM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -694,16 +708,17 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "+-------------+--------------------+--------------------+----+--------------------+---------+------------+----+--------------------+-------------------+-------------+\n|average_stars|         compliments|               elite|fans|             friends|     name|review_count|type|             user_id|              votes|yelping_since|\n+-------------+--------------------+--------------------+----+--------------------+---------+------------+----+--------------------+-------------------+-------------+\n|         4.14|[78,15,11,48,null...|        [2005, 2006]|  70|[rpOyqD_893cqmDAt...|   Russel|         108|user|18kPq7GPye-YQ3LyK...|      [245,167,280]|      2004-10|\n|         3.66|[1642,206,580,109...|[2005, 2006, 2007...|1179|[18kPq7GPye-YQ3Ly...|   Jeremy|        1274|user|rpOyqD_893cqmDAtJ...| [11093,7681,14199]|      2004-10|\n|          3.6|[145,23,120,101,4...|[2005, 2006, 2007...| 100|[18kPq7GPye-YQ3Ly...|  Michael|         442|user|4U9kSBLuBDU391x6b...|     [732,908,1483]|      2004-10|\n|         4.64|[null,2,null,null...|                  []|   2|[18kPq7GPye-YQ3Ly...|      Ken|          11|user|fHtTaujcyKvXglE33...|           [5,1,11]|      2004-10|\n|          3.8|[1,2,null,1,null,...|              [2005]|   4|[rpOyqD_893cqmDAt...|Katherine|          66|user|SIBCL7HBkrP4llolm...|         [13,11,34]|      2004-10|\n|         4.35|[3592,274,1507,27...|[2005, 2006, 2007...| 807|[18kPq7GPye-YQ3Ly...|     Joan|        1611|user|8J4IIYcqBlFch8T90...|[16794,13010,17705]|      2004-10|\n|         4.45|[14,4,2,8,1,1,5,n...|  [2005, 2006, 2007]|   6|[rpOyqD_893cqmDAt...|   George|          55|user|ysYmC-ufbdmVEX9yA...|         [25,35,39]|      2004-10|\n|         3.88|[1,null,null,1,nu...|              [2005]|   2|[i63u3SdbrLsP4Fxi...|     Mary|          60|user|WPOKvkacSKHx_bIG1...|        [34,32,131]|      2004-10|\n|         3.58|[4,1,8,5,null,2,3...|                  []|   7|[rpOyqD_893cqmDAt...|    Nader|         101|user|UTS9XcT14H2ZscRIf...|        [49,53,243]|      2004-10|\n|          4.3|[3,null,null,1,nu...|                  []|   0|[4U9kSBLuBDU391x6...|   Joseph|          20|user|qL7Astun3i7qwr2IL...|          [15,6,30]|      2004-10|\n+-------------+--------------------+--------------------+----+--------------------+---------+------------+----+--------------------+-------------------+-------------+\n\n+--------------------+----------+--------------------+-----+--------------------+------+--------------------+-------+\n|         business_id|      date|           review_id|stars|                text|  type|             user_id|  votes|\n+--------------------+----------+--------------------+-----+--------------------+------+--------------------+-------+\n|5UmKMjUEUNdYWqANh...|2012-08-01|Ya85v4eqdd6k9Od8H...|    4|Mr Hoagie is an i...|review|PUFPaY9KxDAcGqfso...|[0,0,0]|\n|5UmKMjUEUNdYWqANh...|2014-02-13|KPvLNJ21_4wbYNctr...|    5|Excellent food. S...|review|Iu6AxdBYGR4A0wspR...|[0,0,0]|\n|5UmKMjUEUNdYWqANh...|2015-10-31|fFSoGV46Yxuwbr3fH...|    5|Yes this place is...|review|auESFwWvW42h6alXg...|[0,0,0]|\n|UsFtqoBl7naz8AVUB...|2013-11-08|Di3exaUCFNw1V4kSN...|    5|All the food is g...|review|uK8tzraOp4M5u3uYr...|[0,0,0]|\n|UsFtqoBl7naz8AVUB...|2014-03-29|0Lua2-PbqEQMjD9r8...|    3|We checked this p...|review|I_47G-R2_egp7ME5u...|[0,0,0]|\n|UsFtqoBl7naz8AVUB...|2014-10-29|7N9j5YbBHBW6qguE5...|    1|Wing sauce is lik...|review|PP_xoMSYlGr2pb67B...|[0,0,0]|\n|UsFtqoBl7naz8AVUB...|2014-11-28|mjCJR33jvUNt41iJC...|    4|Cold cheap beer. ...|review|JPPhyFE-UE453zA6K...|[0,0,0]|\n|3eu6MEFlq2Dg7bQh8...|2014-02-27|Ieh3kfZ-5J9pLju4J...|    5|I highly recommen...|review|2d5HeDvZTDUNVog_W...|[0,0,0]|\n|3eu6MEFlq2Dg7bQh8...|2015-06-16|PU28OoBSHpZLkYGCm...|    5|I am a big believ...|review|BShxMIUwaJS378xcr...|[0,0,0]|\n|cE27W9VPgO88Qxe4o...|2012-08-19|XsA6AojkWjOHA4Fmu...|    3|Decent range some...|review|fhNxoMwwTipzjO8A9...|[0,0,1]|\n|cE27W9VPgO88Qxe4o...|2013-04-18|rkD7UDbQ9VM3Va6bI...|    1|Owning a driving ...|review|-6rEfobYjMxpUWLNx...|[0,0,1]|\n+--------------------+----------+--------------------+-----+--------------------+------+--------------------+-------+\n\n"
+        "msg": "+-------------+--------------------+--------------------+----+--------------------+---------+------------+----+--------------------+-------------------+-------------+\n|average_stars|         compliments|               elite|fans|             friends|     name|review_count|type|             user_id|              votes|yelping_since|\n+-------------+--------------------+--------------------+----+--------------------+---------+------------+----+--------------------+-------------------+-------------+\n|         4.14|[76,15,11,48,null...|        [2005, 2006]|  69|[rpOyqD_893cqmDAt...|   Russel|         108|user|18kPq7GPye-YQ3LyK...|      [246,167,282]|      2004-10|\n|         3.67|[1675,204,594,111...|[2005, 2006, 2007...|1345|[18kPq7GPye-YQ3Ly...|   Jeremy|        1292|user|rpOyqD_893cqmDAtJ...| [12091,8399,15242]|      2004-10|\n|         3.68|[134,22,96,99,4,1...|[2005, 2006, 2007...| 105|[18kPq7GPye-YQ3Ly...|  Michael|         395|user|4U9kSBLuBDU391x6b...|     [657,722,1349]|      2004-10|\n|         4.64|[null,2,null,null...|                  []|   2|[18kPq7GPye-YQ3Ly...|      Ken|          11|user|fHtTaujcyKvXglE33...|           [5,1,11]|      2004-10|\n|          3.8|[1,2,null,1,null,...|              [2005]|   5|[rpOyqD_893cqmDAt...|Katherine|          66|user|SIBCL7HBkrP4llolm...|         [16,13,37]|      2004-10|\n|         4.35|[3712,273,1527,27...|[2005, 2006, 2007...| 824|[18kPq7GPye-YQ3Ly...|     Joan|        1632|user|8J4IIYcqBlFch8T90...|[17177,13357,18183]|      2004-10|\n|         4.45|[13,4,2,8,1,1,5,n...|  [2005, 2006, 2007]|   6|[rpOyqD_893cqmDAt...|   George|          55|user|ysYmC-ufbdmVEX9yA...|         [25,35,39]|      2004-10|\n|         3.88|[1,null,null,1,nu...|              [2005]|   2|[i63u3SdbrLsP4Fxi...|     Mary|          60|user|WPOKvkacSKHx_bIG1...|        [34,34,135]|      2004-10|\n|         3.59|[5,1,8,5,null,2,3...|                  []|   7|[rpOyqD_893cqmDAt...|    Nader|         102|user|UTS9XcT14H2ZscRIf...|        [52,58,251]|      2004-10|\n|          5.0|[null,null,null,1...|                  []|   0|[rpOyqD_893cqmDAt...|   Kiffen|           1|user|1blidZhgxDVSBuJ_d...|            [0,0,1]|      2004-10|\n+-------------+--------------------+--------------------+----+--------------------+---------+------------+----+--------------------+-------------------+-------------+\n\n+--------------------+----------+--------------------+-----+--------------------+------+--------------------+-------+\n|         business_id|      date|           review_id|stars|                text|  type|             user_id|  votes|\n+--------------------+----------+--------------------+-----+--------------------+------+--------------------+-------+\n|5UmKMjUEUNdYWqANh...|2012-08-01|Ya85v4eqdd6k9Od8H...|    4|Mr Hoagie is an i...|review|PUFPaY9KxDAcGqfso...|[0,0,0]|\n|5UmKMjUEUNdYWqANh...|2014-02-13|KPvLNJ21_4wbYNctr...|    5|Excellent food. S...|review|Iu6AxdBYGR4A0wspR...|[0,0,0]|\n|5UmKMjUEUNdYWqANh...|2015-10-31|fFSoGV46Yxuwbr3fH...|    5|Yes this place is...|review|auESFwWvW42h6alXg...|[0,1,1]|\n|5UmKMjUEUNdYWqANh...|2015-12-26|pVMIt0a_QsKtuDfWV...|    3|PROS: Italian hoa...|review|qiczib2fO_1VBG8Io...|[0,0,0]|\n|5UmKMjUEUNdYWqANh...|2016-04-08|AEyiQ_Y44isJmNbMT...|    2|First the only re...|review|qEE5EvV-f-s7yHC0Z...|[0,0,1]|\n|5UmKMjUEUNdYWqANh...|2016-04-10|V-bqYx62zpxfH2oFk...|    1|Normally, I do no...|review|jBoH6qKGO7wdYyg_Y...|[0,0,0]|\n|5UmKMjUEUNdYWqANh...|2016-05-11|3saY_LVFUpkAfd9t8...|    4|I like this place...|review|bWrodc7hN_T4q2r-r...|[0,0,0]|\n|UsFtqoBl7naz8AVUB...|2013-11-08|Di3exaUCFNw1V4kSN...|    5|All the food is g...|review|uK8tzraOp4M5u3uYr...|[0,0,0]|\n|UsFtqoBl7naz8AVUB...|2014-03-29|0Lua2-PbqEQMjD9r8...|    3|We checked this p...|review|I_47G-R2_egp7ME5u...|[0,0,0]|\n|UsFtqoBl7naz8AVUB...|2014-10-29|7N9j5YbBHBW6qguE5...|    1|Wing sauce is lik...|review|PP_xoMSYlGr2pb67B...|[0,0,0]|\n|UsFtqoBl7naz8AVUB...|2014-11-28|mjCJR33jvUNt41iJC...|    4|Cold cheap beer. ...|review|JPPhyFE-UE453zA6K...|[0,0,0]|\n+--------------------+----------+--------------------+-----+--------------------+------+--------------------+-------+\n\n"
       },
       "dateCreated": "Oct 5, 2016 1:59:03 PM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Nov 12, 2016 11:08:55 AM",
+      "dateFinished": "Nov 12, 2016 11:08:55 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%md\n#### TODO : Using SQL queries, expore the other DataFrames\n\n ",
-      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "text": "%md\n#### TODO : Using SQL queries, explore the other DataFrames\n\n ",
+      "dateUpdated": "Nov 12, 2016 11:09:31 AM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/markdown",
@@ -728,16 +743,17 @@
       "result": {
         "code": "SUCCESS",
         "type": "HTML",
-        "msg": "\u003ch4\u003eTODO : Using SQL queries, expore the other DataFrames\u003c/h4\u003e\n"
+        "msg": "\u003ch4\u003eTODO : Using SQL queries, explore the other DataFrames\u003c/h4\u003e\n"
       },
       "dateCreated": "Oct 5, 2016 1:59:03 PM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Nov 12, 2016 11:09:29 AM",
+      "dateFinished": "Nov 12, 2016 11:09:29 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%pyspark\n",
-      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "text": "%pyspark\n\n",
+      "dateUpdated": "Nov 12, 2016 11:10:31 AM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -764,8 +780,9 @@
         "msg": ""
       },
       "dateCreated": "Oct 5, 2016 1:59:03 PM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Nov 12, 2016 11:10:31 AM",
+      "dateFinished": "Nov 12, 2016 11:10:31 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -904,11 +921,11 @@
     },
     {
       "text": "%md\n### Find out the number of businesses from each city",
-      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "dateUpdated": "Nov 12, 2016 10:12:53 AM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/markdown",
-        "editorHide": false,
+        "editorHide": true,
         "graph": {
           "mode": "table",
           "height": 300.0,
@@ -1605,8 +1622,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%pyspark\nfrom pyspark.sql.types import *\nsqlContext.sql(\"select city, count(*) as count from business group by city order by count desc\").show()\nsqlContext.sql(\"select city, count(*) as count from business group by city order by count desc\").write.save(\"/zeppelin/datasets/yelp/output/sqlresult\")\n\n",
-      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "text": "%pyspark\nfrom pyspark.sql.types import *\nsqlContext.sql(\"select city, count(*) as count from businessTable group by city order by count desc\").show()\nsqlContext.sql(\"select city, count(*) as count from businessTable group by city order by count desc\").write.save(\"/zeppelin/datasets/yelp/output/sqlresult\")\n\n",
+      "dateUpdated": "Nov 12, 2016 11:17:01 AM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -1630,11 +1647,12 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "+---------------+-----+\n|           city|count|\n+---------------+-----+\n|      Las Vegas|17423|\n|        Phoenix|10629|\n|      Charlotte| 5189|\n|     Scottsdale| 5139|\n|       Montréal| 3891|\n|     Pittsburgh| 3337|\n|      Edinburgh| 3272|\n|           Mesa| 3190|\n|      Henderson| 2839|\n|          Tempe| 2773|\n|       Chandler| 2425|\n|        Madison| 2104|\n|       Glendale| 1823|\n|        Gilbert| 1716|\n|         Peoria|  929|\n|      Karlsruhe|  898|\n|North Las Vegas|  819|\n|       Surprise|  587|\n|      Champaign|  462|\n|       Goodyear|  459|\n+---------------+-----+\nonly showing top 20 rows\n\n"
+        "msg": "+---------------+-----+\n|           city|count|\n+---------------+-----+\n|      Las Vegas|19328|\n|        Phoenix|11852|\n|      Charlotte| 5695|\n|     Scottsdale| 5638|\n|       Montréal| 4371|\n|           Mesa| 3638|\n|     Pittsburgh| 3628|\n|      Edinburgh| 3360|\n|      Henderson| 3145|\n|          Tempe| 3043|\n|       Chandler| 2702|\n|        Madison| 2278|\n|       Glendale| 2048|\n|        Gilbert| 1941|\n|         Peoria| 1081|\n|North Las Vegas|  952|\n|      Karlsruhe|  906|\n|       Surprise|  681|\n|       Goodyear|  507|\n|      Champaign|  505|\n+---------------+-----+\nonly showing top 20 rows\n\n"
       },
       "dateCreated": "Oct 5, 2016 1:59:03 PM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Nov 12, 2016 11:17:01 AM",
+      "dateFinished": "Nov 12, 2016 11:17:13 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -1673,7 +1691,7 @@
     },
     {
       "text": "%pyspark\ndf \u003d sqlContext.read.load(\"/zeppelin/datasets/yelp/output/sqlresult\")\ndf.registerTempTable(\"test\")\nsqlContext.sql(\"select * from test order by count desc\").show()",
-      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "dateUpdated": "Nov 12, 2016 11:17:22 AM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -1697,16 +1715,17 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "+---------------+-----+\n|           city|count|\n+---------------+-----+\n|      Las Vegas|17423|\n|        Phoenix|10629|\n|      Charlotte| 5189|\n|     Scottsdale| 5139|\n|       Montréal| 3891|\n|     Pittsburgh| 3337|\n|      Edinburgh| 3272|\n|           Mesa| 3190|\n|      Henderson| 2839|\n|          Tempe| 2773|\n|       Chandler| 2425|\n|        Madison| 2104|\n|       Glendale| 1823|\n|        Gilbert| 1716|\n|         Peoria|  929|\n|      Karlsruhe|  898|\n|North Las Vegas|  819|\n|       Surprise|  587|\n|      Champaign|  462|\n|       Goodyear|  459|\n+---------------+-----+\nonly showing top 20 rows\n\n"
+        "msg": "+---------------+-----+\n|           city|count|\n+---------------+-----+\n|      Las Vegas|19328|\n|        Phoenix|11852|\n|      Charlotte| 5695|\n|     Scottsdale| 5638|\n|       Montréal| 4371|\n|           Mesa| 3638|\n|     Pittsburgh| 3628|\n|      Edinburgh| 3360|\n|      Henderson| 3145|\n|          Tempe| 3043|\n|       Chandler| 2702|\n|        Madison| 2278|\n|       Glendale| 2048|\n|        Gilbert| 1941|\n|         Peoria| 1081|\n|North Las Vegas|  952|\n|      Karlsruhe|  906|\n|       Surprise|  681|\n|       Goodyear|  507|\n|      Champaign|  505|\n+---------------+-----+\nonly showing top 20 rows\n\n"
       },
       "dateCreated": "Oct 5, 2016 1:59:03 PM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Nov 12, 2016 11:17:22 AM",
+      "dateFinished": "Nov 12, 2016 11:17:24 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
       "text": "%md\n## Run SQL directly of files",
-      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "dateUpdated": "Nov 12, 2016 11:17:51 AM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/markdown",
@@ -1734,13 +1753,14 @@
         "msg": "\u003ch2\u003eRun SQL directly of files\u003c/h2\u003e\n"
       },
       "dateCreated": "Oct 5, 2016 1:59:03 PM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Nov 12, 2016 11:17:51 AM",
+      "dateFinished": "Nov 12, 2016 11:17:51 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%pyspark\n\ndf \u003d sqlContext.sql(\"select city, count(*) as count from json.`/zeppelin/datasets/yelp/dataset/yelp_academic_dataset_business.json` group by city order by count desc\")\ndf.show()",
-      "dateUpdated": "Oct 5, 2016 1:59:03 PM",
+      "text": "%pyspark\n\ndf \u003d sqlContext.sql(\"select city, count(*) as count from json.`/zeppelin/datasets/yelp/yelp_academic_dataset_business.json` group by city order by count desc\")\ndf.show()",
+      "dateUpdated": "Nov 12, 2016 11:18:01 AM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -1764,11 +1784,12 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "+---------------+-----+\n|           city|count|\n+---------------+-----+\n|      Las Vegas|17423|\n|        Phoenix|10629|\n|      Charlotte| 5189|\n|     Scottsdale| 5139|\n|       Montréal| 3891|\n|     Pittsburgh| 3337|\n|      Edinburgh| 3272|\n|           Mesa| 3190|\n|      Henderson| 2839|\n|          Tempe| 2773|\n|       Chandler| 2425|\n|        Madison| 2104|\n|       Glendale| 1823|\n|        Gilbert| 1716|\n|         Peoria|  929|\n|      Karlsruhe|  898|\n|North Las Vegas|  819|\n|       Surprise|  587|\n|      Champaign|  462|\n|       Goodyear|  459|\n+---------------+-----+\nonly showing top 20 rows\n\n"
+        "msg": "+---------------+-----+\n|           city|count|\n+---------------+-----+\n|      Las Vegas|19328|\n|        Phoenix|11852|\n|      Charlotte| 5695|\n|     Scottsdale| 5638|\n|       Montréal| 4371|\n|           Mesa| 3638|\n|     Pittsburgh| 3628|\n|      Edinburgh| 3360|\n|      Henderson| 3145|\n|          Tempe| 3043|\n|       Chandler| 2702|\n|        Madison| 2278|\n|       Glendale| 2048|\n|        Gilbert| 1941|\n|         Peoria| 1081|\n|North Las Vegas|  952|\n|      Karlsruhe|  906|\n|       Surprise|  681|\n|       Goodyear|  507|\n|      Champaign|  505|\n+---------------+-----+\nonly showing top 20 rows\n\n"
       },
       "dateCreated": "Oct 5, 2016 1:59:03 PM",
-      "status": "READY",
-      "errorMessage": "",
+      "dateStarted": "Nov 12, 2016 11:18:01 AM",
+      "dateFinished": "Nov 12, 2016 11:18:05 AM",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -1807,21 +1828,21 @@
   "name": "SparkSqlPythonDevTalksParticipants",
   "id": "2BY5QK5WB",
   "angularObjects": {
-    "2BZHNY8YW": [],
-    "2BXH27H7Y": [],
-    "2BXSYDWQJ": [],
-    "2BXVEEXUD": [],
-    "2BZ3ZH5DD": [],
-    "2BZVMRK3C": [],
-    "2BXYUVPDU": [],
-    "2BZF8WBGC": [],
-    "2BWD4U18K": [],
-    "2BY9TUPDW": [],
-    "2BWQ2A68P": [],
-    "2BY8CJRFY": [],
-    "2BWNHA89P": [],
-    "2BWC4685H": [],
-    "2BZ2FXK85": []
+    "2C3WZUK33": [],
+    "2C1YA5D2F": [],
+    "2C2S9E6XK": [],
+    "2C381K1GS": [],
+    "2BZPA1EZS": [],
+    "2BZV245P9": [],
+    "2C43YS5P2": [],
+    "2BZTQ77CG": [],
+    "2C1UP5V1X": [],
+    "2C1D5ZAWQ": [],
+    "2C2P2YH1D": [],
+    "2BZTHUGNC": [],
+    "2C1WZ6MNJ": [],
+    "2C1FTY57N": [],
+    "2C1N9QYZB": []
   },
   "config": {},
   "info": {}
