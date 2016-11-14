@@ -1,0 +1,207 @@
+{
+  "paragraphs": [
+    {
+      "text": "%pyspark\nbusinesses \u003d sqlContext.read.json(\"/zeppelin/datasets/yelp/yelp_academic_dataset_business.json\")\nbusinesses.registerTempTable(\"businesses\")\n",
+      "dateUpdated": "Nov 14, 2016 5:17:24 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1479143190365_-80654958",
+      "id": "20161114-170630_769515540",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Nov 14, 2016 5:06:30 PM",
+      "dateStarted": "Nov 14, 2016 5:17:24 PM",
+      "dateFinished": "Nov 14, 2016 5:17:26 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\ncityLatLongAll \u003d sqlContext.sql(\"select latitude, longitude, city from businesses\")\nsomeCities \u003d sqlContext.sql(\"select city, count(1) as count from businesses group by city order by count desc\").select(\"city\").rdd.map(lambda row : row[0]).take(5)\nprint someCities\n",
+      "dateUpdated": "Nov 14, 2016 5:56:25 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1479143197666_383183649",
+      "id": "20161114-170637_508032291",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "[u\u0027Las Vegas\u0027, u\u0027Phoenix\u0027, u\u0027Charlotte\u0027, u\u0027Scottsdale\u0027, u\u0027Montr\\xe9al\u0027]\n"
+      },
+      "dateCreated": "Nov 14, 2016 5:06:37 PM",
+      "dateStarted": "Nov 14, 2016 5:56:25 PM",
+      "dateFinished": "Nov 14, 2016 5:56:30 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\nfrom pyspark.sql.functions import col\n\ncityLatLong \u003d cityLatLongAll.where(col(\"city\").isin(someCities))",
+      "dateUpdated": "Nov 14, 2016 5:56:32 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1479143883225_-1314367893",
+      "id": "20161114-171803_404563185",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Nov 14, 2016 5:18:03 PM",
+      "dateStarted": "Nov 14, 2016 5:56:32 PM",
+      "dateFinished": "Nov 14, 2016 5:56:32 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\nfrom pyspark.sql.functions import udf\nfrom pyspark.sql.types import ArrayType\nfrom pyspark.mllib.linalg import Vectors, VectorUDT\nfrom pyspark.mllib.linalg import DenseVector\n\ndef latLongVector(lat, lon):\n    return Vectors.dense([lat,lon])\n    \nudfLatLongVector\u003dudf(latLongVector, VectorUDT())\ndata \u003d cityLatLong.select(udfLatLongVector(col(\"latitude\"), col(\"longitude\")).alias(\"features\"),col(\"city\").alias(\"label\"))",
+      "dateUpdated": "Nov 14, 2016 7:01:56 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1479144632959_-1905448949",
+      "id": "20161114-173032_2017294056",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Nov 14, 2016 5:30:32 PM",
+      "dateStarted": "Nov 14, 2016 7:01:56 PM",
+      "dateFinished": "Nov 14, 2016 7:01:56 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\nfrom pyspark.ml.feature import StringIndexer, VectorIndexer\n\nlabelIndexer \u003d StringIndexer(inputCol\u003d\"label\", outputCol\u003d\"indexedLabel\").fit(data)\nprint labelIndexer\n",
+      "dateUpdated": "Nov 14, 2016 7:07:12 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1479146208667_-1272487747",
+      "id": "20161114-175648_778772781",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "StringIndexer_4788b7f318305e87208b\n"
+      },
+      "dateCreated": "Nov 14, 2016 5:56:48 PM",
+      "dateStarted": "Nov 14, 2016 7:07:12 PM",
+      "dateFinished": "Nov 14, 2016 7:07:13 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1479150075010_-1243637404",
+      "id": "20161114-190115_150424760",
+      "dateCreated": "Nov 14, 2016 7:01:15 PM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "SparkMLDecisionTree",
+  "id": "2C12T2JWE",
+  "angularObjects": {
+    "2C3WZUK33": [],
+    "2C1YA5D2F": [],
+    "2C2S9E6XK": [],
+    "2C381K1GS": [],
+    "2BZPA1EZS": [],
+    "2BZV245P9": [],
+    "2C43YS5P2": [],
+    "2BZTQ77CG": [],
+    "2C1UP5V1X": [],
+    "2C1D5ZAWQ": [],
+    "2C2P2YH1D": [],
+    "2BZTHUGNC": [],
+    "2C1WZ6MNJ": [],
+    "2C1FTY57N": [],
+    "2C1N9QYZB": []
+  },
+  "config": {},
+  "info": {}
+}

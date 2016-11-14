@@ -1258,7 +1258,7 @@
       "progressUpdateIntervalMs": 500
     }
   ],
-  "name": "SparkBatchPythonDevTalksParticipants",
+  "name": "SparkBatchPython",
   "id": "2BZE8AGTG",
   "angularObjects": {
     "2C3WZUK33": [],
@@ -1277,6 +1277,8 @@
     "2C1FTY57N": [],
     "2C1N9QYZB": []
   },
-  "config": {},
+  "config": {
+    "looknfeel": "default"
+  },
   "info": {}
 }
