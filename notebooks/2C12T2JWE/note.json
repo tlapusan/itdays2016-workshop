@@ -137,8 +137,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%pyspark\nfrom pyspark.ml.feature import StringIndexer, VectorIndexer\n\nlabelIndexer \u003d StringIndexer(inputCol\u003d\"label\", outputCol\u003d\"indexedLabel\").fit(data)\nprint labelIndexer\n",
-      "dateUpdated": "Nov 14, 2016 7:07:12 PM",
+      "text": "%pyspark\nfrom pyspark.ml.feature import StringIndexer, VectorIndexer\n\nlabelIndexer \u003d StringIndexer(inputCol\u003d\"label\", outputCol\u003d\"indexedLabel\").fit(data)\n\nprint labelIndexer\n",
+      "dateUpdated": "Nov 16, 2016 9:58:56 AM",
       "config": {
         "colWidth": 12.0,
         "graph": {
@@ -160,14 +160,14 @@
       "jobName": "paragraph_1479146208667_-1272487747",
       "id": "20161114-175648_778772781",
       "result": {
-        "code": "SUCCESS",
+        "code": "ERROR",
         "type": "TEXT",
-        "msg": "StringIndexer_4788b7f318305e87208b\n"
+        "msg": "Traceback (most recent call last):\n  File \"/tmp/zeppelin_pyspark.py\", line 222, in \u003cmodule\u003e\n    eval(compiledCode)\n  File \"\u003cstring\u003e\", line 2, in \u003cmodule\u003e\nNameError: name \u0027data\u0027 is not defined\n"
       },
       "dateCreated": "Nov 14, 2016 5:56:48 PM",
-      "dateStarted": "Nov 14, 2016 7:07:12 PM",
-      "dateFinished": "Nov 14, 2016 7:07:13 PM",
-      "status": "FINISHED",
+      "dateStarted": "Nov 16, 2016 9:58:56 AM",
+      "dateFinished": "Nov 16, 2016 9:59:27 AM",
+      "status": "ERROR",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -186,21 +186,21 @@
   "name": "SparkMLDecisionTree",
   "id": "2C12T2JWE",
   "angularObjects": {
-    "2C3WZUK33": [],
-    "2C1YA5D2F": [],
-    "2C2S9E6XK": [],
-    "2C381K1GS": [],
-    "2BZPA1EZS": [],
-    "2BZV245P9": [],
-    "2C43YS5P2": [],
-    "2BZTQ77CG": [],
-    "2C1UP5V1X": [],
-    "2C1D5ZAWQ": [],
-    "2C2P2YH1D": [],
-    "2BZTHUGNC": [],
-    "2C1WZ6MNJ": [],
-    "2C1FTY57N": [],
-    "2C1N9QYZB": []
+    "2C2HY4CV3": [],
+    "2C15WZMF1": [],
+    "2C1KPF2HA": [],
+    "2C3KDVKHX": [],
+    "2C2HJ7J6A": [],
+    "2C2UCRRGC": [],
+    "2C154TDCQ": [],
+    "2C1YW5XET": [],
+    "2BZW8NEYT": [],
+    "2C4G66BYN": [],
+    "2C2JRCV2J": [],
+    "2C2E8F58X": [],
+    "2C1QNE8WD": [],
+    "2C494D2X8": [],
+    "2C3X82K56": []
   },
   "config": {},
   "info": {}
