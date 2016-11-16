@@ -1825,7 +1825,7 @@
       "progressUpdateIntervalMs": 500
     }
   ],
-  "name": "SparkSqlPythonDevTalksParticipants",
+  "name": "SparkSqlPython",
   "id": "2BY5QK5WB",
   "angularObjects": {
     "2C3WZUK33": [],
@@ -1844,6 +1844,8 @@
     "2C1FTY57N": [],
     "2C1N9QYZB": []
   },
-  "config": {},
+  "config": {
+    "looknfeel": "default"
+  },
   "info": {}
 }
