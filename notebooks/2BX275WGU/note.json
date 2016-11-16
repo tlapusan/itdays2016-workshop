@@ -36,7 +36,7 @@
     },
     {
       "text": "%pyspark\nfrom pyspark.sql import SQLContext\nsc\n",
-      "dateUpdated": "Nov 12, 2016 11:19:51 AM",
+      "dateUpdated": "Nov 16, 2016 12:44:50 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -63,8 +63,8 @@
         "msg": ""
       },
       "dateCreated": "Oct 5, 2016 1:59:15 PM",
-      "dateStarted": "Nov 12, 2016 11:19:51 AM",
-      "dateFinished": "Nov 12, 2016 11:19:51 AM",
+      "dateStarted": "Nov 16, 2016 12:44:50 PM",
+      "dateFinished": "Nov 16, 2016 12:44:50 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -104,7 +104,7 @@
     },
     {
       "text": "%pyspark\n\nusers \u003d sqlContext.read.json(\"/zeppelin/datasets/yelp/yelp_academic_dataset_user.json\")\nusers.registerTempTable(\"userTable\")",
-      "dateUpdated": "Nov 14, 2016 5:08:01 PM",
+      "dateUpdated": "Nov 16, 2016 12:44:51 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -131,8 +131,8 @@
         "msg": ""
       },
       "dateCreated": "Oct 5, 2016 1:59:15 PM",
-      "dateStarted": "Nov 14, 2016 5:08:01 PM",
-      "dateFinished": "Nov 14, 2016 5:08:06 PM",
+      "dateStarted": "Nov 16, 2016 12:44:51 PM",
+      "dateFinished": "Nov 16, 2016 12:44:54 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -224,7 +224,7 @@
     },
     {
       "text": "%md\n### Prepare data input for KMeans\n",
-      "dateUpdated": "Oct 5, 2016 1:59:15 PM",
+      "dateUpdated": "Nov 16, 2016 12:48:00 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/markdown",
@@ -258,7 +258,7 @@
     },
     {
       "text": "%pyspark\nfrom pyspark.mllib.linalg import Vectors\n\n# Youtube video k-means tutorial https://www.youtube.com/watch?v\u003d_aWzGGNrcic\n# Coursera video tutorial : https://www.coursera.org/learn/machine-learning/home/week/8\n\nuserReviews \u003d users.map(lambda user : Row(user.user_id, user.name, user.average_stars, Vectors.dense([user.review_count])))\nuserReviewDF \u003d sqlContext.createDataFrame(userReviews, [\"user_id\", \"name\", \"average_stars\", \"features\"])\nuserReviewDF.cache()\nuserReviewDF.show(5)",
-      "dateUpdated": "Nov 12, 2016 11:20:12 AM",
+      "dateUpdated": "Nov 16, 2016 12:45:03 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -285,8 +285,8 @@
         "msg": "+--------------------+---------+-------------+--------+\n|             user_id|     name|average_stars|features|\n+--------------------+---------+-------------+--------+\n|18kPq7GPye-YQ3LyK...|   Russel|         4.14| [108.0]|\n|rpOyqD_893cqmDAtJ...|   Jeremy|         3.67|[1292.0]|\n|4U9kSBLuBDU391x6b...|  Michael|         3.68| [395.0]|\n|fHtTaujcyKvXglE33...|      Ken|         4.64|  [11.0]|\n|SIBCL7HBkrP4llolm...|Katherine|          3.8|  [66.0]|\n+--------------------+---------+-------------+--------+\nonly showing top 5 rows\n\n"
       },
       "dateCreated": "Oct 5, 2016 1:59:15 PM",
-      "dateStarted": "Nov 12, 2016 11:20:12 AM",
-      "dateFinished": "Nov 12, 2016 11:20:16 AM",
+      "dateStarted": "Nov 16, 2016 12:45:03 PM",
+      "dateFinished": "Nov 16, 2016 12:45:06 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -325,8 +325,8 @@
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%pyspark\nfrom pyspark.ml.clustering import KMeans\n\n# official docs : http://spark.apache.org/docs/latest/api/python/pyspark.ml.html#module-pyspark.ml.clustering\nkmeans \u003d KMeans(k\u003d10, initMode\u003d\"random\")\nmodel \u003d kmeans.fit(userReviewDF)\n\n\n",
-      "dateUpdated": "Nov 12, 2016 11:20:20 AM",
+      "text": "%pyspark\nfrom pyspark.ml.clustering import KMeans\n\n# official docs : http://spark.apache.org/docs/latest/api/python/pyspark.ml.html#module-pyspark.ml.clustering\nkmeans \u003d KMeans(k\u003d10, initMode\u003d\"random\")\n\n(trainingData, testData) \u003d userReviewDF.randomSplit([0.7, 0.3])\nmodel \u003d kmeans.fit(trainingData)\n\n\n",
+      "dateUpdated": "Nov 16, 2016 12:45:09 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -353,14 +353,49 @@
         "msg": ""
       },
       "dateCreated": "Oct 5, 2016 1:59:15 PM",
-      "dateStarted": "Nov 12, 2016 11:20:20 AM",
-      "dateFinished": "Nov 12, 2016 11:20:26 AM",
+      "dateStarted": "Nov 16, 2016 12:45:09 PM",
+      "dateFinished": "Nov 16, 2016 12:45:15 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%pyspark\ncenters \u003d model.clusterCenters()\nprint centers\nresults \u003d model.transform(userReviewDF)\nresults.show(5)\nresults.registerTempTable(\"results\")",
-      "dateUpdated": "Nov 12, 2016 11:20:30 AM",
+      "text": "%md\n### Make predictions on test data",
+      "dateUpdated": "Nov 16, 2016 12:48:07 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1479300400232_-1055073798",
+      "id": "20161116-124640_136351607",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch3\u003eMake predictions on test data\u003c/h3\u003e\n"
+      },
+      "dateCreated": "Nov 16, 2016 12:46:40 PM",
+      "dateStarted": "Nov 16, 2016 12:48:05 PM",
+      "dateFinished": "Nov 16, 2016 12:48:05 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\ncenters \u003d model.clusterCenters()\nprint centers\nresults \u003d model.transform(testData)\nresults.show(5)\nresults.registerTempTable(\"results\")",
+      "dateUpdated": "Nov 16, 2016 12:45:18 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -384,17 +419,52 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": "[array([ 2.80558537]), array([ 558.26439578]), array([ 233.19459379]), array([ 0.]), array([ 94.34529598]), array([ 37.85773385]), array([ 16.13547282]), array([ 7.01181854]), array([ 1551.46153846]), array([ 1.])]\n+--------------------+---------+-------------+--------+----------+\n|             user_id|     name|average_stars|features|prediction|\n+--------------------+---------+-------------+--------+----------+\n|18kPq7GPye-YQ3LyK...|   Russel|         4.14| [108.0]|         4|\n|rpOyqD_893cqmDAtJ...|   Jeremy|         3.67|[1292.0]|         8|\n|4U9kSBLuBDU391x6b...|  Michael|         3.68| [395.0]|         2|\n|fHtTaujcyKvXglE33...|      Ken|         4.64|  [11.0]|         7|\n|SIBCL7HBkrP4llolm...|Katherine|          3.8|  [66.0]|         5|\n+--------------------+---------+-------------+--------+----------+\nonly showing top 5 rows\n\n"
+        "msg": "[array([ 1407.65172414]), array([ 90.89229087]), array([ 2.]), array([ 7.70029465]), array([ 36.44780549]), array([ 223.21327306]), array([ 15.79713295]), array([ 0.99987134]), array([ 3.81192911]), array([ 526.92236699])]\n+--------------------+---------+-------------+--------+----------+\n|             user_id|     name|average_stars|features|prediction|\n+--------------------+---------+-------------+--------+----------+\n|rpOyqD_893cqmDAtJ...|   Jeremy|         3.67|[1292.0]|         0|\n|SIBCL7HBkrP4llolm...|Katherine|          3.8|  [66.0]|         1|\n|WPOKvkacSKHx_bIG1...|     Mary|         3.88|  [60.0]|         4|\n|5OlCB4cJ3CUksr3ON...|  Jeffrey|         1.33|   [3.0]|         8|\n|E_DJ1nTDPt9Qk2abW...|  Heather|         4.38|  [13.0]|         6|\n+--------------------+---------+-------------+--------+----------+\nonly showing top 5 rows\n\n"
       },
       "dateCreated": "Oct 5, 2016 1:59:15 PM",
-      "dateStarted": "Nov 12, 2016 11:20:30 AM",
-      "dateFinished": "Nov 12, 2016 11:20:30 AM",
+      "dateStarted": "Nov 16, 2016 12:45:18 PM",
+      "dateFinished": "Nov 16, 2016 12:45:18 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%pyspark\nfrom math import sqrt\n# Evaluate clustering by computing Within Set Sum of Squared Errors\ndef error(point):\n    center \u003d centers[point[\"prediction\"]]\n    return sqrt(sum([x**2 for x in (point[\"features\"] - center)]))",
-      "dateUpdated": "Nov 12, 2016 11:20:39 AM",
+      "text": "%md\n### Compute the cost function",
+      "dateUpdated": "Nov 16, 2016 12:48:16 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1479300446302_2031259286",
+      "id": "20161116-124726_1181713971",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch3\u003eCompute the cost function\u003c/h3\u003e\n"
+      },
+      "dateCreated": "Nov 16, 2016 12:47:26 PM",
+      "dateStarted": "Nov 16, 2016 12:48:14 PM",
+      "dateFinished": "Nov 16, 2016 12:48:14 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%pyspark\nfrom math import sqrt\n# Evaluate clustering by computing Within Set Sum of Squared Errors\ndef error(point):\n    center \u003d centers[point[\"prediction\"]]\n    return sqrt(sum([x**2 for x in (point[\"features\"] - center)]))\n    \nerrors \u003d results.map(lambda point : error(point)).reduce(lambda a,b : a + b)\nprint errors",
+      "dateUpdated": "Nov 16, 2016 12:48:23 PM",
       "config": {
         "colWidth": 12.0,
         "editorMode": "ace/mode/scala",
@@ -418,79 +488,11 @@
       "result": {
         "code": "SUCCESS",
         "type": "TEXT",
-        "msg": ""
+        "msg": "423446.839339\n"
       },
       "dateCreated": "Oct 5, 2016 1:59:15 PM",
-      "dateStarted": "Nov 12, 2016 11:20:39 AM",
-      "dateFinished": "Nov 12, 2016 11:20:39 AM",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "text": "%pyspark\nerrors \u003d results.map(lambda point : error(point)).reduce(lambda a,b : a + b)\nprint errors",
-      "dateUpdated": "Nov 12, 2016 11:20:50 AM",
-      "config": {
-        "colWidth": 12.0,
-        "editorMode": "ace/mode/scala",
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
-        "enabled": true
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "jobName": "paragraph_1475675955404_1520197981",
-      "id": "20161005-135915_1524001078",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": "1439162.53381\n"
-      },
-      "dateCreated": "Oct 5, 2016 1:59:15 PM",
-      "dateStarted": "Nov 12, 2016 11:20:50 AM",
-      "dateFinished": "Nov 12, 2016 11:20:57 AM",
-      "status": "FINISHED",
-      "progressUpdateIntervalMs": 500
-    },
-    {
-      "text": "%pyspark\nsqlContext.sql(\"select prediction, avg(average_stars) as avg_star from results group by prediction\").show()\nsqlContext.sql(\"select * from results where prediction \u003d 0\").show()",
-      "dateUpdated": "Nov 12, 2016 11:21:00 AM",
-      "config": {
-        "colWidth": 12.0,
-        "editorMode": "ace/mode/scala",
-        "graph": {
-          "mode": "table",
-          "height": 300.0,
-          "optionOpen": false,
-          "keys": [],
-          "values": [],
-          "groups": [],
-          "scatter": {}
-        },
-        "enabled": true
-      },
-      "settings": {
-        "params": {},
-        "forms": {}
-      },
-      "jobName": "paragraph_1475675955405_1519813232",
-      "id": "20161005-135915_17536075",
-      "result": {
-        "code": "SUCCESS",
-        "type": "TEXT",
-        "msg": "+----------+------------------+\n|prediction|          avg_star|\n+----------+------------------+\n|         0|3.7154331258050264|\n|         1| 3.753024085637825|\n|         2| 3.767149547803619|\n|         3|               2.5|\n|         4|3.7758655648321704|\n|         5| 3.785892898937419|\n|         6|3.7950972877358495|\n|         7| 3.772825412416008|\n|         8| 3.749460317460318|\n|         9|3.6756718735999523|\n+----------+------------------+\n\n+--------------------+--------+-------------+--------+----------+\n|             user_id|    name|average_stars|features|prediction|\n+--------------------+--------+-------------+--------+----------+\n|5OlCB4cJ3CUksr3ON...| Jeffrey|         1.33|   [3.0]|         0|\n|xOQVHYN1roRZKpLvA...|    Chad|          2.5|   [2.0]|         0|\n|Yt4bcTwDMDCGSD2eQ...|    Jess|         3.67|   [3.0]|         0|\n|9VjrmRRwAkiuEvt8U...|   Chris|          1.0|   [3.0]|         0|\n|0bS4Xdg6xyXKepmay...|   Steve|          3.0|   [3.0]|         0|\n|3vgNYwAbVFsU0SfkI...|    Kyle|          4.0|   [3.0]|         0|\n|AeUdBbzKRSy0G_SQ7...|    Tony|          1.0|   [2.0]|         0|\n|U0RkOYGP0OzOkjn6a...|Sunshine|          4.5|   [2.0]|         0|\n|Po0R9Sj1xJcBS_9a6...|   Tracy|         2.33|   [3.0]|         0|\n|GP68togo6XkoHHBE6...| Breanne|          3.0|   [2.0]|         0|\n|uxJTQh7JXYRx-Vrs1...|   Kelly|         2.67|   [3.0]|         0|\n|N8sTFiMM0J4kK2Q_6...|  Connie|          1.5|   [2.0]|         0|\n|z-0l9wtrlGBSyMlj4...|Lawrence|          3.5|   [3.0]|         0|\n|NSHoWa7SjbWVwZveI...|    Juan|          5.0|   [2.0]|         0|\n|pex4UYLrNXELoafCd...| Bethany|          5.0|   [4.0]|         0|\n|WbeUV41fKMLJTKFSv...|     Dan|         4.67|   [3.0]|         0|\n|rrGaPRXG4O8jNhbyT...|    Adam|          2.0|   [2.0]|         0|\n|wd5LbxpbBEP7FVgU_...|   Raven|          5.0|   [3.0]|         0|\n|hSYqAqxdifcULKX_-...|      JC|          2.0|   [2.0]|         0|\n|rLOlKKUULGTkjfPna...|     Gin|         4.67|   [3.0]|         0|\n+--------------------+--------+-------------+--------+----------+\nonly showing top 20 rows\n\n"
-      },
-      "dateCreated": "Oct 5, 2016 1:59:15 PM",
-      "dateStarted": "Nov 12, 2016 11:21:00 AM",
-      "dateFinished": "Nov 12, 2016 11:21:01 AM",
+      "dateStarted": "Nov 16, 2016 12:48:23 PM",
+      "dateFinished": "Nov 16, 2016 12:48:25 PM",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
@@ -524,21 +526,21 @@
   "name": "SparkMLKmeansPython",
   "id": "2BX275WGU",
   "angularObjects": {
-    "2C3WZUK33": [],
-    "2C1YA5D2F": [],
-    "2C2S9E6XK": [],
-    "2C381K1GS": [],
-    "2BZPA1EZS": [],
-    "2BZV245P9": [],
-    "2C43YS5P2": [],
-    "2BZTQ77CG": [],
-    "2C1UP5V1X": [],
-    "2C1D5ZAWQ": [],
-    "2C2P2YH1D": [],
-    "2BZTHUGNC": [],
-    "2C1WZ6MNJ": [],
-    "2C1FTY57N": [],
-    "2C1N9QYZB": []
+    "2C2HY4CV3": [],
+    "2C15WZMF1": [],
+    "2C1KPF2HA": [],
+    "2C3KDVKHX": [],
+    "2C2HJ7J6A": [],
+    "2C2UCRRGC": [],
+    "2C154TDCQ": [],
+    "2C1YW5XET": [],
+    "2BZW8NEYT": [],
+    "2C4G66BYN": [],
+    "2C2JRCV2J": [],
+    "2C2E8F58X": [],
+    "2C1QNE8WD": [],
+    "2C494D2X8": [],
+    "2C3X82K56": []
   },
   "config": {
     "looknfeel": "default"
